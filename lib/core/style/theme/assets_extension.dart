@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart_app/core/style/images/app_images.dart';
 
 class MyAssets extends ThemeExtension<MyAssets> {
-  const MyAssets(
-    // {
-    // required this.bigNavBar,
-    // required this.homeBg,
-  // }
-  );
+  const MyAssets({
+    required this.quickmartImage,
+  });
 
-  // final String? bigNavBar;
-  // final String? homeBg;
+  final String quickmartImage;
 
   @override
   ThemeExtension<MyAssets> copyWith({
-    String? bigNavBar,
-    String? homeBg,
+    String? quickmartImage,
   }) {
-    return const MyAssets(
-      // bigNavBar: bigNavBar,
-      // homeBg: homeBg,
+    return MyAssets(
+      quickmartImage: quickmartImage ?? this.quickmartImage,
     );
   }
 
@@ -30,18 +25,15 @@ class MyAssets extends ThemeExtension<MyAssets> {
     if (other is! MyAssets) {
       return this;
     }
-    return const MyAssets(
-      // bigNavBar: bigNavBar,
-      // homeBg: homeBg,
+    return MyAssets(
+      quickmartImage: quickmartImage,
     );
   }
 
   static const MyAssets dark = MyAssets(
-    // bigNavBar: AppImages.bigIconNavBarDark,
-    // homeBg: AppImages.homeBgDark,
+    quickmartImage: Assets.imagesQuickmartDarkMode,
   );
   static const MyAssets light = MyAssets(
-    // bigNavBar: AppImages.bigIconNavBarLight,
-    // homeBg: AppImages.homeBgLight,
+    quickmartImage: Assets.imagesQuickmartLightMode,
   );
 }
