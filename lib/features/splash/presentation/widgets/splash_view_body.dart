@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
+import 'package:quick_mart_app/core/routes/app_routes.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -10,6 +11,14 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      context.pushReplacementNamed(AppRoutes.login);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
