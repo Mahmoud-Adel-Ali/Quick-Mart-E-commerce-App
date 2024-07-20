@@ -5,4 +5,5 @@ class ColorsLight {
   static const Color buttonColor = Color(0xff1C1B1B);
   static const Color textColorWithOpacity = Color(0xff6F7384);
   static const Color textColor = Color(0xff1C1B1B);
+  static const Color onBordingContainerColor = Color(0xffF4FDFA);
 }
