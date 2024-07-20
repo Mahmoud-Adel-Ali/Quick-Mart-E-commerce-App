@@ -8,12 +8,14 @@ class MyColors extends ThemeExtension<MyColors> {
     required this.buttonColor,
     required this.textColor,
     required this.textColorWithOpacity,
+    required this.onBordingContainerColor,
   });
 
   final Color mainColor;
   final Color buttonColor;
   final Color textColor;
   final Color textColorWithOpacity;
+  final Color onBordingContainerColor;
 
   @override
   ThemeExtension<MyColors> copyWith({
@@ -21,12 +23,14 @@ class MyColors extends ThemeExtension<MyColors> {
     Color? buttonColor,
     Color? textColor,
     Color? textColorWithOpacity,
+    Color? onBordingContainerColor,
   }) {
     return MyColors(
       mainColor: mainColor ?? this.mainColor,
       buttonColor: buttonColor ?? this.buttonColor,
       textColor: textColor ?? this.textColor,
       textColorWithOpacity: textColorWithOpacity ?? this.textColorWithOpacity,
+      onBordingContainerColor: onBordingContainerColor ?? this.onBordingContainerColor,
     );
   }
 
@@ -43,6 +47,7 @@ class MyColors extends ThemeExtension<MyColors> {
       buttonColor: buttonColor,
       textColor: textColor,
       textColorWithOpacity: textColorWithOpacity,
+      onBordingContainerColor:onBordingContainerColor,
     );
   }
 
@@ -50,11 +55,15 @@ class MyColors extends ThemeExtension<MyColors> {
       mainColor: ColorsDark.mainColor,
       buttonColor: ColorsDark.buttonColor,
       textColor: ColorsDark.textColor,
-      textColorWithOpacity: ColorsDark.textColorWithOpacity);
+      textColorWithOpacity: ColorsDark.textColorWithOpacity,
+      onBordingContainerColor:ColorsDark.onBordingContainerColor,
+      );
 
   static const MyColors light = MyColors(
       mainColor: ColorsLight.mainColor,
       buttonColor: ColorsLight.buttonColor,
       textColor: ColorsLight.textColor,
-      textColorWithOpacity: ColorsLight.textColorWithOpacity);
+      textColorWithOpacity: ColorsLight.textColorWithOpacity,
+      onBordingContainerColor:ColorsLight.onBordingContainerColor,
+      );
 }
