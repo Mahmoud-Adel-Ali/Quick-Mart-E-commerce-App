@@ -52,7 +52,7 @@ class Test extends StatelessWidget {
             child: Text(
               'Change mode',
               style: TextStyle(
-                color: context.color.mainColor,
+                color: context.color.textColor,
               ),
             ),
           ),
