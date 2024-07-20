@@ -4,7 +4,7 @@ import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
 import 'package:quick_mart_app/core/databases/cach_keys.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
 import 'package:quick_mart_app/core/routes/app_routes.dart';
-import 'package:quick_mart_app/core/style/theme/app_theme.dart';
+import 'package:quick_mart_app/core/utils/theme/app_theme.dart';
 
 class QuickMart extends StatelessWidget {
   const QuickMart({super.key});

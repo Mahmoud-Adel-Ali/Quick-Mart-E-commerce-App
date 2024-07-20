@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/style/images/app_images.dart';
+import 'package:quick_mart_app/core/utils/images/app_images.dart';
 
 class MyAssets extends ThemeExtension<MyAssets> {
   const MyAssets({

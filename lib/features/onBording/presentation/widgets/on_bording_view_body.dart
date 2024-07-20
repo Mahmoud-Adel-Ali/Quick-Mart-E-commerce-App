@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/style/fonts/font_family_helper.dart';
+import 'package:quick_mart_app/core/utils/fonts/font_family_helper.dart';
 
 class OnBordingViewBody extends StatelessWidget {
   const OnBordingViewBody({super.key});

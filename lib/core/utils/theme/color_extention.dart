@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/style/colors/colors_dark.dart';
-import 'package:quick_mart_app/core/style/colors/colors_light.dart';
+import 'package:quick_mart_app/core/utils/colors/colors_dark.dart';
+import 'package:quick_mart_app/core/utils/colors/colors_light.dart';
 
 class MyColors extends ThemeExtension<MyColors> {
   const MyColors({
