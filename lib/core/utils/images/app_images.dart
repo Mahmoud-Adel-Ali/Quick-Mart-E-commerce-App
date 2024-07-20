@@ -1,17 +1,17 @@
 class Assets {
   Assets._();
   
-  /// Assets for imagesOnBording1
-  /// assets/images/onBording1.svg
-  static const String imagesOnBording1 = "assets/images/onBording1.svg";
+  /// Assets for imagesOnBoarding1
+  /// assets/images/onBoarding1.svg
+  static const String imagesOnBoarding1 = "assets/images/onBoarding1.svg";
 
-  /// Assets for imagesOnBording2
-  /// assets/images/onBording2.svg
-  static const String imagesOnBording2 = "assets/images/onBording2.svg";
+  /// Assets for imagesOnBoarding2
+  /// assets/images/onBoarding2.svg
+  static const String imagesOnBoarding2 = "assets/images/onBoarding2.svg";
 
-  /// Assets for imagesOnBording3
-  /// assets/images/onBording3.svg
-  static const String imagesOnBording3 = "assets/images/onBording3.svg";
+  /// Assets for imagesOnBoarding3
+  /// assets/images/onBoarding3.svg
+  static const String imagesOnBoarding3 = "assets/images/onBoarding3.svg";
 
   /// Assets for imagesPageUnderBuild
   /// assets/images/page_under_build.jpg
