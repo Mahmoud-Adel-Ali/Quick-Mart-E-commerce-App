@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:quick_mart_app/main.dart';
+import 'package:quick_mart_app/quick_mart.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
