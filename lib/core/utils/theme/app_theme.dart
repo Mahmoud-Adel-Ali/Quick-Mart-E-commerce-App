@@ -7,7 +7,7 @@ import 'package:quick_mart_app/core/utils/theme/color_extention.dart';
 
 ThemeData themeDark() {
   return ThemeData(
-    scaffoldBackgroundColor:ColorsDark.mainColor,
+    scaffoldBackgroundColor:ColorsDark.black,
     extensions: const <ThemeExtension<dynamic>>[
       MyColors.dark,
       MyAssets.dark,
@@ -17,7 +17,7 @@ ThemeData themeDark() {
 
 ThemeData themeLight() {
   return ThemeData(
-    scaffoldBackgroundColor: ColorsLight.mainColor,
+    scaffoldBackgroundColor: ColorsLight.white,
     extensions: const <ThemeExtension<dynamic>>[
       MyColors.light,
       MyAssets.light,

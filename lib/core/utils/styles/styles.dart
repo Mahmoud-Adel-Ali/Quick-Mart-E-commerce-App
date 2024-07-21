@@ -7,7 +7,7 @@ abstract class Styless {
         fontFamily: FontFamilyHelper.plusJakartaSans,
         fontWeight: FontWeight.w400,
         fontSize: 12,
-        color: context.color.textColorWithOpacity,
+        color: context.color.grey150,
       );
   static TextStyle textSemiBold14(BuildContext context) => TextStyle(
         fontFamily: FontFamilyHelper.plusJakartaSans,
@@ -19,13 +19,13 @@ abstract class Styless {
         fontFamily: FontFamilyHelper.plusJakartaSans,
         fontWeight: FontWeight.w500,
         fontSize: 14,
-        color: context.color.textColorWithOpacity,
+        color: context.color.grey150,
       );
   static TextStyle textRegular14(BuildContext context) => TextStyle(
         fontFamily: FontFamilyHelper.plusJakartaSans,
         fontWeight: FontWeight.w400,
         fontSize: 14,
-        color: context.color.textColorWithOpacity,
+        color: context.color.grey150,
       );
   static TextStyle textSemiBold16(BuildContext context) => TextStyle(
         fontFamily: FontFamilyHelper.plusJakartaSans,

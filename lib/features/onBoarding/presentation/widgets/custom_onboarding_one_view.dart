@@ -32,7 +32,7 @@ class CustomOnboardingOneView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
             // margin: const EdgeInsets.all(18),
             decoration: BoxDecoration(
-                color: context.color.onBordingContainerColor,
+                color: context.color.grey50,
                 borderRadius: BorderRadius.circular(32)),
             child: Column(
               children: [

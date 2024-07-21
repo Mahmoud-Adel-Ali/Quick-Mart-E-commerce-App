@@ -25,7 +25,7 @@ class OnBoardingSecodeView extends StatelessWidget {
           },
           icon: Icon(
             Icons.arrow_back,
-            color: context.color.textColor,
+            color: context.color.grey50,
             size: 32,
           ),
         ),

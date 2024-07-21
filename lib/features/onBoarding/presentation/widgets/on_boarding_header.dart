@@ -42,7 +42,7 @@ class SkipForNow extends StatelessWidget {
       child: Text(
         'Skip for now',
         style: Styless.textRegular14(context)
-            .copyWith(color: ColorsDark.buttonColor),
+            .copyWith(color: ColorsDark.cyan),
       ),
     );
   }

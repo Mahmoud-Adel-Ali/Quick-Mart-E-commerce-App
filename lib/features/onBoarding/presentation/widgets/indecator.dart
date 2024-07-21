@@ -12,7 +12,7 @@ class InActiveIndecator extends StatelessWidget {
       width: 10,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: context.color.textColorWithOpacity,
+        color: context.color.grey100,
       ),
     );
   }
@@ -29,7 +29,7 @@ class ActiveIndecator extends StatelessWidget {
       margin: const EdgeInsets.all(3),
       decoration:  BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: ColorsDark.buttonColor,
+        color: ColorsDark.cyan,
       ),
     );
   }
