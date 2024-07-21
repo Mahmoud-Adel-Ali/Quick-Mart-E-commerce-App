@@ -4,7 +4,8 @@ import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boardin
 import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
 
 class AppRoutes {
-  // static const String login = 'login';
+  static const String login = 'login';
+  static const String signUp = 'signUp';
   static const String splash = 'splash';
   static const String onbording = 'onbording';
 
