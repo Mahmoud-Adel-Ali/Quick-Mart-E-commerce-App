@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_image_slideshow: ^0.1.6
   flutter_svg: ^2.0.10+1
   shared_preferences: ^2.2.3
 
@@ -65,7 +66,6 @@ flutter:
     - family: Plus-Jakarta-Sans
       fonts:
         - asset: assets/fonts/PlusJakartaSans-Regular.ttf
-
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_assets:
