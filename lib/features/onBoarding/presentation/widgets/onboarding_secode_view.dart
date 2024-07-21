@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/images/app_images.dart';
 
@@ -25,8 +26,7 @@ class OnBoardingSecodeView extends StatelessWidget {
       title: 'Unlock exclusive offers and discounts',
       subtitle:
           'Get access to limited-time deals and special promotions available only to our valued customers.',
-      buttonOnPressed: () {},
-      textOfButton: 'Next',
+      buttons: CustomButton(onPressed: () {}, text: 'Next'),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/images/app_images.dart';
 
@@ -22,8 +23,7 @@ class OnBoardingFirstView extends StatelessWidget {
       title: 'Explore a wide range of products',
       subtitle:
           'Explore a wide range of products at your fingertips. QuickMart offers an extensive collection to suit your needs.',
-      buttonOnPressed: () {},
-      textOfButton: 'Next',
+      buttons: CustomButton(onPressed: (){}, text: 'Next'),
     );
   }
 }

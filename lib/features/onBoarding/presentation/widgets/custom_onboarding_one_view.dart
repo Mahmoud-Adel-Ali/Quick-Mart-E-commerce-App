@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/styles/styles.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/widgets/on_boarding_header.dart';
@@ -12,16 +11,14 @@ class CustomOnboardingOneView extends StatelessWidget {
     required this.image,
     required this.title,
     required this.subtitle,
-    required this.textOfButton,
-    required this.buttonOnPressed,
+    required this.buttons,
   });
   final Widget leading;
   final void Function()? onTapOnSkipForNow;
   final String image;
   final String title;
   final String subtitle;
-  final String textOfButton;
-  final dynamic Function() buttonOnPressed;
+  final Widget buttons;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -66,7 +63,7 @@ class CustomOnboardingOneView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          CustomButton(onPressed: buttonOnPressed, text: textOfButton),
+          buttons,
         ],
       ),
     );

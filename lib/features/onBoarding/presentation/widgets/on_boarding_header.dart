@@ -12,19 +12,38 @@ class OnBorardingHeader extends StatelessWidget {
   final Widget leading;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        leading,
-        GestureDetector(
-          onTap: onTapOnSkipForNow,
-          child: Text(
-            'Skip for now',
-            style: Styless.textRegular14(context)
-                .copyWith(color: ColorsDark.buttonColor),
-          ),
-        )
-      ],
+    return onTapOnSkipForNow == null
+        ? Container(
+          width: double.infinity,
+          alignment: Alignment.centerLeft,
+          child: leading)
+        : Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              leading,
+              SkipForNow(onTapOnSkipForNow: onTapOnSkipForNow)
+            ],
+          );
+  }
+}
+
+class SkipForNow extends StatelessWidget {
+  const SkipForNow({
+    super.key,
+    required this.onTapOnSkipForNow,
+  });
+
+  final void Function()? onTapOnSkipForNow;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTapOnSkipForNow,
+      child: Text(
+        'Skip for now',
+        style: Styless.textRegular14(context)
+            .copyWith(color: ColorsDark.buttonColor),
+      ),
     );
   }
 }

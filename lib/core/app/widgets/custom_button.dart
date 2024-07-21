@@ -7,15 +7,18 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.onPressed,
     required this.text,
+    this.textColor,
+    this.color,
   });
   final Function()? onPressed;
   final String text;
-
+  final Color? textColor;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
-      color: context.color.buttonColor,
+      color: color ?? context.color.buttonColor,
       minWidth: 360,
       height: 67,
       shape: RoundedRectangleBorder(
@@ -24,7 +27,7 @@ class CustomButton extends StatelessWidget {
       child: Text(
         text,
         style: Styless.textSemiBold14(context).copyWith(
-          color: Colors.white,
+          color: textColor ?? Colors.white,
         ),
       ),
     );
