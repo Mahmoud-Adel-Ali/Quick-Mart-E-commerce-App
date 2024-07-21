@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
@@ -49,16 +47,23 @@ class CustomOnboardingOneView extends StatelessWidget {
               ],
             ),
           ),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: Styless.textBold24(context),
+          const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: Styless.textBold24(context),
+            ),
           ),
           const SizedBox(height: 20),
-          Text(
-            subtitle,
-            textAlign: TextAlign.center,
-            style: Styless.textRegular14(context),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Text(
+              subtitle,
+              textAlign: TextAlign.center,
+              style: Styless.textRegular14(context),
+            ),
           ),
           const SizedBox(height: 20),
           CustomButton(onPressed: buttonOnPressed, text: textOfButton),
