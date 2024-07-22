@@ -11,35 +11,51 @@ class CustomCountryCode extends StatefulWidget {
 }
 
 class _CustomCountryCodeState extends State<CustomCountryCode> {
-  var number = "";
+  String number = "";
   FocusNode focusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        CustomTextFormLable(lableText: 'Phone Number'),
+        const CustomTextFormLable(lableText: 'Phone Number'),
         //Picker Widget
         IntlPhoneField(
           focusNode: focusNode,
           cursorColor: context.color.cyan,
+          dropdownIconPosition: IconPosition.trailing,
+          dropdownIcon: const Icon(Icons.keyboard_arrow_down),
+          invalidNumberMessage: 'Incorrect number',
           decoration: InputDecoration(
             // labelText: 'Phone Number',
             fillColor: context.color.mainColor,
             filled: true,
-            border: OutlineInputBorder(
-              borderSide: BorderSide(),
+
+            border: _buildBorder(context, color: context.color.grey100),
+            focusedBorder: _buildBorder(context, color: context.color.cyan),
+            enabledBorder: _buildBorder(
+              context,
+              color: number.isNotEmpty
+                  ? context.color.blue
+                  : context.color.grey100,
             ),
           ),
           languageCode: "en",
           onChanged: (phone) {
-            print(phone.completeNumber);
+            number = phone.number;
+            setState(() {});
           },
-          onCountryChanged: (country) {
-            print('Country changed to: ' + country.name);
-          },
+          onCountryChanged: (country) {},
         ),
       ],
+    );
+  }
+
+  OutlineInputBorder _buildBorder(BuildContext context,
+      {required Color color}) {
+    return OutlineInputBorder(
+      borderSide: BorderSide(color: color),
+      borderRadius: BorderRadius.circular(12),
     );
   }
 }
