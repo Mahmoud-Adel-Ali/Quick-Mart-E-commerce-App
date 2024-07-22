@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
+import 'package:quick_mart_app/core/app/widgets/custom_country_code.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_drop_down.dart';
 import 'package:quick_mart_app/core/databases/cach_keys.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
@@ -40,15 +41,7 @@ class AppWidgets extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(18.0),
-          child: CustomDropdownFeild(
-            hintText: 'Select city',
-            items: [
-              'Karachi',
-              'Hyderabad',
-              'Sukkur',
-              'Egypt',
-            ],
-          ),
+          child: CustomCountryCode(),
         ),
       ),
     );
