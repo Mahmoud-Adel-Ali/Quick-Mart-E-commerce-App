@@ -40,13 +40,13 @@ abstract class Styless {
         fontFamily: FontFamilyHelper.plusJakartaSans,
         fontWeight: FontWeight.w500,
         fontSize: 14,
-        color: context.color.grey150,
+        color: context.color.textColor,
       );
   static TextStyle textRegular14(BuildContext context) => TextStyle(
         fontFamily: FontFamilyHelper.plusJakartaSans,
         fontWeight: FontWeight.w400,
         fontSize: 14,
-        color: context.color.grey150,
+        color: context.color.textColor,
       );
   // 16
   static TextStyle textSemiBold16(BuildContext context) => TextStyle(
