@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
-import 'package:quick_mart_app/core/app/widgets/custom_country_code.dart';
+import 'package:quick_mart_app/core/app/widgets/custom_digits_box.dart';
 import 'package:quick_mart_app/core/databases/cach_keys.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
 import 'package:quick_mart_app/core/utils/theme/app_theme.dart';
@@ -40,7 +40,7 @@ class AppWidgets extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(18.0),
-          child: CustomCountryCode(),
+          child: CustomDigitsBox(digit: 0,),
         ),
       ),
     );
