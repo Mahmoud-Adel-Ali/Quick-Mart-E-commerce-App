@@ -33,9 +33,33 @@ class Assets {
   /// assets/images/quickmart_light_mode.svg
   static const String imagesQuickmartLightMode = "assets/images/quickmart_light_mode.svg";
 
+  /// Assets for imagesSearchBlack
+  /// assets/images/search-black.svg
+  static const String imagesSearchBlack = "assets/images/search-black.svg";
+
+  /// Assets for imagesSearchGrey
+  /// assets/images/search-grey.svg
+  static const String imagesSearchGrey = "assets/images/search-grey.svg";
+
+  /// Assets for imagesSearchWhite
+  /// assets/images/search-white.svg
+  static const String imagesSearchWhite = "assets/images/search-white.svg";
+
   /// Assets for imagesSuccess
   /// assets/images/Success.svg
   static const String imagesSuccess = "assets/images/Success.svg";
+
+  /// Assets for imagesSuffSearchBlack
+  /// assets/images/suff_search_black.svg
+  static const String imagesSuffSearchBlack = "assets/images/suff_search_black.svg";
+
+  /// Assets for imagesSuffSearchGrey
+  /// assets/images/suff_search_grey.svg
+  static const String imagesSuffSearchGrey = "assets/images/suff_search_grey.svg";
+
+  /// Assets for imagesSuffSearchWhite
+  /// assets/images/suff_search_white.svg
+  static const String imagesSuffSearchWhite = "assets/images/suff_search_white.svg";
 
   /// Assets for imagesWarning
   /// assets/images/Warning.svg
