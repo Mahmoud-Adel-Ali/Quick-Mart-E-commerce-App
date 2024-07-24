@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
-import 'package:quick_mart_app/core/app/widgets/custom_search_field.dart';
+import 'package:quick_mart_app/core/app/widgets/custom_toggel.dart';
 import 'package:quick_mart_app/core/databases/cach_keys.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
 import 'package:quick_mart_app/core/utils/theme/app_theme.dart';
@@ -36,11 +36,11 @@ class AppWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Scaffold(
+    return const Scaffold(
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(18.0),
-          child: CustomSearchField(),
+          child: CustomToggel(value: true,),
         ),
       ),
     );
