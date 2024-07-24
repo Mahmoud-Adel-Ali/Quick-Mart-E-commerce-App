@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/app/views/under_build_screen.dart';
+import 'package:quick_mart_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
 
@@ -15,6 +16,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (context) => const OnBoardingView());
       case splash:
         return MaterialPageRoute(builder: (context) => const SplashView());
+      case signUp:
+        return MaterialPageRoute(builder: (context) => const SignUpView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),
