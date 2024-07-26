@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_text_form_field.dart';
+import 'package:quick_mart_app/core/app/widgets/custom_toast_message.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/features/auth/manager/functions/valid.dart';
 
@@ -58,7 +59,12 @@ class _SignUpFormState extends State<SignUpForm> {
           CustomButton(
             onPressed: () {
               if (signUpFormKey.currentState!.validate()) {
-                print('done');
+                CustomToastMessage().topToast(context,
+                    msg: 'Success : Done', type: ToastMessageType.success);
+              } else {
+                CustomToastMessage().bottomToast(context,
+                    msg: 'Error : fill all fields',
+                    type: ToastMessageType.error);
               }
             },
             text: 'Create Account',
