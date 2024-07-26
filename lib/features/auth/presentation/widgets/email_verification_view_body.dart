@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart_app/features/auth/presentation/widgets/email_verification_form.dart';
 import 'package:quick_mart_app/features/auth/presentation/widgets/email_verification_header.dart';
 
 class EmailVerificationViewBody extends StatelessWidget {
@@ -11,6 +12,8 @@ class EmailVerificationViewBody extends StatelessWidget {
       child: Column(
         children: [
           EmaillVerificationHeader(),
+          SizedBox(height: 50),
+          EmailVerificationForm(),
         ],
       ),
     );
