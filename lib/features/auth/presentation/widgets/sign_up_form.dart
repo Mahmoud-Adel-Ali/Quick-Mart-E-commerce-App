@@ -3,6 +3,7 @@ import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_text_form_field.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_toast_message.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
+import 'package:quick_mart_app/core/routes/app_routes.dart';
 import 'package:quick_mart_app/features/auth/manager/functions/valid.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -60,7 +61,10 @@ class _SignUpFormState extends State<SignUpForm> {
             onPressed: () {
               if (signUpFormKey.currentState!.validate()) {
                 CustomToastMessage().topToast(context,
-                    msg: 'Success : Done', type: ToastMessageType.success);
+                    msg:
+                        '6-digit Verification code has been send to your email address.',
+                    type: ToastMessageType.success);
+                context.pushName(AppRoutes.emailVerification);
               } else {
                 CustomToastMessage().bottomToast(context,
                     msg: 'Error : fill all fields',

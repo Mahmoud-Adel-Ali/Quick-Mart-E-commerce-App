@@ -5,7 +5,7 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/images/app_images.dart';
 import 'package:quick_mart_app/core/utils/styles/styles.dart';
 
- class CustomToastMessage {
+class CustomToastMessage {
   FToast fToast = FToast();
   void removeAllToast() {
     // To remove present shwoing toast
@@ -67,13 +67,9 @@ import 'package:quick_mart_app/core/utils/styles/styles.dart';
         borderRadius: BorderRadius.circular(12.0),
         color: context.color.grey50,
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SvgPicture.asset(toastImage(type)),
-          const SizedBox(width: 16.0),
-          Text(msg, style: Styless.textSemiBold14(context)),
-        ],
+      child: ListTile(
+        title: Text(msg, style: Styless.textSemiBold14(context)),
+        leading: SvgPicture.asset(toastImage(type)),
       ),
     );
   }

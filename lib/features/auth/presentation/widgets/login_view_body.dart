@@ -4,6 +4,7 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/routes/app_routes.dart';
 import 'package:quick_mart_app/features/auth/presentation/widgets/form_header.dart';
 import 'package:quick_mart_app/features/auth/presentation/widgets/login_form.dart';
+import 'package:quick_mart_app/features/auth/presentation/widgets/privacy_terms.dart';
 import 'package:quick_mart_app/features/auth/presentation/widgets/with_google_widget.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -12,14 +13,14 @@ class LoginViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.sizeOf(context).height;
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: Column(
-          children: [
-            CustomQuickMartHeader(height: height),
-            const SizedBox(height: 30),
-            FormHeader(
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(child: CustomQuickMartHeader(height: height)),
+          const SliverToBoxAdapter(child: SizedBox(height: 30)),
+          SliverToBoxAdapter(
+            child: FormHeader(
               viewTitle: 'Login',
               secondViewName: "Sign up",
               leadingText: "Dont't have an account? ",
@@ -27,14 +28,18 @@ class LoginViewBody extends StatelessWidget {
                 context.pushReplacementNamed(AppRoutes.signUp);
               },
             ),
-            const SizedBox(height: 30),
-            const LoginForm(),
-            const SizedBox(height: 50),
-            const WithGoogleWidget(
+          ),
+          const SliverToBoxAdapter(child: SizedBox(height: 30)),
+          const SliverToBoxAdapter(child: LoginForm()),
+          const SliverToBoxAdapter(child: SizedBox(height: 50)),
+          const SliverToBoxAdapter(
+            child: WithGoogleWidget(
               text: 'Login with Google',
             ),
-          ],
-        ),
+          ),
+          const SliverFillRemaining(
+              hasScrollBody: false, child: PrivacyTerms()),
+        ],
       ),
     );
   }
