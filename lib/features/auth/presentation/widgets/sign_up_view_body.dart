@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:quick_mart_app/core/app/widgets/custom_quick_mart_header.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/routes/app_routes.dart';
 import 'package:quick_mart_app/core/utils/images/app_images.dart';
@@ -18,15 +19,7 @@ class SignUpViewBody extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                alignment: Alignment.centerLeft,
-                width: double.infinity,
-                child: SvgPicture.asset(
-                  context.image.quickmartImage,
-                  fit: BoxFit.scaleDown,
-                  height: height * 0.05,
-                ),
-              ),
+              CustomQuickMartHeader(height: height),
               const SizedBox(height: 30),
               Container(
                   alignment: Alignment.centerLeft,
