@@ -14,19 +14,21 @@ class ForgetPasswordComfirmEmailView extends StatelessWidget {
         // appBar: ForgetPasswordAppBar(),
         body: Padding(
           padding: const EdgeInsets.all(18.0),
-          child: Column(
-            children: [
-              CustomAppBar(
-                title: 'Forgot Password',
-                trailing: Text('01/03', style: Styless.textSemiBold14(context)),
-              ),
-              const SizedBox(height: 30),
-              const FormHeader(
-                  leadingText: 'Enter your email address for verification.',
-                  viewTitle: 'Confirmation Email'),
-              const SizedBox(height: 30),
-              const ForgetPasswordComfirmEmailForm(),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                CustomAppBar(
+                  title: 'Forgot Password',
+                  trailing: Text('01/03', style: Styless.textSemiBold14(context)),
+                ),
+                const SizedBox(height: 30),
+                const FormHeader(
+                    leadingText: 'Enter your email address for verification.',
+                    viewTitle: 'Confirmation Email'),
+                const SizedBox(height: 30),
+                const ForgetPasswordComfirmEmailForm(),
+              ],
+            ),
           ),
         ),
       ),
