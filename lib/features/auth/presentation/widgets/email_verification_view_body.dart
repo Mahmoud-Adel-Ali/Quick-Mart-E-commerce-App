@@ -7,13 +7,16 @@ class EmailVerificationViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(18.0),
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
       child: Column(
         children: [
-          EmaillVerificationHeader(),
-          SizedBox(height: 50),
-          EmailVerificationForm(),
+          const EmaillVerificationHeader(),
+          const SizedBox(height: 50),
+          EmailVerificationForm(
+            onCompleted: (code) {},
+            onTapProceed: () {},
+          ),
         ],
       ),
     );
