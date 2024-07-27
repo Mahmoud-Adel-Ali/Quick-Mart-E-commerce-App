@@ -3,6 +3,7 @@ import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_text_form_field.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_toast_message.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
+import 'package:quick_mart_app/core/routes/app_routes.dart';
 import 'package:quick_mart_app/core/utils/styles/styles.dart';
 import 'package:quick_mart_app/features/auth/manager/functions/valid.dart';
 
@@ -54,7 +55,9 @@ class _LoginFormState extends State<LoginForm> {
             width: double.infinity,
             alignment: Alignment.centerRight,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                context.pushName(AppRoutes.forgetPasswordComfirmEmail);
+              },
               child: Text(
                 'Forgot password?',
                 style: Styless.textSemiBold14(context)
