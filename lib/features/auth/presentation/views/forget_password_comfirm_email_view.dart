@@ -19,7 +19,7 @@ class ForgetPasswordComfirmEmailView extends StatelessWidget {
               children: [
                 CustomAppBar(
                   title: 'Forgot Password',
-                  trailing: Text('01/03', style: Styless.textSemiBold14(context)),
+                  trailing: Text('01/03', style: Styless.textSemiBold16(context)),
                 ),
                 const SizedBox(height: 30),
                 const FormHeader(
