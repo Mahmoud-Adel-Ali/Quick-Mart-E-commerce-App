@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart_app/core/extensions/context_extention.dart';
+import 'package:quick_mart_app/core/routes/app_routes.dart';
 import 'package:quick_mart_app/core/utils/styles/styles.dart';
 import 'package:quick_mart_app/features/auth/presentation/widgets/custom_app_bar.dart';
 import 'package:quick_mart_app/features/auth/presentation/widgets/email_verification_form.dart';
@@ -26,7 +28,9 @@ class ForgetPasswodEmailVerificationView extends StatelessWidget {
                 const SizedBox(height: 30),
                 EmailVerificationForm(
                   onCompleted: (code) {},
-                  onTapProceed: () {},
+                  onTapProceed: () {
+                    context.pushName(AppRoutes.forgetPasswodNewPassword);
+                  },
                 ),
               ],
             ),

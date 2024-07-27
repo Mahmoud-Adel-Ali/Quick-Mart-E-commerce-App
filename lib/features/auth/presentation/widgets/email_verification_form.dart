@@ -5,10 +5,15 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/styles/styles.dart';
 
 class EmailVerificationForm extends StatelessWidget {
-  const EmailVerificationForm(
-      {super.key, required this.onCompleted, required this.onTapProceed});
+  const EmailVerificationForm({
+    super.key,
+    required this.onCompleted,
+    required this.onTapProceed,
+    this.onTapResendCode,
+  });
   final void Function(String)? onCompleted;
   final dynamic Function()? onTapProceed;
+  final dynamic Function()? onTapResendCode;
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
@@ -40,11 +45,11 @@ class EmailVerificationForm extends StatelessWidget {
           submittedPinTheme: submittedPinTheme,
           pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
           showCursor: true,
-          onCompleted: (pin) {},
+          onCompleted: onCompleted,
         ),
         const SizedBox(height: 10),
         TextButton(
-          onPressed: () {},
+          onPressed: onTapResendCode,
           child: Text(
             'Resend Code',
             style: Styless.textSemiBold14(context)
@@ -52,7 +57,7 @@ class EmailVerificationForm extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 50),
-        CustomButton(onPressed: () {}, text: 'Proceed'),
+        CustomButton(onPressed: onTapProceed, text: 'Proceed'),
       ],
     );
   }

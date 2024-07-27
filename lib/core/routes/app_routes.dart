@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/app/views/under_build_screen.dart';
 import 'package:quick_mart_app/features/auth/presentation/views/email_verification_view.dart';
 import 'package:quick_mart_app/features/auth/presentation/views/forget_passwod_email_verification_view.dart';
+import 'package:quick_mart_app/features/auth/presentation/views/forget_passwod_new_password_view.dart';
 import 'package:quick_mart_app/features/auth/presentation/views/forget_password_comfirm_email_view.dart';
 import 'package:quick_mart_app/features/auth/presentation/views/login_view.dart';
 import 'package:quick_mart_app/features/auth/presentation/views/sign_up_view.dart';
@@ -16,6 +17,7 @@ class AppRoutes {
   static const String onbording = 'onbording';
   static const String forgetPasswordComfirmEmail = 'forgetPasswordComfirmEmai';
   static const String forgetPasswodEmailVerification = 'forgetPasswodEmailVerification';
+  static const String forgetPasswodNewPassword = 'forgetPasswodNewPassword';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -36,6 +38,9 @@ class AppRoutes {
       case forgetPasswodEmailVerification:
         return MaterialPageRoute(
             builder: (context) => const ForgetPasswodEmailVerificationView());
+      case forgetPasswodNewPassword:
+        return MaterialPageRoute(
+            builder: (context) => const ForgetPasswodNewPasswordView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),
