@@ -6,13 +6,13 @@ class FormHeader extends StatelessWidget {
   const FormHeader({
     super.key,
     required this.leadingText,
-    required this.secondViewName,
-    required this.onPressed,
+    this.secondViewName,
+    this.onPressed,
     required this.viewTitle,
   });
   final String leadingText;
-  final String secondViewName;
-  final void Function() onPressed;
+  final String? secondViewName;
+  final void Function()? onPressed;
   final String viewTitle;
 
   @override
@@ -37,7 +37,7 @@ class FormHeader extends StatelessWidget {
             TextButton(
               onPressed: onPressed,
               child: Text(
-                secondViewName,
+                secondViewName ?? '',
                 style: Styless.textRegular14(context)
                     .copyWith(color: context.color.cyan),
               ),

@@ -13,6 +13,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.zero,
       title: Text(title, style: Styless.textSemiBold14(context)),
       leading: IconButton(
         onPressed: () => context.pop(),
