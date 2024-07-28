@@ -3,7 +3,7 @@ import 'package:quick_mart_app/core/utils/theme/assets_extension.dart';
 import 'package:quick_mart_app/core/utils/theme/color_extention.dart';
 
 extension ContextExt on BuildContext {
-    // colors
+  // colors
   MyColors get color => Theme.of(this).extension<MyColors>()!;
   // text style
   TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
@@ -19,9 +19,11 @@ extension ContextExt on BuildContext {
         .pushReplacementNamed(routename, arguments: object);
   }
 
-  // Future<dynamic> pushAndRemoveUntil(String routename, {Object? object}) {
-  //   return Navigator.of(this).pushAndRemoveUntil(routename, (route) => false)
-  // }
+  Future<dynamic> pushNamedAndRemoveUntil(String routename, {Object? object}) {
+    return Navigator.of(this).pushNamedAndRemoveUntil(
+        routename, (route) => false,
+        arguments: object);
+  }
 
   void pop() => Navigator.of(this).pop();
 }

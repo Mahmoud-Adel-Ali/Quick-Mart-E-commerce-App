@@ -30,8 +30,8 @@ class Assets {
   static const String imagesPageUnderBuild = "assets/images/page_under_build.jpg";
 
   /// Assets for imagesPasswordCreadedSuccess
-  /// assets/images/password_creaded_success.svg
-  static const String imagesPasswordCreadedSuccess = "assets/images/password_creaded_success.svg";
+  /// assets/images/password_creaded_success.png
+  static const String imagesPasswordCreadedSuccess = "assets/images/password_creaded_success.png";
 
   /// Assets for imagesQuickmartDarkMode
   /// assets/images/quickmart_dark_mode.svg
