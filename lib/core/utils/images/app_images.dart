@@ -34,12 +34,12 @@ class Assets {
   static const String imagesPasswordCreadedSuccess = "assets/images/password_creaded_success.png";
 
   /// Assets for imagesQuickmartDarkMode
-  /// assets/images/quickmart_dark_mode.svg
-  static const String imagesQuickmartDarkMode = "assets/images/quickmart_dark_mode.svg";
+  /// assets/images/quickmart_dark_mode.png
+  static const String imagesQuickmartDarkMode = "assets/images/quickmart_dark_mode.png";
 
   /// Assets for imagesQuickmartLightMode
-  /// assets/images/quickmart_light_mode.svg
-  static const String imagesQuickmartLightMode = "assets/images/quickmart_light_mode.svg";
+  /// assets/images/quickmart_light_mode.png
+  static const String imagesQuickmartLightMode = "assets/images/quickmart_light_mode.png";
 
   /// Assets for imagesSearchBlack
   /// assets/images/search-black.svg
