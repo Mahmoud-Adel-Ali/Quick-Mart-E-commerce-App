@@ -28,22 +28,31 @@ class FormHeader extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 5),
-        Row(
-          children: [
-            Text(
-              leadingText,
-              style: Styless.textRegular14(context),
-            ),
-            TextButton(
-              onPressed: onPressed,
+        secondViewName == null
+            ? Container(
+              width: double.infinity,
+              alignment: Alignment.centerLeft,
               child: Text(
-                secondViewName ?? '',
-                style: Styless.textRegular14(context)
-                    .copyWith(color: context.color.cyan),
+                  leadingText,
+                  style: Styless.textRegular14(context),
+                ),
+            )
+            : Row(
+                children: [
+                  Text(
+                    leadingText,
+                    style: Styless.textRegular14(context),
+                  ),
+                  TextButton(
+                    onPressed: onPressed,
+                    child: Text(
+                      secondViewName!,
+                      style: Styless.textRegular14(context)
+                          .copyWith(color: context.color.cyan),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
-        ),
       ],
     );
   }
