@@ -21,50 +21,60 @@ class CustomOnboardingOneView extends StatelessWidget {
   final Widget buttons;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-            height: MediaQuery.sizeOf(context).height * 0.6,
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
-            // margin: const EdgeInsets.all(18),
-            decoration: BoxDecoration(
-                color: context.color.grey50,
-                borderRadius: BorderRadius.circular(32)),
-            child: Column(
-              children: [
-                OnBorardingHeader(
-                  leading: leading,
-                  onTapOnSkipForNow: onTapOnSkipForNow,
+    return SizedBox(
+      height: MediaQuery.sizeOf(context).height * 0.9,
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+              flex: 8,
+              child: Container(
+                // height: MediaQuery.sizeOf(context).height * 0.6,
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+                // margin: const EdgeInsets.all(18),
+                decoration: BoxDecoration(
+                    color: context.color.grey50,
+                    borderRadius: BorderRadius.circular(32)),
+                child: Column(
+                  children: [
+                    OnBorardingHeader(
+                      leading: leading,
+                      onTapOnSkipForNow: onTapOnSkipForNow,
+                    ),
+                    Expanded(child: Image.asset(image)),
+                  ],
                 ),
-                Expanded(child: Image.asset(image)),
-              ],
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
-            child: Text(
-              title,
-              textAlign: TextAlign.center,
-              style: Styless.textBold24(context),
+            const SizedBox(height: 20),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                child: Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: Styless.textBold24(context),
+                ),
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
-            child: Text(
-              subtitle,
-              textAlign: TextAlign.center,
-              style: Styless.textRegular14(context),
+            const SizedBox(height: 20),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                child: Text(
+                  subtitle,
+                  textAlign: TextAlign.center,
+                  style: Styless.textRegular14(context),
+                ),
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          buttons,
-        ],
+            const SizedBox(height: 20),
+            Expanded(child: buttons),
+          ],
+        ),
       ),
     );
   }
