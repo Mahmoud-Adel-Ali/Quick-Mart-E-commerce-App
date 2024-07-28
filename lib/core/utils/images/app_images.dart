@@ -29,6 +29,10 @@ class Assets {
   /// assets/images/page_under_build.jpg
   static const String imagesPageUnderBuild = "assets/images/page_under_build.jpg";
 
+  /// Assets for imagesPasswordCreadedSuccess
+  /// assets/images/password_creaded_success.svg
+  static const String imagesPasswordCreadedSuccess = "assets/images/password_creaded_success.svg";
+
   /// Assets for imagesQuickmartDarkMode
   /// assets/images/quickmart_dark_mode.svg
   static const String imagesQuickmartDarkMode = "assets/images/quickmart_dark_mode.svg";

@@ -5,6 +5,7 @@ import 'package:quick_mart_app/features/auth/presentation/views/forget_passwod_e
 import 'package:quick_mart_app/features/auth/presentation/views/forget_passwod_new_password_view.dart';
 import 'package:quick_mart_app/features/auth/presentation/views/forget_password_comfirm_email_view.dart';
 import 'package:quick_mart_app/features/auth/presentation/views/login_view.dart';
+import 'package:quick_mart_app/features/auth/presentation/views/password_created_successfully_view.dart';
 import 'package:quick_mart_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
@@ -16,8 +17,11 @@ class AppRoutes {
   static const String splash = 'splash';
   static const String onbording = 'onbording';
   static const String forgetPasswordComfirmEmail = 'forgetPasswordComfirmEmai';
-  static const String forgetPasswodEmailVerification = 'forgetPasswodEmailVerification';
+  static const String forgetPasswodEmailVerification =
+      'forgetPasswodEmailVerification';
   static const String forgetPasswodNewPassword = 'forgetPasswodNewPassword';
+  static const String passwordCreatedSuccessfully =
+      'passwordCreatedSuccessfully';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -41,6 +45,9 @@ class AppRoutes {
       case forgetPasswodNewPassword:
         return MaterialPageRoute(
             builder: (context) => const ForgetPasswodNewPasswordView());
+      case passwordCreatedSuccessfully:
+        return MaterialPageRoute(
+            builder: (context) => const PasswordCreatedSuccessfullyView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),
