@@ -33,7 +33,8 @@ class CustomOnboardingOneView extends StatelessWidget {
               child: Container(
                 // height: MediaQuery.sizeOf(context).height * 0.6,
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
                 // margin: const EdgeInsets.all(18),
                 decoration: BoxDecoration(
                     color: context.color.grey50,
@@ -50,14 +51,12 @@ class CustomOnboardingOneView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                child: Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: Styless.textBold24(context),
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: Styless.textBold24(context),
               ),
             ),
             const SizedBox(height: 20),
@@ -72,7 +71,7 @@ class CustomOnboardingOneView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Expanded(child: buttons),
+            buttons,
           ],
         ),
       ),
