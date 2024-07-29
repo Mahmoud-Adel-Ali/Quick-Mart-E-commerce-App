@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/routes/app_routes.dart';
 import 'package:quick_mart_app/core/utils/images/app_images.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/manager/cubit/onboarding_cubit.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/manager/cubit/onboarding_state.dart';
@@ -30,7 +29,7 @@ class OnBoardingSecodeView extends StatelessWidget {
           ),
         ),
         onTapOnSkipForNow: () {
-          context.pushReplacementNamed(AppRoutes.login);
+          context.read<OnbordingCubit>().toThirdPage();
         },
         image: Assets.imagesOnBoarding2,
         title: 'Unlock exclusive offers and discounts',
