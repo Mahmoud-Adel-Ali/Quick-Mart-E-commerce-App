@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/utils/styles/styles.dart';
-import 'package:quick_mart_app/features/auth/presentation/widgets/custom_app_bar.dart';
-import 'package:quick_mart_app/features/auth/presentation/widgets/forget_password_comfirm_email_form.dart';
-import 'package:quick_mart_app/features/auth/presentation/widgets/form_header.dart';
+import 'package:quick_mart_app/features/auth/sign_up/presentation/widgets/custom_app_bar.dart';
+import 'package:quick_mart_app/features/auth/sign_up/presentation/widgets/forget_password_comfirm_email_form.dart';
+import 'package:quick_mart_app/features/auth/sign_up/presentation/widgets/form_header.dart';
 
 class ForgetPasswordComfirmEmailView extends StatelessWidget {
   const ForgetPasswordComfirmEmailView({super.key});

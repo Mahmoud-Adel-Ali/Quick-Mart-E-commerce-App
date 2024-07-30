@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/app/views/under_build_screen.dart';
-import 'package:quick_mart_app/features/auth/presentation/views/email_verification_view.dart';
-import 'package:quick_mart_app/features/auth/presentation/views/forget_passwod_email_verification_view.dart';
-import 'package:quick_mart_app/features/auth/presentation/views/forget_passwod_new_password_view.dart';
-import 'package:quick_mart_app/features/auth/presentation/views/forget_password_comfirm_email_view.dart';
-import 'package:quick_mart_app/features/auth/presentation/views/login_view.dart';
-import 'package:quick_mart_app/features/auth/presentation/views/password_created_successfully_view.dart';
-import 'package:quick_mart_app/features/auth/presentation/views/sign_up_view.dart';
+import 'package:quick_mart_app/features/auth/sign_up/presentation/views/email_verification_view.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/views/forget_passwod_email_verification_view.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/views/forget_passwod_new_password_view.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/views/forget_password_comfirm_email_view.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/views/login_view.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/views/password_created_successfully_view.dart';
+import 'package:quick_mart_app/features/auth/sign_up/presentation/views/sign_up_view.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
 
