@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/images/app_images.dart';
@@ -19,7 +18,7 @@ class OnBoardingFirstView extends StatelessWidget {
     return BlocBuilder<OnbordingCubit, OnbordingState>(
         builder: (context, state) {
       return CustomOnboardingOneView(
-        leading: SvgPicture.asset(
+        leading: Image.asset(
           context.image.quickmartImage,
           height: 35,
         ),
