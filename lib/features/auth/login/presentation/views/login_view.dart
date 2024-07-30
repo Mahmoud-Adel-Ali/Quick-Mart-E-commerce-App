@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart_app/core/app/widgets/app_logo.dart';
+import 'package:quick_mart_app/core/app/widgets/custom_simple_app_bar.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/widgets/login_view_body.dart';
 
 class LoginView extends StatelessWidget {
@@ -6,9 +8,14 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Scaffold(
-        body: LoginViewBody(),
+        appBar: customAppBar(
+          context,
+          title: const AppLogo(),
+        ),
+        // bottomNavigationBar: ,
+        body: const LoginViewBody(),
       ),
     );
   }
