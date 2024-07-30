@@ -21,8 +21,7 @@ class CustomOnboardingOneView extends StatelessWidget {
   final Widget buttons;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.sizeOf(context).height * 0.9,
+    return Expanded(
       child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -31,7 +30,6 @@ class CustomOnboardingOneView extends StatelessWidget {
             Expanded(
               flex: 8,
               child: Container(
-                // height: MediaQuery.sizeOf(context).height * 0.6,
                 width: double.infinity,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
@@ -45,7 +43,7 @@ class CustomOnboardingOneView extends StatelessWidget {
                       leading: leading,
                       onTapOnSkipForNow: onTapOnSkipForNow,
                     ),
-                    Expanded(child: Image.asset(image)),
+                    Flexible( child: Image.asset(image)),
                   ],
                 ),
               ),
@@ -60,14 +58,12 @@ class CustomOnboardingOneView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                child: Text(
-                  subtitle,
-                  textAlign: TextAlign.center,
-                  style: Styless.textRegular14(context),
-                ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              child: Text(
+                subtitle,
+                textAlign: TextAlign.center,
+                style: Styless.textRegular14(context),
               ),
             ),
             const SizedBox(height: 20),
