@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/utils/styles/styles.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/widgets/custom_forget_password_app_bar.dart';
+import 'package:quick_mart_app/core/app/widgets/custom_simple_app_bar.dart';
+import 'package:quick_mart_app/core/extensions/context_extention.dart';
+import 'package:quick_mart_app/core/routes/app_routes.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/widgets/forget_password_comfirm_email_form.dart';
 import 'package:quick_mart_app/features/auth/sign_up/presentation/widgets/form_header.dart';
 
@@ -11,22 +12,20 @@ class ForgetPasswordComfirmEmailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: customForgetPasswordAppBar(context),
-        body: Padding(
-          padding: const EdgeInsets.all(18.0),
+        appBar: customSimpleAppBar(context,
+            onTapOnLeading: () =>
+                context.pushNamedAndRemoveUntil(AppRoutes.login)),
+        body: const Padding(
+          padding: EdgeInsets.all(18.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                CustomAppBar(
-                  title: 'Forgot Password',
-                  trailing: Text('01/03', style: Styless.textSemiBold16(context)),
-                ),
-                const SizedBox(height: 30),
-                const FormHeader(
+                SizedBox(height: 30),
+                FormHeader(
                     leadingText: 'Enter your email address for verification.',
                     viewTitle: 'Confirmation Email'),
-                const SizedBox(height: 30),
-                const ForgetPasswordComfirmEmailForm(),
+                SizedBox(height: 30),
+                ForgetPasswordComfirmEmailForm(),
               ],
             ),
           ),
