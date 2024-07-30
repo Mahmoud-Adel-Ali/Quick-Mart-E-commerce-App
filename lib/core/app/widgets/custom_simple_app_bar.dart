@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/utils/styles/styles.dart';
 
-customSimpleAppBar(
+customAppBar(
   BuildContext context, {
-  required void Function() onTapOnLeading,
+  required void Function()? onTapOnLeading,
   List<Widget>? actions,
+  Widget? title,
 }) {
   return AppBar(
-    title: Text('Forgot Password', style: Styless.textSemiBold14(context)),
+    title: title,
     leading: IconButton(
-      onPressed: onTapOnLeading,
+      onPressed: onTapOnLeading ?? () => context.pop(),
       icon: Icon(Icons.arrow_back, color: context.color.textColor),
     ),
     backgroundColor: context.color.mainColor,
