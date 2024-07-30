@@ -13,7 +13,6 @@ class ForgetPasswodEmailVerificationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: customForgetPasswordAppBar(context),
         body: Padding(
           padding: const EdgeInsets.all(18.0),
           child: SingleChildScrollView(
