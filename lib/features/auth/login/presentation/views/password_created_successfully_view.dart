@@ -12,23 +12,17 @@ class PasswordCreatedSuccessfullyView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              CustomOnboardingOneView(
-                leading: const Text(''),
-                image: Assets.imagesPasswordCreadedSuccess,
-                title: 'New password set successfully',
-                subtitle:
-                    'Congratulations! Your password has been set successfully. Please proceed to the login screen to verify your account.',
-                buttons: CustomButton(
-                    onPressed: () {
-                      context.pushNamedAndRemoveUntil(AppRoutes.login);
-                    },
-                    text: 'Login'),
-              ),
-            ],
-          ),
+        body: CustomOnboardingOneView(
+          leading: const Text(''),
+          image: Assets.imagesPasswordCreadedSuccess,
+          title: 'New password set successfully',
+          subtitle:
+              'Congratulations! Your password has been set successfully. Please proceed to the login screen to verify your account.',
+          buttons: CustomButton(
+              onPressed: () {
+                context.pushNamedAndRemoveUntil(AppRoutes.login);
+              },
+              text: 'Login'),
         ),
       ),
     );

@@ -22,18 +22,16 @@ class EmailVerificationForm extends StatelessWidget {
       textStyle: Styless.textSemiBold16(context),
       decoration: BoxDecoration(
         border: Border.all(color: context.color.grey150),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(8),
       ),
     );
 
     final focusedPinTheme = defaultPinTheme.copyDecorationWith(
       border: Border.all(color: context.color.blue),
-      borderRadius: BorderRadius.circular(8),
     );
 
     final submittedPinTheme = defaultPinTheme.copyDecorationWith(
       border: Border.all(color: context.color.cyan),
-      borderRadius: BorderRadius.circular(8),
     );
 
     return Column(
