@@ -7,12 +7,6 @@ import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
 import 'package:quick_mart_app/quick_mart.dart';
 
 void main() async {
-  // SystemChrome.setSystemUIOverlayStyle(
-  //   const SystemUiOverlayStyle(
-  //     systemNavigationBarColor:  Color(0xFF1C1B1B), // navigation bar color
-  //     statusBarColor: Color(0xFF1C1B1B),
-  //   ),
-  // );
   WidgetsFlutterBinding.ensureInitialized();
   await CacheHelper().init();
 // this step used to set device not rotated
