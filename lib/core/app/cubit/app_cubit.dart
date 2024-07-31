@@ -2,8 +2,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/databases/cach_keys.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
-import 'package:quick_mart_app/core/utils/colors/colors_dark.dart';
-import 'package:quick_mart_app/core/utils/colors/colors_light.dart';
+import 'package:quick_mart_app/core/colors/colors_dark.dart';
+import 'package:quick_mart_app/core/colors/colors_light.dart';
 
 part 'app_state.dart';
 

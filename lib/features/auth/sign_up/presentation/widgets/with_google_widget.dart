@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
+import 'package:quick_mart_app/core/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/app/app_images.dart';
+import 'package:quick_mart_app/core/utils/app_images.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 
 class WithGoogleWidget extends StatelessWidget {

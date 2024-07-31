@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/utils/colors/colors_dark.dart';
+import 'package:quick_mart_app/core/colors/colors_dark.dart';
 
 class InActiveIndecator extends StatelessWidget {
   const InActiveIndecator({super.key});

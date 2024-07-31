@@ -43,7 +43,7 @@ class CustomOnboardingOneView extends StatelessWidget {
                       leading: leading,
                       onTapOnSkipForNow: onTapOnSkipForNow,
                     ),
-                    Flexible( child: Image.asset(image)),
+                    Expanded(child: Flexible( child: Image.asset(image))),
                   ],
                 ),
               ),

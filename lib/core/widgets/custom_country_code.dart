@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:quick_mart_app/core/app/widgets/custom_text_form_lable.dart';
+import 'package:quick_mart_app/core/widgets/custom_text_form_lable.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 
 class CustomCountryCode extends StatefulWidget {

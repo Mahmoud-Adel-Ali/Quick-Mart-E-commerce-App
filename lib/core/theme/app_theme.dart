@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/utils/colors/colors_dark.dart';
-import 'package:quick_mart_app/core/utils/colors/colors_light.dart';
-import 'package:quick_mart_app/core/utils/theme/assets_extension.dart';
-import 'package:quick_mart_app/core/utils/theme/color_extention.dart';
+import 'package:quick_mart_app/core/colors/colors_dark.dart';
+import 'package:quick_mart_app/core/colors/colors_light.dart';
+import 'package:quick_mart_app/core/theme/assets_extension.dart';
+import 'package:quick_mart_app/core/theme/color_extention.dart';
 
 ThemeData themeDark() {
   return ThemeData(

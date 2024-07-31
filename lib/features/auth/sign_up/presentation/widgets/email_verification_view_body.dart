@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/app/widgets/email_verification_form.dart';
-import 'package:quick_mart_app/core/app/widgets/email_verification_header.dart';
+import 'package:quick_mart_app/core/widgets/email_verification_form.dart';
+import 'package:quick_mart_app/core/widgets/email_verification_header.dart';
 
 class EmailVerificationViewBody extends StatelessWidget {
   const EmailVerificationViewBody({super.key});

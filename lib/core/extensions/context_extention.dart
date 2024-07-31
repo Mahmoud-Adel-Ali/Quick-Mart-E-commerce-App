@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/utils/theme/assets_extension.dart';
-import 'package:quick_mart_app/core/utils/theme/color_extention.dart';
+import 'package:quick_mart_app/core/theme/assets_extension.dart';
+import 'package:quick_mart_app/core/theme/color_extention.dart';
 
 extension ContextExt on BuildContext {
   // colors

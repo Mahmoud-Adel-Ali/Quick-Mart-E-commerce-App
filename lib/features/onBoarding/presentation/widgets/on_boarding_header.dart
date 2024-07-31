@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/utils/colors/colors_dark.dart';
+import 'package:quick_mart_app/core/colors/colors_dark.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 
 class OnBorardingHeader extends StatelessWidget {
