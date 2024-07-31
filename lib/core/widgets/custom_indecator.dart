@@ -11,9 +11,9 @@ class CustomIndecator extends StatelessWidget {
   final int activeIndecatorPosition;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber,
+    return SizedBox(
       height: 18,
+      width: numOfIndecator * 15,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: numOfIndecator,
