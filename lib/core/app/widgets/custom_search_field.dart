@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/app/widgets/search_field_icon.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/utils/images/app_images.dart';
-import 'package:quick_mart_app/core/utils/styles/styles.dart';
+import 'package:quick_mart_app/core/app/app_images.dart';
+import 'package:quick_mart_app/core/utils/styles.dart';
 
 class CustomSearchField extends StatefulWidget {
   const CustomSearchField({super.key, this.controller, this.onChanged});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/utils/styles/styles.dart';
+import 'package:quick_mart_app/core/utils/styles.dart';
 
 class CustomDigitsBox extends StatelessWidget {
   const CustomDigitsBox({super.key, required this.digit});

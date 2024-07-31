@@ -1,7 +1,7 @@
 import 'package:animated_custom_dropdown/custom_dropdown.dart';
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/utils/styles/styles.dart';
+import 'package:quick_mart_app/core/utils/styles.dart';
 
 class CustomDropdownFeild extends StatefulWidget {
   const CustomDropdownFeild({

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/utils/images/app_images.dart';
-import 'package:quick_mart_app/core/utils/styles/styles.dart';
+import 'package:quick_mart_app/core/app/app_images.dart';
+import 'package:quick_mart_app/core/utils/styles.dart';
 
 class CustomToastMessage {
   FToast fToast = FToast();

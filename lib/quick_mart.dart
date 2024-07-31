@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
-import 'package:quick_mart_app/core/routes/app_routes.dart';
+import 'package:quick_mart_app/core/app/app_routes.dart';
 import 'package:quick_mart_app/core/utils/theme/app_theme.dart';
 
 class QuickMart extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/app/widgets/app_logo.dart';
 import 'package:quick_mart_app/core/app/widgets/custom_button.dart';
-import 'package:quick_mart_app/core/utils/images/app_images.dart';
+import 'package:quick_mart_app/core/app/app_images.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/manager/cubit/onboarding_cubit.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/manager/cubit/onboarding_state.dart';
 
