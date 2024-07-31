@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
 import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/theme/app_theme.dart';
+import 'package:quick_mart_app/core/widgets/product/home_banner.dart';
 
 class QuickMart extends StatelessWidget {
   const QuickMart({super.key});
@@ -14,10 +15,22 @@ class QuickMart extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: context.read<AppCubit>().isDark ? themeDark() : themeLight(),
-          initialRoute: AppRoutes.splash,
-          onGenerateRoute: AppRoutes.onGenerateRoute,
+          //initialRoute: AppRoutes.splash,
+          //onGenerateRoute: AppRoutes.onGenerateRoute,
+          home: const MyWidgets(),
         );
       },
+    );
+  }
+}
+
+class MyWidgets extends StatelessWidget {
+  const MyWidgets({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(child: HomeBanner(),),
     );
   }
 }

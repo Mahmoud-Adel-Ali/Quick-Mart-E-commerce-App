@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animated_custom_dropdown: ^3.1.1
+  cached_network_image: ^3.3.1
   cupertino_icons: ^1.0.6
   device_preview: ^1.2.0
   easy_splash_screen: ^1.0.4
