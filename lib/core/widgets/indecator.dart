@@ -2,6 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/colors/colors_dark.dart';
 
+class CustomIndecator extends StatelessWidget {
+  const CustomIndecator(
+      {super.key,
+      required this.numOfIndecator,
+      required this.activeIndecatorPosition});
+  final int numOfIndecator;
+  final int activeIndecatorPosition;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.amber,
+      height: 18,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: numOfIndecator,
+        itemBuilder: (context, index) {
+          return index != activeIndecatorPosition
+              ? const InActiveIndecator()
+              : const ActiveIndecator();
+        },
+      ),
+    );
+  }
+}
+
 class InActiveIndecator extends StatelessWidget {
   const InActiveIndecator({super.key});
 
@@ -10,6 +35,7 @@ class InActiveIndecator extends StatelessWidget {
     return Container(
       height: 10,
       width: 10,
+      margin: const EdgeInsets.symmetric(horizontal: 1),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: context.color.grey100,
@@ -27,7 +53,7 @@ class ActiveIndecator extends StatelessWidget {
       height: 10,
       width: 20,
       margin: const EdgeInsets.all(3),
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: ColorsDark.cyan,
       ),

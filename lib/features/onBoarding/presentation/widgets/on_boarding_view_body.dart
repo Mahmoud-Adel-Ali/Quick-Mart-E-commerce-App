@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/manager/cubit/onboarding_cubit.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/manager/cubit/onboarding_state.dart';
-import 'package:quick_mart_app/features/onBoarding/presentation/widgets/indecator.dart';
+import 'package:quick_mart_app/core/widgets/indecator.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/widgets/onboading_first_view.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/widgets/onboarding_secode_view.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/widgets/onbording_third_view.dart';
