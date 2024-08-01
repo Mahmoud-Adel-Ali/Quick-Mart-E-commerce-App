@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
 import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/theme/app_theme.dart';
+import 'package:quick_mart_app/core/widgets/product/custom_wish_icon.dart';
 import 'package:quick_mart_app/core/widgets/product/home_banner.dart';
 
 class QuickMart extends StatelessWidget {
@@ -30,7 +31,7 @@ class MyWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: HomeBanner(),),
+      body: Center(child: CustomWishIcon(),),
     );
   }
 }
