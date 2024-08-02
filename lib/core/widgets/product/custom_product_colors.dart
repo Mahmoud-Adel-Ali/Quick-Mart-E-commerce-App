@@ -22,7 +22,6 @@ class CustomProductColors extends StatelessWidget {
           (e) {
             int index = e.key;
             Color color = e.value;
-            log(index.toString());
             return Positioned(
               right: index * 15,
               child: OneColorsOfProduct(
