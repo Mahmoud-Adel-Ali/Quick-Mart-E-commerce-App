@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart_app/core/widgets/custom_cached_network_image.dart';
 import 'package:quick_mart_app/core/widgets/product/custom_wish_icon.dart';
 
 class CustomProductCardImage extends StatelessWidget {
@@ -17,11 +18,7 @@ class CustomProductCardImage extends StatelessWidget {
         padding: const EdgeInsets.only(right: 16, top: 16),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(24)),
-          color: Colors.grey[200],
-          image: DecorationImage(
-            fit: BoxFit.fill,
-            image: NetworkImage(imgPath),
-          ),
+          image: customCachedNetworkImageprovider(imgPath) ,
         ),
         alignment: Alignment.topRight,
         child: const CustomWishIcon(),
