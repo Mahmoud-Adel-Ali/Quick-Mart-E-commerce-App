@@ -14,7 +14,7 @@ class CustomProductColors extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 25,
-      width: (17 * productColors.length).toDouble(),
+      width: (20 * productColors.length).toDouble(),
       child: Stack(
         alignment: Alignment.center,
         children: productColors.reversed.toList().asMap().entries.map(

@@ -30,7 +30,15 @@ class MyWidgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: CustomProductCard()),
+          child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
+          childAspectRatio: 0.65,
+        ),
+        itemBuilder: (context, index) => CustomProductCard(),
+      )),
     );
   }
 }
