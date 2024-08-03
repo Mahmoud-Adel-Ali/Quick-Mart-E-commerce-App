@@ -1,6 +1,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesCategory
+  /// assets/images/Category.png
+  static const String imagesCategory = "assets/images/Category.png";
+
   /// Assets for imagesError
   /// assets/images/Error.svg
   static const String imagesError = "assets/images/Error.svg";
