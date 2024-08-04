@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
 import 'package:quick_mart_app/core/theme/app_theme.dart';
+import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/widgets/product/custom_size_of_product.dart';
 
 class QuickMart extends StatelessWidget {
@@ -14,9 +15,9 @@ class QuickMart extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: context.read<AppCubit>().isDark ? themeDark() : themeLight(),
-          //initialRoute: AppRoutes.splash,
-          //onGenerateRoute: AppRoutes.onGenerateRoute,
-          home: const MyWidgets(),
+          initialRoute: AppRoutes.homeView,
+          onGenerateRoute: AppRoutes.onGenerateRoute,
+          // home: const MyWidgets(),
         );
       },
     );
@@ -30,7 +31,7 @@ class MyWidgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: CustomSizeOfProduct(productSize: ProductSize.xs,)),
+          child: CustomSizeOfProduct(productSize: ProductSize.m,)),
     );
   }
 }

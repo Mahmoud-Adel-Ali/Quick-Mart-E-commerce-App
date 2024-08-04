@@ -7,6 +7,7 @@ import 'package:quick_mart_app/features/auth/login/presentation/views/forget_pas
 import 'package:quick_mart_app/features/auth/login/presentation/views/login_view.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/views/password_created_successfully_view.dart';
 import 'package:quick_mart_app/features/auth/sign_up/presentation/views/sign_up_view.dart';
+import 'package:quick_mart_app/features/home/presentation/view/home_view.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
 
@@ -22,7 +23,7 @@ class AppRoutes {
   static const String forgetPasswodNewPassword = 'forgetPasswodNewPassword';
   static const String passwordCreatedSuccessfully =
       'passwordCreatedSuccessfully';
-
+  static const String homeView = 'homeView';
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case onbording:
@@ -48,6 +49,9 @@ class AppRoutes {
       case passwordCreatedSuccessfully:
         return MaterialPageRoute(
             builder: (context) => const PasswordCreatedSuccessfullyView());
+      case homeView:
+        return MaterialPageRoute(
+            builder: (context) => const HomeView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),
