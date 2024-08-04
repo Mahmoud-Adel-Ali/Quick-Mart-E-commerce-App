@@ -14,7 +14,6 @@ class HomeBannerOnlyItem extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 328 / 148, // 16:9 aspect ratio
       child: Container(
-        margin: const EdgeInsets.all(5),
         padding: const EdgeInsets.all(24),
         decoration: const BoxDecoration(
           image: DecorationImage(
