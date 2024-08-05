@@ -11,14 +11,16 @@ import 'package:quick_mart_app/features/onBoarding/presentation/widgets/onbordin
 class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});
   Widget? currentPage(int index) {
-    if (index == 0) {
-      return const OnBoardingFirstView();
-    } else if (index == 1) {
-      return const OnBoardingSecodeView();
-    } else if (index == 2) {
-      return const OnBoardingThirdView();
+    switch (index) {
+      case 1:
+        return const OnBoardingFirstView();
+      case 2:
+        return const OnBoardingSecodeView();
+      case 3:
+        return const OnBoardingThirdView();
+      default:
+        return null;
     }
-    return null;
   }
 
   @override
@@ -28,20 +30,9 @@ class OnBoardingViewBody extends StatelessWidget {
       return Column(
         children: [
           currentPage(context.read<OnbordingCubit>().initialPage)!,
-          Container(
-            alignment: Alignment.center,
-            width: double.infinity,
-            height: 15,
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: 3,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return index == context.read<OnbordingCubit>().initialPage
-                    ? const ActiveIndecator()
-                    : const InActiveIndecator();
-              },
-            ),
+          CustomIndecator(
+            numOfIndecator: 3,
+            activeIndecatorPosition: context.read<OnbordingCubit>().initialPage,
           )
         ],
       );
