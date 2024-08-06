@@ -5,6 +5,18 @@ class Assets {
   /// assets/images/Category.png
   static const String imagesCategory = "assets/images/Category.png";
 
+  /// Assets for imagesCategoryCyan
+  /// assets/images/category-cyan.svg
+  static const String imagesCategoryCyan = "assets/images/category-cyan.svg";
+
+  /// Assets for imagesCategoryGrey
+  /// assets/images/category-grey.svg
+  static const String imagesCategoryGrey = "assets/images/category-grey.svg";
+
+  /// Assets for imagesCategoryWhite
+  /// assets/images/category-white.svg
+  static const String imagesCategoryWhite = "assets/images/category-white.svg";
+
   /// Assets for imagesError
   /// assets/images/Error.svg
   static const String imagesError = "assets/images/Error.svg";
@@ -13,9 +25,45 @@ class Assets {
   /// assets/images/google.svg
   static const String imagesGoogle = "assets/images/google.svg";
 
+  /// Assets for imagesHeartCyan
+  /// assets/images/heart-cyan.svg
+  static const String imagesHeartCyan = "assets/images/heart-cyan.svg";
+
+  /// Assets for imagesHeartGrey
+  /// assets/images/heart-grey.svg
+  static const String imagesHeartGrey = "assets/images/heart-grey.svg";
+
+  /// Assets for imagesHeartWhite
+  /// assets/images/heart-white.svg
+  static const String imagesHeartWhite = "assets/images/heart-white.svg";
+
+  /// Assets for imagesHomeCyan
+  /// assets/images/home-cyan.svg
+  static const String imagesHomeCyan = "assets/images/home-cyan.svg";
+
+  /// Assets for imagesHomeGrey
+  /// assets/images/home-grey.svg
+  static const String imagesHomeGrey = "assets/images/home-grey.svg";
+
+  /// Assets for imagesHomeWhite
+  /// assets/images/home-white.svg
+  static const String imagesHomeWhite = "assets/images/home-white.svg";
+
   /// Assets for imagesInfo
   /// assets/images/Info.svg
   static const String imagesInfo = "assets/images/Info.svg";
+
+  /// Assets for imagesMyCartCyan
+  /// assets/images/my-cart-cyan.svg
+  static const String imagesMyCartCyan = "assets/images/my-cart-cyan.svg";
+
+  /// Assets for imagesMyCartGrey
+  /// assets/images/my-cart-grey.svg
+  static const String imagesMyCartGrey = "assets/images/my-cart-grey.svg";
+
+  /// Assets for imagesMyCartWhite
+  /// assets/images/my-cart-white.svg
+  static const String imagesMyCartWhite = "assets/images/my-cart-white.svg";
 
   /// Assets for imagesOnBoarding1
   /// assets/images/OnBoarding1.png
@@ -36,6 +84,18 @@ class Assets {
   /// Assets for imagesPasswordCreadedSuccess
   /// assets/images/password_creaded_success.png
   static const String imagesPasswordCreadedSuccess = "assets/images/password_creaded_success.png";
+
+  /// Assets for imagesProfileCyan
+  /// assets/images/profile-cyan.svg
+  static const String imagesProfileCyan = "assets/images/profile-cyan.svg";
+
+  /// Assets for imagesProfileGrey
+  /// assets/images/profile-grey.svg
+  static const String imagesProfileGrey = "assets/images/profile-grey.svg";
+
+  /// Assets for imagesProfileWhite
+  /// assets/images/profile-white.svg
+  static const String imagesProfileWhite = "assets/images/profile-white.svg";
 
   /// Assets for imagesQuickmartDarkMode
   /// assets/images/quickmart_dark_mode.png

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart_app/core/views/quick_mart_app_views.dart';
 import 'package:quick_mart_app/core/views/under_build_screen.dart';
 import 'package:quick_mart_app/features/auth/sign_up/presentation/views/email_verification_view.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/views/forget_passwod_email_verification_view.dart';
@@ -24,6 +25,7 @@ class AppRoutes {
   static const String passwordCreatedSuccessfully =
       'passwordCreatedSuccessfully';
   static const String homeView = 'homeView';
+  static const String quickMartAppViews = 'quickMartAppViews';
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case onbording:
@@ -50,8 +52,10 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (context) => const PasswordCreatedSuccessfullyView());
       case homeView:
+        return MaterialPageRoute(builder: (context) => const HomeView());
+      case quickMartAppViews:
         return MaterialPageRoute(
-            builder: (context) => const HomeView());
+            builder: (context) => const QuickMartAppViews());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),

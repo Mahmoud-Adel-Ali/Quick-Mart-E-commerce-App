@@ -12,11 +12,11 @@ class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});
   Widget? currentPage(int index) {
     switch (index) {
-      case 1:
+      case 0:
         return const OnBoardingFirstView();
-      case 2:
+      case 1:
         return const OnBoardingSecodeView();
-      case 3:
+      case 2:
         return const OnBoardingThirdView();
       default:
         return null;
