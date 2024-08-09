@@ -4,6 +4,7 @@ import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
 import 'package:quick_mart_app/core/theme/app_theme.dart';
 import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/widgets/product/custom_size_of_product.dart';
+import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
 
 class QuickMart extends StatelessWidget {
   const QuickMart({super.key});
@@ -17,7 +18,7 @@ class QuickMart extends StatelessWidget {
           theme: context.read<AppCubit>().isDark ? themeDark() : themeLight(),
           initialRoute: AppRoutes.splash,
           onGenerateRoute: AppRoutes.onGenerateRoute,
-          // home: const MyWidgets(),
+          // home: const SplashView(),
         );
       },
     );
