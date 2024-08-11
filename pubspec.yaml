@@ -32,6 +32,7 @@ dependencies:
   cached_network_image: ^3.3.1
   cupertino_icons: ^1.0.6
   device_preview: ^1.2.0
+  dio: ^5.5.0+1
   easy_splash_screen: ^1.0.4
   expandable_page_view: ^1.0.17
   flutter:
