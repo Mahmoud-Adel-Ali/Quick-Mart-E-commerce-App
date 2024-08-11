@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:quick_mart_app/core/errors/error_model.dart';
 
 class ServerException implements Exception {
   final ErrorModel errorModel;

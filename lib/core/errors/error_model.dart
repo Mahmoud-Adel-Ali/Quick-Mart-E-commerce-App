@@ -1,4 +1,4 @@
-import 'package:nectar_app/core/api/api_keys.dart';
+import 'package:quick_mart_app/core/api/api_keys.dart';
 
 class ErrorModel {
   final int statusCode;
