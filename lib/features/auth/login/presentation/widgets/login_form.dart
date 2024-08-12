@@ -90,6 +90,7 @@ class _LoginFormState extends State<LoginForm> {
                             .loginFormKey
                             .currentState!
                             .validate()) {
+                          context.read<LoginCubit>().login();
                         } else {
                           CustomToastMessage().bottomToast(context,
                               msg: 'Please fill all fields',
