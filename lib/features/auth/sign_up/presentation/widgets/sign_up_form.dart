@@ -31,6 +31,15 @@ class _SignUpFormState extends State<SignUpForm> {
           ),
           const SizedBox(height: 20),
           CustomTextFormField(
+            hintText: 'Your egyption phone',
+            lableText: 'Phone number',
+            keyboardType: TextInputType.number,
+            validator: (value) {
+              return vailEgyptionPhone(value);
+            },
+          ),
+          const SizedBox(height: 20),
+          CustomTextFormField(
             hintText: 'Enter Your Email',
             lableText: 'Email',
             validator: (value) {
@@ -50,10 +59,39 @@ class _SignUpFormState extends State<SignUpForm> {
                 showPassword = !showPassword;
                 setState(() {});
               },
-              icon: Icon(
-                Icons.visibility,
-                color: context.color.textColor,
-              ),
+              icon: showPassword
+                  ? Icon(
+                      Icons.visibility_off,
+                      color: context.color.textColor,
+                    )
+                  : Icon(
+                      Icons.visibility,
+                      color: context.color.textColor,
+                    ),
+            ),
+          ),
+          const SizedBox(height: 50),
+          CustomTextFormField(
+            hintText: 'Enter ConfirmPassword',
+            lableText: 'ConfirmPassword',
+            obscureText: showPassword,
+            validator: (value) {
+              return validatorOfPassword(value);
+            },
+            suffixIcon: IconButton(
+              onPressed: () {
+                showPassword = !showPassword;
+                setState(() {});
+              },
+              icon: showPassword
+                  ? Icon(
+                      Icons.visibility_off,
+                      color: context.color.textColor,
+                    )
+                  : Icon(
+                      Icons.visibility,
+                      color: context.color.textColor,
+                    ),
             ),
           ),
           const SizedBox(height: 50),

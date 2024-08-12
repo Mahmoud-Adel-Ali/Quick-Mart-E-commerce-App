@@ -38,3 +38,14 @@ String? validUserName(String? value) {
     return 'should contain at least one upper case , lower caser \nand under score';
   }
 }
+
+String? vailEgyptionPhone(String? value){
+  RegExp regex = RegExp(r'^01([0-9]{9})$');
+  if (value == null || value.isEmpty) {
+    return 'Please enter phone number';
+  } else if (!regex.hasMatch(value)) {
+    return 'Enter a valid Egyptian phone number';
+  }
+  return null;
+}
+

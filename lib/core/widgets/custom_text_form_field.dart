@@ -14,6 +14,7 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.validator,
     this.controller,
+    this.keyboardType,
     required this.lableText,
   });
   final TextEditingController? controller;
@@ -23,6 +24,7 @@ class CustomTextFormField extends StatelessWidget {
   final Function(String)? onChange;
   final Widget? suffixIcon;
   final String? Function(String?)? validator;
+  final TextInputType? keyboardType;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,6 +33,7 @@ class CustomTextFormField extends StatelessWidget {
         CustomTextFormLable(lableText: lableText),
         const SizedBox(height: 10),
         TextFormField(
+          keyboardType: keyboardType,
           controller: controller,
           obscureText: obscureText ?? false, // show_Text or no
           validator: validator,
@@ -44,7 +47,8 @@ class CustomTextFormField extends StatelessWidget {
             hintStyle: Styless.textRegular12(context),
             hintText: hintText,
             suffixIcon: suffixIcon,
-            contentPadding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(18),
                 borderSide: BorderSide(
