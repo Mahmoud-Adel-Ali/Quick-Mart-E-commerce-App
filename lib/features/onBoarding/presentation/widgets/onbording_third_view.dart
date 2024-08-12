@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/databases/cach_keys.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
+import 'package:quick_mart_app/core/services/services_locator.dart';
 import 'package:quick_mart_app/core/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/app_routes.dart';
@@ -68,6 +69,6 @@ class OnBoardingThirdView extends StatelessWidget {
   }
 
   void onBoardingIsVisited() {
-    CacheHelper().setBoolean(CachKeys.onBoardingIsViewing, true);
+    getit<CacheHelper>().setBoolean(CachKeys.onBoardingIsViewing, true);
   }
 }
