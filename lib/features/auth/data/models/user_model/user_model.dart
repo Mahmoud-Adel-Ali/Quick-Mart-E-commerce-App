@@ -3,16 +3,16 @@ import 'package:quick_mart_app/core/api/api_keys.dart';
 
 import 'data.dart';
 
-class SignUpModel {
+class UserModel {
   int? statusCode;
   bool? isSuccess;
   String? message;
   Data? data;
 
-  SignUpModel({this.statusCode, this.isSuccess, this.message, this.data});
+  UserModel({this.statusCode, this.isSuccess, this.message, this.data});
 
-  factory SignUpModel.fromJson(Map<String, dynamic> json) {
-    return SignUpModel(
+  factory UserModel.fromJson(Map<String, dynamic> json) {
+    return UserModel(
       statusCode: json[ApiKeys.statusCode] as int?,
       isSuccess: json[ApiKeys.isSuccess] as bool?,
       message: json[ApiKeys.message] as String?,
