@@ -10,8 +10,6 @@ import 'package:quick_mart_app/core/services/services_locator.dart';
 import 'package:quick_mart_app/features/auth/data/models/sign_up_user/sign_up_model.dart';
 import 'package:quick_mart_app/features/auth/data/repos/auth_repo.dart';
 
-
-
 class AuthRepoImplementation extends AuthRepo {
   final DioConsumer dio;
 
@@ -53,6 +51,29 @@ class AuthRepoImplementation extends AuthRepo {
       return Right(signUpModel);
     } on ServerException catch (e) {
       return Left(e.errorModel.message ?? 'failure');
+    }
+  }
+
+  @override
+  Future<Either<String, SignUpModel>> login(
+      {required String email, required String password}) async {
+    try {
+      final response = await dio.post(EndPoints.login, data: {
+        ApiKeys.email: email,
+        ApiKeys.password: password,
+      });
+      StatusCodeModel statusCodeModel = StatusCodeModel.fromJson(response);
+      if (statusCodeModel.statusCode != 200) {
+        ErrorModel errorModel = ErrorModel.fromJson(response);
+        return Left(errorModel.message);
+      }
+      // success
+      SignUpModel signUpModel = SignUpModel.fromJson(response);
+      getit<CacheHelper>().setString(ApiKeys.token, signUpModel.data!.token!);
+      getit<CacheHelper>().setString(ApiKeys.id, signUpModel.data!.id!);
+      return Right(signUpModel);
+    } on ServerException catch (e) {
+      return Left(e.errorModel.message);
     }
   }
 }
