@@ -76,4 +76,16 @@ class AuthRepoImplementation extends AuthRepo {
       return Left(e.errorModel.message);
     }
   }
+
+  @override
+  Future<Either<String, dynamic>> sentNumForEmail(
+      {required String email}) async {
+    try {
+      final response = await dio.post(EndPoints.sendNumForEmail(email));
+      String message = response.toString();
+      return Right('get code from this email $email \n $message');
+    } on ServerException catch (e) {
+      return Left(e.errorModel.message);
+    }
+  }
 }

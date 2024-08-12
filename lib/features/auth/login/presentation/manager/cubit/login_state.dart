@@ -17,3 +17,18 @@ final class LoginFailure extends LoginState {
 
   LoginFailure({required this.errorMessage});
 }
+
+
+final class SendNumForEmailLoading extends LoginState {}
+
+final class SendNumForEmailSuccess extends LoginState {
+  final String message;
+
+  SendNumForEmailSuccess({required this.message});
+}
+
+final class SendNumForEmailFailure extends LoginState {
+  final String errorMessage;
+
+  SendNumForEmailFailure({required this.errorMessage});
+}
