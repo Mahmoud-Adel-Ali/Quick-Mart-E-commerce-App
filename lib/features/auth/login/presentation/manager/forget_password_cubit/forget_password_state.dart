@@ -6,6 +6,8 @@ sealed class ForgetPasswordState {}
 
 final class ForgetPasswordInitial extends ForgetPasswordState {}
 
+final class ChangeViewDone extends ForgetPasswordState {}
+
 final class SendNumForEmailLoading extends ForgetPasswordState {}
 
 final class SendNumForEmailSuccess extends ForgetPasswordState {

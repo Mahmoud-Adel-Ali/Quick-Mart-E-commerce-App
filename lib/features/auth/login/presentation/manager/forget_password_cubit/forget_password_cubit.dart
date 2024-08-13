@@ -10,6 +10,22 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
       : super(ForgetPasswordInitial());
 
   final AuthRepoImplementation authRepoImplementation;
+// current view of forget passworf
+  int cuurentViewOfForgetPassword = 1;
+  toSecondView() {
+    cuurentViewOfForgetPassword = 2;
+    emit(ChangeViewDone());
+  }
+
+  toFirstView() {
+    cuurentViewOfForgetPassword = 1;
+    emit(ChangeViewDone());
+  }
+
+  toThirdView() {
+    cuurentViewOfForgetPassword = 3;
+    emit(ChangeViewDone());
+  }
 
 // forget password
   TextEditingController forgetPasswordEmail = TextEditingController();
