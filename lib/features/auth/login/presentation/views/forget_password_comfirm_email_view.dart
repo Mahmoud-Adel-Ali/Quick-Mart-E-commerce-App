@@ -8,8 +8,7 @@ import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/features/auth/data/repos/auth_repo_implementation.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/manager/cubit/login_cubit.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/widgets/forget_password_comfirm_email_form.dart';
-import 'package:quick_mart_app/features/auth/sign_up/presentation/widgets/form_header.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/widgets/forget_password_comfirm_email_view_body.dart';
 
 class ForgetPasswordComfirmEmailView extends StatelessWidget {
   const ForgetPasswordComfirmEmailView({super.key});
@@ -27,21 +26,7 @@ class ForgetPasswordComfirmEmailView extends StatelessWidget {
                   style: Styless.textSemiBold14(context)),
               onTapOnLeading: () =>
                   context.pushNamedAndRemoveUntil(AppRoutes.login)),
-          body: const Padding(
-            padding: EdgeInsets.all(18.0),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(height: 30),
-                  FormHeader(
-                      leadingText: 'Enter your email address for verification.',
-                      viewTitle: 'Confirmation Email'),
-                  SizedBox(height: 30),
-                  ForgetPasswordComfirmEmailForm(),
-                ],
-              ),
-            ),
-          ),
+          body: ForgetPasswordComfirmEmailViewBody(),
         ),
       ),
     );
