@@ -5,7 +5,7 @@ import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/widgets/custom_toast_message.dart';
 import 'package:quick_mart_app/core/widgets/email_verification_form.dart';
 import 'package:quick_mart_app/core/widgets/email_verification_header.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/manager/cubit/login_cubit.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/manager/login_cubit/login_cubit.dart';
 
 class ForgetPasswodEmailVerificationViewBody extends StatelessWidget {
   const ForgetPasswodEmailVerificationViewBody({

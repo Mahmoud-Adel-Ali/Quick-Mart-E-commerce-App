@@ -7,7 +7,7 @@ import 'package:quick_mart_app/core/functions/validation_of_input_fields.dart';
 import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/core/widgets/custom_toast_message.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/manager/cubit/login_cubit.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/manager/login_cubit/login_cubit.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});

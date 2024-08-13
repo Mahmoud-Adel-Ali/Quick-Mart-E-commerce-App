@@ -7,7 +7,7 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/features/auth/data/repos/auth_repo_implementation.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/manager/cubit/login_cubit.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/widgets/forget_password_comfirm_email_view_body.dart';
 
 class ForgetPasswordComfirmEmailView extends StatelessWidget {
