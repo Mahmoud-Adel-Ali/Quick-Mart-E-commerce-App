@@ -45,3 +45,18 @@ final class ConfirmNumFailure extends LoginState {
 
   ConfirmNumFailure({required this.errorMessage});
 }
+
+//ChangePassword
+final class ChangePasswordLoading extends LoginState {}
+
+final class ChangePasswordSuccess extends LoginState {
+  final String message;
+
+  ChangePasswordSuccess({required this.message});
+}
+
+final class ChangePasswordFailure extends LoginState {
+  final String errorMessage;
+
+  ChangePasswordFailure({required this.errorMessage});
+}
