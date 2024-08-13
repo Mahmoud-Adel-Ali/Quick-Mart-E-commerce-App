@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/features/auth/data/models/user_model/user_model.dart';
@@ -13,7 +12,9 @@ class LoginCubit extends Cubit<LoginState> {
   GlobalKey<FormState> loginFormKey = GlobalKey();
   TextEditingController loginEmail = TextEditingController();
   TextEditingController loginPassword = TextEditingController();
-
+  // forget password
+  TextEditingController forgetPasswordEmail = TextEditingController();
+  GlobalKey<FormState> forgetPasswordComfirmEmailFormkey = GlobalKey();
   login() async {
     emit(LoginLoading());
     final response = await authRepoImplementation.login(
@@ -23,5 +24,16 @@ class LoginCubit extends Cubit<LoginState> {
     response.fold(
         (errorMessage) => emit(LoginFailure(errorMessage: errorMessage)),
         (userModel) => emit(LoginSuccess(userModel: userModel)));
+  }
+
+  sentNumForEmail() async {
+    emit(SendNumForEmailLoading());
+    final response = await authRepoImplementation.sentNumForEmail(
+        email: forgetPasswordEmail.text);
+    response.fold(
+      (errorMessage) =>
+          emit(SendNumForEmailFailure(errorMessage: errorMessage)),
+      (message) => emit(SendNumForEmailSuccess(message: message)),
+    );
   }
 }
