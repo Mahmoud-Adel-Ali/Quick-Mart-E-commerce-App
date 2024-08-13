@@ -5,9 +5,9 @@ import 'package:quick_mart_app/core/widgets/custom_text_form_field.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/functions/validation_of_input_fields.dart';
 import 'package:quick_mart_app/core/utils/app_routes.dart';
-import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/core/widgets/custom_toast_message.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/manager/login_cubit/login_cubit.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/widgets/forget_password_text_button.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -66,20 +66,7 @@ class _LoginFormState extends State<LoginForm> {
                 ),
               ),
               const SizedBox(height: 20),
-              Container(
-                width: double.infinity,
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {
-                    context.pushName(AppRoutes.forgetPasswordComfirmEmail);
-                  },
-                  child: Text(
-                    'Forgot password?',
-                    style: Styless.textSemiBold14(context)
-                        .copyWith(color: context.color.cyan),
-                  ),
-                ),
-              ),
+              ForgetPasswordTextButton(),
               const SizedBox(height: 50),
               state is LoginLoading
                   ? CircularProgressIndicator(color: context.color.cyan)

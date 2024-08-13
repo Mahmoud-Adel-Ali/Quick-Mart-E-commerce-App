@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/widgets/custom_toast_message.dart';
 import 'package:quick_mart_app/core/widgets/email_verification_form.dart';
 import 'package:quick_mart_app/core/widgets/email_verification_header.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/manager/login_cubit/login_cubit.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/manager/forget_password_cubit/forget_password_cubit.dart';
 
 class ForgetPasswodEmailVerificationViewBody extends StatelessWidget {
   const ForgetPasswodEmailVerificationViewBody({
@@ -22,7 +21,7 @@ class ForgetPasswodEmailVerificationViewBody extends StatelessWidget {
             const SizedBox(height: 50),
             const EmaillVerificationHeader(),
             const SizedBox(height: 30),
-            BlocConsumer<LoginCubit, LoginState>(
+            BlocConsumer<ForgetPasswordCubit, ForgetPasswordState>(
               listener: (context, state) {
                 // on resend code for email
                 if (state is SendNumForEmailFailure) {
@@ -30,12 +29,11 @@ class ForgetPasswodEmailVerificationViewBody extends StatelessWidget {
                       msg: 'Error : ${state.errorMessage}',
                       type: ToastMessageType.error);
                 } else if (state is SendNumForEmailSuccess) {
-                  context.pushName(AppRoutes.forgetPasswodEmailVerification);
                   CustomToastMessage().topToast(context,
                       msg: state.message, type: ToastMessageType.success);
                 } //on confirm code num
                 else if (state is ConfirmNumSuccess) {
-                  context.pushName(AppRoutes.forgetPasswodNewPassword);
+                  context.read<ForgetPasswordCubit>().toThirdView();
                   CustomToastMessage().topToast(context,
                       msg: state.userModel.message ??
                           ' Done : you can change password now',
@@ -53,19 +51,24 @@ class ForgetPasswodEmailVerificationViewBody extends StatelessWidget {
                       )
                     : EmailVerificationForm(
                         onCompleted: (code) {
-                          context.read<LoginCubit>().setConfirmNumCode(code);
+                          context
+                              .read<ForgetPasswordCubit>()
+                              .setConfirmNumCode(code);
                         },
                         onTapProceed: () {
-                          if (context.read<LoginCubit>().confirmNumCode == '') {
+                          if (context
+                                  .read<ForgetPasswordCubit>()
+                                  .confirmNumCode ==
+                              '') {
                             CustomToastMessage().bottomToast(context,
                                 msg: 'you should comlete code firs',
                                 type: ToastMessageType.error);
                           } else {
-                            context.read<LoginCubit>().confirmNum();
+                            context.read<ForgetPasswordCubit>().confirmNum();
                           }
                         },
                         onTapResendCode: () {
-                          context.read<LoginCubit>().sentNumForEmail();
+                          context.read<ForgetPasswordCubit>().sentNumForEmail();
                         },
                       );
               },
