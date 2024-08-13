@@ -18,7 +18,6 @@ final class LoginFailure extends LoginState {
   LoginFailure({required this.errorMessage});
 }
 
-
 final class SendNumForEmailLoading extends LoginState {}
 
 final class SendNumForEmailSuccess extends LoginState {
@@ -31,4 +30,18 @@ final class SendNumForEmailFailure extends LoginState {
   final String errorMessage;
 
   SendNumForEmailFailure({required this.errorMessage});
+}
+
+final class ConfirmNumLoading extends LoginState {}
+
+final class ConfirmNumSuccess extends LoginState {
+  final UserModel userModel;
+
+  ConfirmNumSuccess({required this.userModel});
+}
+
+final class ConfirmNumFailure extends LoginState {
+  final String errorMessage;
+
+  ConfirmNumFailure({required this.errorMessage});
 }

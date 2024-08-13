@@ -15,6 +15,12 @@ class LoginCubit extends Cubit<LoginState> {
   // forget password
   TextEditingController forgetPasswordEmail = TextEditingController();
   GlobalKey<FormState> forgetPasswordComfirmEmailFormkey = GlobalKey();
+  //confirmNum
+  String confirmNumCode = '';
+  setConfirmNumCode(String code){
+    confirmNumCode = code;
+  }
+
   login() async {
     emit(LoginLoading());
     final response = await authRepoImplementation.login(
@@ -34,6 +40,16 @@ class LoginCubit extends Cubit<LoginState> {
       (errorMessage) =>
           emit(SendNumForEmailFailure(errorMessage: errorMessage)),
       (message) => emit(SendNumForEmailSuccess(message: message)),
+    );
+  }
+
+  confirmNum() async {
+    emit(ConfirmNumLoading());
+    final response =
+        await authRepoImplementation.confirmNum(code: confirmNumCode);
+    response.fold(
+      (errorMessage) => emit(ConfirmNumFailure(errorMessage: errorMessage)),
+      (userModel) => emit(ConfirmNumSuccess(userModel: userModel)),
     );
   }
 }

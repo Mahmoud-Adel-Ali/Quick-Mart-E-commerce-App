@@ -16,4 +16,5 @@ abstract class AuthRepo {
   Future<Either<String, dynamic>> sentNumForEmail({
     required String email,
   });
+  Future<Either<String, UserModel>> confirmNum({required String code});
 }
