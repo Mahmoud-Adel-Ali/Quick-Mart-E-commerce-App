@@ -106,4 +106,21 @@ class AuthRepoImplementation extends AuthRepo {
       return Left(e.errorModel.message.toString());
     }
   }
+
+  @override
+  Future<Either<String, dynamic>> changePassword(
+      {required String email,
+      required String password,
+      required String confirmPassword}) async {
+    try {
+      final response = await dio.post(EndPoints.changePassword, data: {
+        ApiKeys.email: email,
+        ApiKeys.password: password,
+        ApiKeys.confirmPassword: confirmPassword,
+      });
+      return Right(response);
+    } on ServerException catch (e) {
+      return Left(e.errorModel.message);
+    }
+  }
 }

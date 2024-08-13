@@ -17,4 +17,11 @@ abstract class AuthRepo {
     required String email,
   });
   Future<Either<String, UserModel>> confirmNum({required String code});
+
+  Future<Either<String, dynamic>> changePassword({
+    required String email,
+    required String password,
+    required String confirmPassword,
+  });
+
 }
