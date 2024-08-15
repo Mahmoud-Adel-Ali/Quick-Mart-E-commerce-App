@@ -22,7 +22,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       logoWidth: MediaQuery.sizeOf(context).width * 0.5,
       logo: Image.asset(context.image.quickmartImage, width: 260, height: 70),
       backgroundColor: context.color.mainColor,
-      durationInSeconds: 3,
+      durationInSeconds: 6,
       navigator: getit<CacheHelper>().getBoolean(CachKeys.onBoardingIsViewing) ?? false
           ? LoginView()
           : const OnBoardingView(),
