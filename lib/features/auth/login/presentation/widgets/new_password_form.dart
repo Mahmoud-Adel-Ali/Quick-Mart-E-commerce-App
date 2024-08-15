@@ -8,16 +8,16 @@ import 'package:quick_mart_app/core/functions/validation_of_input_fields.dart';
 import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/manager/forget_password_cubit/forget_password_cubit.dart';
 
-class ForgetPasswodNewPasswordForm extends StatefulWidget {
-  const ForgetPasswodNewPasswordForm({super.key});
+class NewPasswordForm extends StatefulWidget {
+  const NewPasswordForm({super.key});
 
   @override
-  State<ForgetPasswodNewPasswordForm> createState() =>
-      _ForgetPasswodNewPasswordFormState();
+  State<NewPasswordForm> createState() =>
+      _NewPasswordFormState();
 }
 
-class _ForgetPasswodNewPasswordFormState
-    extends State<ForgetPasswodNewPasswordForm> {
+class _NewPasswordFormState
+    extends State<NewPasswordForm> {
   bool showPassword = true;
   bool showConfirmPassword = true;
   @override
