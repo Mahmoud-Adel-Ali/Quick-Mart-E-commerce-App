@@ -20,7 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   Widget build(BuildContext context) {
     return EasySplashScreen(
       logoWidth: MediaQuery.sizeOf(context).width * 0.5,
-      logo: Image.asset(context.image.quickmartImage, width: 260, height: 70),
+      logo: Image.asset(context.image.quickmartImage),
       backgroundColor: context.color.mainColor,
       durationInSeconds: 6,
       navigator: getit<CacheHelper>().getBoolean(CachKeys.onBoardingIsViewing) ?? false
