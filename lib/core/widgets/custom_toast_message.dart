@@ -21,6 +21,7 @@ class CustomToastMessage {
   }) {
     fToast.init(context);
     return fToast.showToast(
+      toastDuration: Duration(seconds: 3),
       child: _buildToast(context, msg: msg, type: type),
       gravity: ToastGravity.BOTTOM,
       positionedToastBuilder: (context, child) =>
@@ -35,6 +36,7 @@ class CustomToastMessage {
   }) {
     fToast.init(context);
     return fToast.showToast(
+      toastDuration: Duration(seconds: 3),
       child: _buildToast(context, msg: msg, type: type),
       gravity: ToastGravity.TOP,
       positionedToastBuilder: (context, child) =>
