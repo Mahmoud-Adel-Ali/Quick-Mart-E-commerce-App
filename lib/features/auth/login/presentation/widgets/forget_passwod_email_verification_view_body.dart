@@ -30,7 +30,9 @@ class ForgetPasswodEmailVerificationViewBody extends StatelessWidget {
                       type: ToastMessageType.error);
                 } else if (state is SendNumForEmailSuccess) {
                   CustomToastMessage().topToast(context,
-                      msg: state.message, type: ToastMessageType.success);
+                      msg:
+                          '6-digit Verification code has been send to your email address.',
+                      type: ToastMessageType.success);
                 } //on confirm code num
                 else if (state is ConfirmNumSuccess) {
                   context.read<ForgetPasswordCubit>().toThirdView();
