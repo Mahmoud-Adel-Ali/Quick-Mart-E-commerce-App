@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/widgets/forget_password_comfirm_email_form.dart';
+import 'package:quick_mart_app/features/auth/login/presentation/widgets/comfirm_email_form.dart';
 import 'package:quick_mart_app/features/auth/sign_up/presentation/widgets/form_header.dart';
 
-class ForgetPasswordComfirmEmailViewBody extends StatelessWidget {
-  const ForgetPasswordComfirmEmailViewBody({
+class ComfirmEmailViewBody extends StatelessWidget {
+  const ComfirmEmailViewBody({
     super.key,
   });
 
@@ -19,7 +19,7 @@ class ForgetPasswordComfirmEmailViewBody extends StatelessWidget {
                 leadingText: 'Enter your email address for verification.',
                 viewTitle: 'Confirmation Email'),
             SizedBox(height: 30),
-            ForgetPasswordComfirmEmailForm(),
+            ComfirmEmailForm(),
           ],
         ),
       ),

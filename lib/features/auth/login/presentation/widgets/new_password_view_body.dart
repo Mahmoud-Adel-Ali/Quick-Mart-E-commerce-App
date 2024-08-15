@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/widgets/new_password_form.dart';
 import 'package:quick_mart_app/features/auth/sign_up/presentation/widgets/form_header.dart';
 
-class ForgetPasswodNewPasswordViewBody extends StatelessWidget {
-  const ForgetPasswodNewPasswordViewBody({
+class NewPasswordViewBody extends StatelessWidget {
+  const NewPasswordViewBody({
     super.key,
   });
 
