@@ -4,8 +4,8 @@ import 'package:quick_mart_app/core/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 
-class EmailVerificationForm extends StatelessWidget {
-  const EmailVerificationForm({
+class CustomEmailVerificationForm extends StatelessWidget {
+  const CustomEmailVerificationForm({
     super.key,
     required this.onCompleted,
     required this.onTapProceed,

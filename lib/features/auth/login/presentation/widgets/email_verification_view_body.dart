@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/widgets/custom_toast_message.dart';
-import 'package:quick_mart_app/core/widgets/email_verification_form.dart';
+import 'package:quick_mart_app/core/widgets/custom_email_verification_form.dart';
 import 'package:quick_mart_app/core/widgets/email_verification_header.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/manager/forget_password_cubit/forget_password_cubit.dart';
 
@@ -51,7 +51,7 @@ class EmailVerificationViewBody extends StatelessWidget {
                         child: CircularProgressIndicator(
                             color: context.color.cyan),
                       )
-                    : EmailVerificationForm(
+                    : CustomEmailVerificationForm(
                         onCompleted: (code) {
                           context
                               .read<ForgetPasswordCubit>()
