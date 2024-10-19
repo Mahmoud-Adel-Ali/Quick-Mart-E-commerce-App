@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/app_images.dart';
+import 'package:quick_mart_app/features/categories/presentation/views/categories_view.dart';
 import 'package:quick_mart_app/features/home/presentation/view/home_view.dart';
 
 class QuickMartAppViews extends StatefulWidget {
@@ -70,7 +71,7 @@ class _QuickMartAppViewsState extends State<QuickMartAppViews> {
         controller: _pageController,
         children: const [
           HomeView(),
-          SizedBox(),
+          CategoriesView(),
           SizedBox(),
           SizedBox(),
           SizedBox(),
