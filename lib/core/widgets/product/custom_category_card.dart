@@ -16,16 +16,19 @@ class CustomCategoryCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.black12),
       ),
-      child: Column(
-        children: [
-          Image.asset(img),
-          SizedBox(height: 10),
-          Text(
-            categoryName,
-            style: Styless.textSemiBold12(context)
-                .copyWith(color: context.color.textColor),
-          ),
-        ],
+      child: FittedBox(
+        fit: BoxFit.cover,
+        child: Column(
+          children: [
+            Image.asset(img),
+            SizedBox(height: 10),
+            Text(
+              categoryName,
+              style: Styless.textSemiBold12(context)
+                  .copyWith(color: context.color.textColor),
+            ),
+          ],
+        ),
       ),
     );
   }
