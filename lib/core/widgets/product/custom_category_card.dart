@@ -17,7 +17,6 @@ class CustomCategoryCard extends StatelessWidget {
         border: Border.all(color: Colors.black12),
       ),
       child: FittedBox(
-        fit: BoxFit.cover,
         child: Column(
           children: [
             Image.asset(img),

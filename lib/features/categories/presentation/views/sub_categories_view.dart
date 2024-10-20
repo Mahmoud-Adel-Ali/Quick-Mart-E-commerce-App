@@ -13,7 +13,7 @@ class SubCategoriesView extends StatelessWidget {
         context,
         title: Text(
           "Categories Name",
-          style: Styless.textSemiBold14(context),
+          style: Styless.textSemiBold16(context),
         ),
         showLeading: true,
         onTapOnLeading: () {
