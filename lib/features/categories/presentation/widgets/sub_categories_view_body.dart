@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/widgets/product/custom_sub_categories_item.dart';
 
 class SubCategoriesViewBody extends StatelessWidget {
@@ -17,7 +18,9 @@ class SubCategoriesViewBody extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.productListingView);
+            },
             child: CustomSubCategoriesItem(),
           );
         },
