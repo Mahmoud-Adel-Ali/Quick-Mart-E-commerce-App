@@ -4,7 +4,9 @@ import 'package:quick_mart_app/core/utils/styles.dart';
 
 class HeaderOfAnyHomeSection extends StatelessWidget {
   const HeaderOfAnyHomeSection({
-    super.key, required this.title, this.onPressedOnSeeAll,
+    super.key,
+    required this.title,
+    this.onPressedOnSeeAll,
   });
   final String title;
   final void Function()? onPressedOnSeeAll;

@@ -10,10 +10,12 @@ customAppBar(
 }) {
   return AppBar(
     title: title,
-    leading:showLeading == false ? null : IconButton(
-      onPressed: onTapOnLeading ?? () => context.pop(),
-      icon: Icon(Icons.arrow_back, color: context.color.textColor),
-    ),
+    leading: showLeading == false
+        ? null
+        : IconButton(
+            onPressed: onTapOnLeading ?? () => context.pop(),
+            icon: Icon(Icons.arrow_back, color: context.color.textColor),
+          ),
     backgroundColor: context.color.mainColor,
     flexibleSpace: FlexibleSpaceBar(
       background: Container(color: context.color.mainColor),

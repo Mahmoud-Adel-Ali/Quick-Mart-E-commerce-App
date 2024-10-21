@@ -18,7 +18,7 @@ class CustomProductCardImage extends StatelessWidget {
         padding: const EdgeInsets.only(right: 16, top: 16),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(24)),
-          image: customCachedNetworkImageprovider(imgPath) ,
+          image: customCachedNetworkImageprovider(imgPath),
         ),
         alignment: Alignment.topRight,
         child: const CustomWishIcon(),

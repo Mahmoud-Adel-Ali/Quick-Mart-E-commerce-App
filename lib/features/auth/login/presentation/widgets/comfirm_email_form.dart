@@ -21,7 +21,9 @@ class ComfirmEmailForm extends StatelessWidget {
         } else if (state is SendNumForEmailSuccess) {
           context.read<ForgetPasswordCubit>().toSecondView();
           CustomToastMessage().topToast(context,
-              msg: '6-digit Verification code has been send to your email address.', type: ToastMessageType.success);
+              msg:
+                  '6-digit Verification code has been send to your email address.',
+              type: ToastMessageType.success);
         }
       },
       builder: (context, state) {

@@ -3,7 +3,9 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 
 class CustomToggel extends StatelessWidget {
   const CustomToggel({
-    super.key, required this.value, this.onChanged,
+    super.key,
+    required this.value,
+    this.onChanged,
   });
   final bool value;
   final void Function(bool)? onChanged;

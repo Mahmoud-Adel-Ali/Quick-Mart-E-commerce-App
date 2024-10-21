@@ -19,7 +19,10 @@ class EmailVerificationView extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back,color: context.color.textColor,)),
+            icon: Icon(
+              Icons.arrow_back,
+              color: context.color.textColor,
+            )),
       ),
       body: const EmailVerificationViewBody(),
     );

@@ -9,7 +9,6 @@ class CustomTextFormLable extends StatelessWidget {
   });
 
   final String lableText;
-  
 
   @override
   Widget build(BuildContext context) {

@@ -32,10 +32,7 @@ class AppCubit extends Cubit<AppState> {
           ? ColorsDark.black
           : ColorsLight.white, // Adjust these colors as needed
       statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
-      systemNavigationBarColor: !isDark
-          ? ColorsDark.black
-          : ColorsLight.white,
-
+      systemNavigationBarColor: !isDark ? ColorsDark.black : ColorsLight.white,
     ));
   }
 }

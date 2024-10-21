@@ -44,7 +44,10 @@ class CustomOnboardingOneView extends StatelessWidget {
                       onTapOnSkipForNow: onTapOnSkipForNow,
                     ),
                     Expanded(child: SizedBox()),
-                    Flexible( flex: 10, child: Image.asset(image),),
+                    Flexible(
+                      flex: 10,
+                      child: Image.asset(image),
+                    ),
                     Expanded(child: SizedBox()),
                   ],
                 ),

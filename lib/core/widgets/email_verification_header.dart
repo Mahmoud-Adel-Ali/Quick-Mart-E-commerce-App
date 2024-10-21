@@ -16,10 +16,11 @@ class EmaillVerificationHeader extends StatelessWidget {
         style: Styless.textBold24(context),
       ),
       subtitle: Padding(
-        padding: const EdgeInsets.only(top:  20.0),
+        padding: const EdgeInsets.only(top: 20.0),
         child: Text(
           'Enter the 6-digit verification code send to your email address.',
-          style: Styless.textMedium14(context).copyWith(color: context.color.grey150),
+          style: Styless.textMedium14(context)
+              .copyWith(color: context.color.grey150),
         ),
       ),
     );

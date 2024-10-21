@@ -143,7 +143,7 @@ class MyColors extends ThemeExtension<MyColors> {
     pink: ColorsDark.pink,
     buttonColor: ColorsDark.cyan,
     mainColor: ColorsDark.black,
-    textColor : ColorsDark.white,
+    textColor: ColorsDark.white,
   );
 
   static const MyColors light = MyColors(
@@ -165,6 +165,6 @@ class MyColors extends ThemeExtension<MyColors> {
     pink: ColorsLight.pink,
     buttonColor: ColorsLight.black,
     mainColor: ColorsDark.white,
-    textColor : ColorsLight.black,
+    textColor: ColorsLight.black,
   );
 }

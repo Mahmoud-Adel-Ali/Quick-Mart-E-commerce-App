@@ -23,5 +23,4 @@ abstract class AuthRepo {
     required String password,
     required String confirmPassword,
   });
-
 }

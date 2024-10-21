@@ -23,9 +23,10 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       logo: Image.asset(context.image.quickmartImage),
       backgroundColor: context.color.mainColor,
       durationInSeconds: 7,
-      navigator: getit<CacheHelper>().getBoolean(CachKeys.onBoardingIsViewing) ?? false
-          ? LoginView()
-          : const OnBoardingView(),
+      navigator:
+          getit<CacheHelper>().getBoolean(CachKeys.onBoardingIsViewing) ?? false
+              ? LoginView()
+              : const OnBoardingView(),
       showLoader: false,
       loadingText: Text(
         'Asia’s No 1 Ecommerce App',

@@ -12,12 +12,10 @@ class NewPasswordForm extends StatefulWidget {
   const NewPasswordForm({super.key});
 
   @override
-  State<NewPasswordForm> createState() =>
-      _NewPasswordFormState();
+  State<NewPasswordForm> createState() => _NewPasswordFormState();
 }
 
-class _NewPasswordFormState
-    extends State<NewPasswordForm> {
+class _NewPasswordFormState extends State<NewPasswordForm> {
   bool showPassword = true;
   bool showConfirmPassword = true;
   @override

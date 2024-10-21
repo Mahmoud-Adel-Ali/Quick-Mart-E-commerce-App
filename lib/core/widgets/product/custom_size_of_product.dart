@@ -38,4 +38,4 @@ class CustomSizeOfProduct extends StatelessWidget {
   }
 }
 
-enum ProductSize {m, l, xl, xxl, s,xs }
+enum ProductSize { m, l, xl, xxl, s, xs }

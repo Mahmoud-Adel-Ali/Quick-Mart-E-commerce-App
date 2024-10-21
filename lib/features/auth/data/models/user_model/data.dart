@@ -1,4 +1,3 @@
-
 import 'package:quick_mart_app/core/api/api_keys.dart';
 
 class Data {

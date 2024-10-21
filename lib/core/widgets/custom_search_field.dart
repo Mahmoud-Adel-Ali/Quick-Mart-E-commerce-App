@@ -32,7 +32,7 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
           isAvailable = false;
           setState(() {});
         },
-        onChanged:widget.onChanged,
+        onChanged: widget.onChanged,
         decoration: InputDecoration(
             hintText: 'Search',
             hintStyle: Styless.textRegular12(context),

@@ -30,13 +30,13 @@ class FormHeader extends StatelessWidget {
         const SizedBox(height: 5),
         secondViewName == null
             ? Container(
-              width: double.infinity,
-              alignment: Alignment.centerLeft,
-              child: Text(
+                width: double.infinity,
+                alignment: Alignment.centerLeft,
+                child: Text(
                   leadingText,
                   style: Styless.textRegular14(context),
                 ),
-            )
+              )
             : Row(
                 children: [
                   Text(

@@ -9,10 +9,8 @@ class CategoriesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(
-        context,
-        title: Text("Categories",style: Styless.textSemiBold16(context))
-      ),
+      appBar: customAppBar(context,
+          title: Text("Categories", style: Styless.textSemiBold16(context))),
       body: CategoriesViewBody(),
     );
   }

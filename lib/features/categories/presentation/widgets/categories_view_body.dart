@@ -20,7 +20,7 @@ class CategoriesViewBody extends StatelessWidget {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
-              Navigator.pushNamed(context,AppRoutes.subCategoriesView);
+              Navigator.pushNamed(context, AppRoutes.subCategoriesView);
             },
             child: CustomCategoryCard(
                 categoryName: "Electronics", img: Assets.imagesCategory),

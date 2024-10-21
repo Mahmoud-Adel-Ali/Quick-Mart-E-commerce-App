@@ -4,7 +4,6 @@ import 'package:quick_mart_app/core/api/api_interceptor.dart';
 import 'package:quick_mart_app/core/api/end_points.dart';
 import 'package:quick_mart_app/core/errors/exception.dart';
 
-
 class DioConsumer extends ApiConsumer {
   final Dio dio;
 

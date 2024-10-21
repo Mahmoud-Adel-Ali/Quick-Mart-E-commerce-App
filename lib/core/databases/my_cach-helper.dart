@@ -3,13 +3,13 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
-
   static late SharedPreferences sharedPreferences;
 
   ///Below method is to initialize the SharedPreference instance.
   Future<dynamic> init() async {
     sharedPreferences = await SharedPreferences.getInstance();
   }
+
 //MA@2611m
   ///Below method is to return the SharedPreference instance.
   SharedPreferences getPreferenceInstance() {

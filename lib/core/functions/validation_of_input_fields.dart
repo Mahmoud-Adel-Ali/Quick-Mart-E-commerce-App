@@ -39,7 +39,7 @@ String? validUserName(String? value) {
   }
 }
 
-String? vailEgyptionPhone(String? value){
+String? vailEgyptionPhone(String? value) {
   RegExp regex = RegExp(r'^01([0-9]{9})$');
   if (value == null || value.isEmpty) {
     return 'Please enter phone number';
@@ -48,4 +48,3 @@ String? vailEgyptionPhone(String? value){
   }
   return null;
 }
-

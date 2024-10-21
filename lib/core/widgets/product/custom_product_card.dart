@@ -41,15 +41,15 @@ class CustomProductCard extends StatelessWidget {
           Text(
             'Product Name',
             style: Styless.textBold18(context),
-          ),Text(
+          ),
+          Text(
             r'$126.00',
             style: Styless.textSemiBold16(context),
-          )
-          ,Text(
+          ),
+          Text(
             r'$186.00',
             style: Styless.textRegular12(context),
           ),
-          
         ],
       ),
     );

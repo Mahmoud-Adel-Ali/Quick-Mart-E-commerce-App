@@ -1,6 +1,6 @@
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesCategory
   /// assets/images/Category.png
   static const String imagesCategory = "assets/images/Category.png";
@@ -79,11 +79,13 @@ class Assets {
 
   /// Assets for imagesPageUnderBuild
   /// assets/images/page_under_build.jpg
-  static const String imagesPageUnderBuild = "assets/images/page_under_build.jpg";
+  static const String imagesPageUnderBuild =
+      "assets/images/page_under_build.jpg";
 
   /// Assets for imagesPasswordCreadedSuccess
   /// assets/images/password_creaded_success.png
-  static const String imagesPasswordCreadedSuccess = "assets/images/password_creaded_success.png";
+  static const String imagesPasswordCreadedSuccess =
+      "assets/images/password_creaded_success.png";
 
   /// Assets for imagesProfileCyan
   /// assets/images/profile-cyan.svg
@@ -99,11 +101,13 @@ class Assets {
 
   /// Assets for imagesQuickmartDarkMode
   /// assets/images/quickmart_dark_mode.png
-  static const String imagesQuickmartDarkMode = "assets/images/quickmart_dark_mode.png";
+  static const String imagesQuickmartDarkMode =
+      "assets/images/quickmart_dark_mode.png";
 
   /// Assets for imagesQuickmartLightMode
   /// assets/images/quickmart_light_mode.png
-  static const String imagesQuickmartLightMode = "assets/images/quickmart_light_mode.png";
+  static const String imagesQuickmartLightMode =
+      "assets/images/quickmart_light_mode.png";
 
   /// Assets for imagesSearchBlack
   /// assets/images/search-black.svg
@@ -123,18 +127,20 @@ class Assets {
 
   /// Assets for imagesSuffSearchBlack
   /// assets/images/suff_search_black.svg
-  static const String imagesSuffSearchBlack = "assets/images/suff_search_black.svg";
+  static const String imagesSuffSearchBlack =
+      "assets/images/suff_search_black.svg";
 
   /// Assets for imagesSuffSearchGrey
   /// assets/images/suff_search_grey.svg
-  static const String imagesSuffSearchGrey = "assets/images/suff_search_grey.svg";
+  static const String imagesSuffSearchGrey =
+      "assets/images/suff_search_grey.svg";
 
   /// Assets for imagesSuffSearchWhite
   /// assets/images/suff_search_white.svg
-  static const String imagesSuffSearchWhite = "assets/images/suff_search_white.svg";
+  static const String imagesSuffSearchWhite =
+      "assets/images/suff_search_white.svg";
 
   /// Assets for imagesWarning
   /// assets/images/Warning.svg
   static const String imagesWarning = "assets/images/Warning.svg";
 }
-

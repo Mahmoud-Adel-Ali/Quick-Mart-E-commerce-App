@@ -20,9 +20,15 @@ void handelDioException(DioException e) {
     case DioExceptionType.cancel:
       throw ServerException(errorModel: ErrorModel.fromJson(e.response!.data));
     case DioExceptionType.connectionError:
-    e.response == null
-      ?throw ServerException(errorModel: ErrorModel(statusCode: 500, isSuccess: false, data: null, message: 'Lose Internet'))
-      :throw ServerException(errorModel: ErrorModel.fromJson(e.response!.data));
+      e.response == null
+          ? throw ServerException(
+              errorModel: ErrorModel(
+                  statusCode: 500,
+                  isSuccess: false,
+                  data: null,
+                  message: 'Lose Internet'))
+          : throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
     case DioExceptionType.unknown:
       throw ServerException(errorModel: ErrorModel.fromJson(e.response!.data));
     case DioExceptionType.badResponse:

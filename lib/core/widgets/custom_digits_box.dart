@@ -12,7 +12,7 @@ class CustomDigitsBox extends StatelessWidget {
       width: 50,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: context.color.cyan50,
+          color: context.color.cyan50,
           border: Border.all(
             color: context.color.cyan,
           ),

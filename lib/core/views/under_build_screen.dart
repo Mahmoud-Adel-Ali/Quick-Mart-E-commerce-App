@@ -9,7 +9,7 @@ class PageUnderBuildView extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Container(
         constraints: const BoxConstraints.expand(),
-        decoration:const BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/page_under_build.jpg'),
             fit: BoxFit.fill,

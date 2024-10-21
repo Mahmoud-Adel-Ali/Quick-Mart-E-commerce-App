@@ -53,7 +53,8 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (context) => const SubCategoriesView());
       case productListingView:
-        return MaterialPageRoute(builder: (context) => const ProductListingView());
+        return MaterialPageRoute(
+            builder: (context) => const ProductListingView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),

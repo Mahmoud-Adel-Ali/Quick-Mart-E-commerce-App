@@ -9,7 +9,6 @@ class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit({required this.authRepoImplementation}) : super(SignUpInitial());
   final AuthRepoImplementation authRepoImplementation;
 
-  
   TextEditingController signUpUserName = TextEditingController();
   TextEditingController signUpPhoneNumber = TextEditingController();
   TextEditingController signUpEmail = TextEditingController();

@@ -14,7 +14,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupServicesLocator();
   await getit<CacheHelper>().init();
-  //observer state of cubits 
+  //observer state of cubits
   Bloc.observer = AppBlocObserver();
   // this step used to set device not rotated
   await SystemChrome.setPreferredOrientations([

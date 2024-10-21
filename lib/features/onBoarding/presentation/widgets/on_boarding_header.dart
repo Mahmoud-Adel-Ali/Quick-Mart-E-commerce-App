@@ -14,9 +14,9 @@ class OnBorardingHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return onTapOnSkipForNow == null
         ? Container(
-          width: double.infinity,
-          alignment: Alignment.centerLeft,
-          child: leading)
+            width: double.infinity,
+            alignment: Alignment.centerLeft,
+            child: leading)
         : Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -41,8 +41,7 @@ class SkipForNow extends StatelessWidget {
       onTap: onTapOnSkipForNow,
       child: Text(
         'Skip for now',
-        style: Styless.textRegular14(context)
-            .copyWith(color: ColorsDark.cyan),
+        style: Styless.textRegular14(context).copyWith(color: ColorsDark.cyan),
       ),
     );
   }
