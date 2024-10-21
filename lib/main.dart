@@ -6,6 +6,8 @@ import 'package:quick_mart_app/core/app/bloc_observer.dart';
 import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
 import 'package:quick_mart_app/core/databases/cach_keys.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
+import 'package:quick_mart_app/core/manager/products_cubit/products_cubit.dart';
+import 'package:quick_mart_app/core/manager/repo/product_repo_impl.dart';
 import 'package:quick_mart_app/core/services/services_locator.dart';
 import 'package:quick_mart_app/quick_mart.dart';
 import 'package:device_preview/device_preview.dart';
@@ -21,11 +23,20 @@ void main() async {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]).then((_) {
-    runApp(BlocProvider<AppCubit>(
-      create: (context) => AppCubit()
-        ..changeAppThemeMode(
-          sharedMode: CacheHelper().getBoolean(CachKeys.isDarkMode),
+    runApp(MultiBlocProvider(
+      providers: [
+        BlocProvider<AppCubit>(
+          create: (context) => AppCubit()
+            ..changeAppThemeMode(
+              sharedMode: CacheHelper().getBoolean(CachKeys.isDarkMode),
+            ),
         ),
+        BlocProvider<ProductsCubit>(
+          create: (context) => ProductsCubit(productRepoImpl: ProductRepoImpl())
+            ..getAllProducts()
+            ..getCategories(),
+        ),
+      ],
       child: DevicePreview(
         enabled: !kReleaseMode,
         builder: (context) => const QuickMart(), // Wrap your app

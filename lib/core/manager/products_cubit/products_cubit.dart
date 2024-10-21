@@ -6,7 +6,7 @@ import 'package:quick_mart_app/core/models/product_model/product_model.dart';
 part 'products_state.dart';
 
 class ProductsCubit extends Cubit<ProductsState> {
-  ProductsCubit(this.productRepoImpl) : super(ProductsInitial());
+  ProductsCubit({required this.productRepoImpl}) : super(ProductsInitial());
   final ProductRepoImpl productRepoImpl;
   List<ProductModel> allProducts = [];
   List<String> allcategories = [];
