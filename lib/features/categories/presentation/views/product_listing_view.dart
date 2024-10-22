@@ -11,7 +11,8 @@ class ProductListingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // setting object
-    final category = ModalRoute.of(context)!.settings.arguments as String;    return Scaffold(
+    final category = ModalRoute.of(context)!.settings.arguments as String;
+    return Scaffold(
       appBar: customAppBar(
         context,
         title: Text(category, style: Styless.textBold18(context)),
@@ -28,7 +29,9 @@ class ProductListingView extends StatelessWidget {
           SizedBox(width: 12),
         ],
       ),
-      body: ProductListingViewBody(),
+      body: ProductListingViewBody(
+        category: category,
+      ),
     );
   }
 }

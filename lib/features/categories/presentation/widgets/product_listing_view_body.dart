@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quick_mart_app/core/manager/products_cubit/products_cubit.dart';
+import 'package:quick_mart_app/core/models/product_model/product_model.dart';
+import 'package:quick_mart_app/core/widgets/product/custom_product_card.dart';
 
 class ProductListingViewBody extends StatelessWidget {
-  const ProductListingViewBody({super.key});
-
+  const ProductListingViewBody({super.key, required this.category});
+  final String category;
   @override
   Widget build(BuildContext context) {
+    final List<ProductModel> products =
+        context.read<ProductsCubit>().categoryMap[category] ?? [];
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: GridView.builder(
@@ -14,11 +20,9 @@ class ProductListingViewBody extends StatelessWidget {
           mainAxisSpacing: 8,
           crossAxisSpacing: 8,
         ),
+        itemCount: products.length,
         itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {},
-            // child: CustomProductCard(),
-          );
+          return CustomProductCard(product: products[index],);
         },
       ),
     );
