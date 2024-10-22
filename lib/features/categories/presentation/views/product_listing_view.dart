@@ -7,13 +7,14 @@ import 'package:quick_mart_app/features/categories/presentation/widgets/product_
 
 class ProductListingView extends StatelessWidget {
   const ProductListingView({super.key});
-
+  // final String categoryName;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    // setting object
+    final category = ModalRoute.of(context)!.settings.arguments as String;    return Scaffold(
       appBar: customAppBar(
         context,
-        title: Text("Product Listing name", style: Styless.textBold18(context)),
+        title: Text(category, style: Styless.textBold18(context)),
         actions: [
           InkWell(
             onTap: () {},

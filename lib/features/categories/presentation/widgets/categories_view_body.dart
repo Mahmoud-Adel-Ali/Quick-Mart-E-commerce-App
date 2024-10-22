@@ -26,7 +26,8 @@ class CategoriesViewBody extends StatelessWidget {
               context.read<ProductsCubit>().categoryMap;
           return InkWell(
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.productListingView);
+              Navigator.pushNamed(context, AppRoutes.productListingView,
+                  arguments: category);
             },
             child: CustomCategoryCard(
                 categoryName: category,
