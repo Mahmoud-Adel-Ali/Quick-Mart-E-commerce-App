@@ -9,7 +9,7 @@ class ProductsCubit extends Cubit<ProductsState> {
   ProductsCubit({required this.productRepoImpl}) : super(ProductsInitial());
   final ProductRepoImpl productRepoImpl;
   List<ProductModel> allProducts = [];
-  List<String> allcategories = [];
+  List<dynamic> allcategories = [];
   void getAllProducts() async {
     emit(GetAllProductsLoading());
     var response = await productRepoImpl.getAllProducts();

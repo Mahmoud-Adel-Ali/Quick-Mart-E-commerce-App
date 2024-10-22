@@ -1,8 +1,8 @@
 class AllCategoriesModel {
-  List<String> allCategories;
+  List<dynamic> allCategories;
   AllCategoriesModel({required this.allCategories});
 
   factory AllCategoriesModel.fromJson(List<String> json) {
-    return AllCategoriesModel(allCategories: json);
+    return AllCategoriesModel(allCategories: json as List<dynamic>);
   }
 }

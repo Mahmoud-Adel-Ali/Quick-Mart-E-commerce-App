@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:quick_mart_app/core/manager/repo/product_repo.dart';
-import 'package:quick_mart_app/core/models/all_categories_model.dart';
 import 'package:quick_mart_app/core/models/product_model/product_model.dart';
 
 class ProductRepoImpl implements ProductRepo {
@@ -13,9 +12,7 @@ class ProductRepoImpl implements ProductRepo {
     try {
       var respons = await dio.get('https://fakestoreapi.com/products');
       if (respons.statusCode == 200) {
-        List<ProductModel> products =
-            jsonDecode(respons.data).map((json) => ProductModel.fromJson(json));
-
+        List<ProductModel> products = handelProdectsJson(respons.data);
         return right(products);
       } else {
         return left('Failed to fetch products');
@@ -26,13 +23,12 @@ class ProductRepoImpl implements ProductRepo {
   }
 
   @override
-  Future<Either<String, List<String>>> getCatergories() async {
+  Future<Either<String, List<dynamic>>> getCatergories() async {
     try {
-      var response = await dio.get('https://fakestoreapi.com/categories');
+      var response =
+          await dio.get('https://fakestoreapi.com/products/categories');
       if (response.statusCode == 200) {
-        AllCategoriesModel allCategoriesModel =
-            AllCategoriesModel.fromJson(response.data);
-        return right(allCategoriesModel.allCategories);
+        return right(response.data);
       } else {
         return left('Failed to fetch categories');
       }
@@ -59,5 +55,9 @@ class ProductRepoImpl implements ProductRepo {
     } on DioException catch (e) {
       return left('Failed to fetch products in category: ${e.message}');
     }
+  }
+
+  List<ProductModel> handelProdectsJson(List<dynamic> prod) {
+    return prod.map((json) => ProductModel.fromJson(json)).toList();
   }
 }

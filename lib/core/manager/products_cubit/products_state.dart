@@ -30,7 +30,7 @@ final class GetAllCategoriesFailure extends ProductsState {
 
 final class GetAllCategoriesSuccess extends ProductsState {
   GetAllCategoriesSuccess({required this.categories});
-  List<String> categories;
+  List<dynamic> categories;
 }
 
 // get products in Category
