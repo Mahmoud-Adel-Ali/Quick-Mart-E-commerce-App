@@ -18,7 +18,7 @@ class ProductListingViewBody extends StatelessWidget {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () {},
-            child: CustomProductCard(),
+            // child: CustomProductCard(),
           );
         },
       ),

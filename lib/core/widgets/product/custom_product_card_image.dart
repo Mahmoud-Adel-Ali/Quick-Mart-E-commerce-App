@@ -13,7 +13,7 @@ class CustomProductCardImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 160 / 138,
+      aspectRatio: 1.2,
       child: Container(
         padding: const EdgeInsets.only(right: 16, top: 16),
         decoration: BoxDecoration(
