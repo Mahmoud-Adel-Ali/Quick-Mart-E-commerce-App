@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
+import 'package:quick_mart_app/core/widgets/custom_cached_network_image.dart';
 
 class CustomCategoryCard extends StatelessWidget {
   const CustomCategoryCard(
-      {super.key, required this.categoryName, required this.img});
+      {super.key, required this.categoryName, required this.imgPath});
   final String categoryName;
-  final String img;
+  final String imgPath;
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 100,
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: context.color.mainColor,
@@ -17,9 +19,10 @@ class CustomCategoryCard extends StatelessWidget {
         border: Border.all(color: Colors.black12),
       ),
       child: FittedBox(
+        fit: BoxFit.scaleDown,
         child: Column(
           children: [
-            Image.asset(img),
+            CustomCachedNetworkImage(imgUrl: imgPath,height: 50,),
             SizedBox(height: 10),
             Text(
               categoryName,

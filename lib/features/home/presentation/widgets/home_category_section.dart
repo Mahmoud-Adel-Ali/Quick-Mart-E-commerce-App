@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/utils/app_images.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quick_mart_app/core/manager/products_cubit/products_cubit.dart';
+import 'package:quick_mart_app/core/models/product_model/product_model.dart';
 import 'package:quick_mart_app/core/widgets/product/custom_category_card.dart';
 import 'package:quick_mart_app/features/home/presentation/widgets/header_of_any_home_section.dart';
 
@@ -11,17 +13,33 @@ class HomeCategorySection extends StatelessWidget {
     return Column(
       children: [
         HeaderOfAnyHomeSection(title: 'Categories', onPressedOnSeeAll: () {}),
-        SizedBox(
-          height: 100,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: 4,
-            itemBuilder: (context, index) => Padding(
-              padding: EdgeInsets.only(left: index != 0 ? 4 : 0),
-              child: CustomCategoryCard(
-                  categoryName: 'Electronics', img: Assets.imagesCategory),
-            ),
-          ),
+        BlocConsumer<ProductsCubit, ProductsState>(
+          listener: (context, state) {},
+          builder: (context, state) {
+            return state is GetAllCategoriesLoading
+                ? Center(child: CircularProgressIndicator())
+                : SizedBox(
+                    height: 120,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount:
+                          context.read<ProductsCubit>().allcategories.length,
+                      itemBuilder: (context, index) {
+                        String category =
+                            context.read<ProductsCubit>().allcategories[index];
+                        Map<String, List<ProductModel>> categoryMap =
+                            context.read<ProductsCubit>().categoryMap;
+                        return Padding(
+                          padding: EdgeInsets.only(left: index != 0 ? 4 : 0),
+                          child: CustomCategoryCard(
+                            categoryName: category,
+                            imgPath: categoryMap[category]?.last.image ?? "",
+                          ),
+                        );
+                      },
+                    ),
+                  );
+          },
         )
       ],
     );

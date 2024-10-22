@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/widgets/product/custom_product_card.dart';
 
 class ProductListingViewBody extends StatelessWidget {
   const ProductListingViewBody({super.key});

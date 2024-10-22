@@ -50,7 +50,7 @@ class CustomProductCard extends StatelessWidget {
             style: Styless.textSemiBold16(context),
           ),
           Text(
-            '\$${product.rating.toString()}',
+            'rate: ${product.rating?.rate.toString()}',
             maxLines: 1,
             style: Styless.textRegular12(context),
           ),

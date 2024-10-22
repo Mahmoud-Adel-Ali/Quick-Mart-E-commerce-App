@@ -10,6 +10,8 @@ class ProductsCubit extends Cubit<ProductsState> {
   final ProductRepoImpl productRepoImpl;
   List<ProductModel> allProducts = [];
   List<dynamic> allcategories = [];
+  Map<String, List<ProductModel>> categoryMap = {};
+  //
   void getAllProducts() async {
     emit(GetAllProductsLoading());
     var response = await productRepoImpl.getAllProducts();
@@ -17,6 +19,7 @@ class ProductsCubit extends Cubit<ProductsState> {
       (error) => emit(GetAllProductsFailure(errorMessage: error)),
       (products) {
         allProducts = products;
+        handelCategoryMap();
         emit(GetAllProductsSuccess(products: products));
       },
     );
@@ -29,6 +32,7 @@ class ProductsCubit extends Cubit<ProductsState> {
       (error) => emit(GetAllCategoriesFailure(errorMessage: error)),
       (categories) {
         allcategories = categories;
+        // handelCategoryMap();
         emit(GetAllCategoriesSuccess(categories: categories));
       },
     );
@@ -41,6 +45,15 @@ class ProductsCubit extends Cubit<ProductsState> {
       return allProducts
           .where((product) => product.category == categoryId)
           .toList();
+    }
+  }
+
+  void handelCategoryMap() {
+    for (ProductModel item in allProducts) {
+      if (!categoryMap.containsKey(item.category)) {
+        categoryMap[item.category!] = [];
+      }
+      categoryMap[item.category]!.add(item);
     }
   }
 }
