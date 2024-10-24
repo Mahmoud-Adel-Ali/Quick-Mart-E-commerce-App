@@ -8,6 +8,7 @@ import 'package:quick_mart_app/features/auth/login/presentation/views/password_c
 import 'package:quick_mart_app/features/auth/sign_up/presentation/views/sign_up_view.dart';
 import 'package:quick_mart_app/features/categories/presentation/views/product_listing_view.dart';
 import 'package:quick_mart_app/features/categories/presentation/views/sub_categories_view.dart';
+import 'package:quick_mart_app/features/product_details/presentation/views/product_details_view.dart';
 import 'package:quick_mart_app/features/home/presentation/view/home_view.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
@@ -25,6 +26,7 @@ class AppRoutes {
   static const String forgetPasswordView = 'forgetPasswordView';
   static const String subCategoriesView = 'subCategoriesView';
   static const String productListingView = 'productListingView';
+  static const String productDetailsView = 'productDetailsView';
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case onbording:
@@ -56,6 +58,10 @@ class AppRoutes {
         return MaterialPageRoute(
             settings: settings,
             builder: (context) => const ProductListingView());
+      case productDetailsView:
+      return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => const ProductDetailsView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),
