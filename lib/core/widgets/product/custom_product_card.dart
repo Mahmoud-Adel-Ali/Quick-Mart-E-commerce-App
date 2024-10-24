@@ -15,7 +15,10 @@ class CustomProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(AppRoutes.productDetailsView);
+        Navigator.of(context).pushNamed(
+          AppRoutes.productDetailsView,
+          arguments: product,
+        );
       },
       child: Card(
         color: context.color.mainColor,
