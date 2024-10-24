@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
+import 'package:quick_mart_app/core/models/product_model/category.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/core/widgets/custom_cached_network_image.dart';
 
 class CustomCategoryCard extends StatelessWidget {
-  const CustomCategoryCard(
-      {super.key, required this.categoryName, required this.imgPath});
-  final String categoryName;
-  final String imgPath;
+  const CustomCategoryCard({super.key, required this.categoryModel});
+  final CategoryModel categoryModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,12 +22,12 @@ class CustomCategoryCard extends StatelessWidget {
         child: Column(
           children: [
             CustomCachedNetworkImage(
-              imgUrl: imgPath,
+              imgUrl: categoryModel.image ?? '',
               height: 50,
             ),
             SizedBox(height: 10),
             Text(
-              categoryName,
+              categoryModel.name ?? "unlabled",
               style: Styless.textSemiBold12(context)
                   .copyWith(color: context.color.textColor),
             ),
