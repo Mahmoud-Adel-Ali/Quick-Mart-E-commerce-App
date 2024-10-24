@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/manager/products_cubit/products_cubit.dart';
+import 'package:quick_mart_app/core/models/product_model/category.dart';
 import 'package:quick_mart_app/core/models/product_model/product_model.dart';
 import 'package:quick_mart_app/core/widgets/product/custom_category_card.dart';
 import 'package:quick_mart_app/features/home/presentation/widgets/header_of_any_home_section.dart';
@@ -25,15 +26,15 @@ class HomeCategorySection extends StatelessWidget {
                       itemCount:
                           context.read<ProductsCubit>().allcategories.length,
                       itemBuilder: (context, index) {
-                        String category =
+                        CategoryModel category =
                             context.read<ProductsCubit>().allcategories[index];
-                        Map<String, List<ProductModel>> categoryMap =
+                        Map<int, List<ProductModel>> categoryMap =
                             context.read<ProductsCubit>().categoryMap;
                         return Padding(
                           padding: EdgeInsets.only(left: index != 0 ? 4 : 0),
                           child: CustomCategoryCard(
-                            categoryName: category,
-                            imgPath: categoryMap[category]?.last.image ?? "",
+                            categoryName: category.name ?? "unLabled",
+                            imgPath: categoryMap[category.id]?.last.images?[0] ?? "",
                           ),
                         );
                       },

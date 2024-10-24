@@ -22,7 +22,10 @@ class CustomCategoryCard extends StatelessWidget {
         fit: BoxFit.scaleDown,
         child: Column(
           children: [
-            CustomCachedNetworkImage(imgUrl: imgPath,height: 50,),
+            CustomCachedNetworkImage(
+              imgUrl: imgPath,
+              height: 50,
+            ),
             SizedBox(height: 10),
             Text(
               categoryName,

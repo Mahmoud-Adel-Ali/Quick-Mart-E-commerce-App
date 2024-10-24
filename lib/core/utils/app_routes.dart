@@ -59,9 +59,9 @@ class AppRoutes {
             settings: settings,
             builder: (context) => const ProductListingView());
       case productDetailsView:
-      return MaterialPageRoute(
-          settings: settings,
-          builder: (context) => const ProductDetailsView());
+        return MaterialPageRoute(
+            settings: settings,
+            builder: (context) => const ProductDetailsView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),

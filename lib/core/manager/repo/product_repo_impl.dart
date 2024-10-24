@@ -1,8 +1,8 @@
-import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:quick_mart_app/core/manager/repo/product_repo.dart';
+import 'package:quick_mart_app/core/models/product_model/category.dart';
 import 'package:quick_mart_app/core/models/product_model/product_model.dart';
 
 class ProductRepoImpl implements ProductRepo {
@@ -10,7 +10,8 @@ class ProductRepoImpl implements ProductRepo {
   @override
   Future<Either<String, List<ProductModel>>> getAllProducts() async {
     try {
-      var respons = await dio.get('https://fakestoreapi.com/products');
+      var respons = await dio
+          .get('https://api.escuelajs.co/api/v1/products/?offset=0&limit=200');
       if (respons.statusCode == 200) {
         List<ProductModel> products = handelProdectsJson(respons.data);
         return right(products);
@@ -23,12 +24,13 @@ class ProductRepoImpl implements ProductRepo {
   }
 
   @override
-  Future<Either<String, List<dynamic>>> getCatergories() async {
+  Future<Either<String, List<CategoryModel>>> getCatergories() async {
     try {
       var response =
-          await dio.get('https://fakestoreapi.com/products/categories');
+          await dio.get('https://api.escuelajs.co/api/v1/categories/');
       if (response.statusCode == 200) {
-        return right(response.data);
+        List<CategoryModel> categories = handelCategoriesToList(response);
+        return right(categories);
       } else {
         return left('Failed to fetch categories');
       }
@@ -37,24 +39,13 @@ class ProductRepoImpl implements ProductRepo {
     }
   }
 
-  @override
-  Future<Either<String, List<ProductModel>>> getProductsInCategory(
-      String categoryId) async {
-    try {
-      var response = await dio.get(
-        'https://fakestoreapi.com/products/category/:$categoryId',
-      );
-      if (response.statusCode == 200) {
-        List<ProductModel> products = jsonDecode(response.data)
-            .map((json) => ProductModel.fromJson(json));
-
-        return right(products);
-      } else {
-        return left('Failed to fetch products in category');
-      }
-    } on DioException catch (e) {
-      return left('Failed to fetch products in category: ${e.message}');
+  List<CategoryModel> handelCategoriesToList(Response<dynamic> response) {
+    List<dynamic> data = response.data;
+    List<CategoryModel> categories = [];
+    for (var cat in data) {
+      categories.add(CategoryModel.fromJson(cat));
     }
+    return categories;
   }
 
   List<ProductModel> handelProdectsJson(List<dynamic> prod) {

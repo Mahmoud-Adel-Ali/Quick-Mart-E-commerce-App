@@ -22,7 +22,7 @@ class CustomProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomProductCardImage(imgPath: product.image ?? ""),
+            CustomProductCardImage(imgPath: product.images?[0] ?? ""),
             Row(
               children: [
                 CustomProductColors(
@@ -55,7 +55,7 @@ class CustomProductCard extends StatelessWidget {
               style: Styless.textSemiBold16(context),
             ),
             Text(
-              'rate: ${product.rating?.rate.toString()}',
+              'updatedAt: ${product.updatedAt.toString()}',
               maxLines: 1,
               style: Styless.textRegular12(context),
             ),
