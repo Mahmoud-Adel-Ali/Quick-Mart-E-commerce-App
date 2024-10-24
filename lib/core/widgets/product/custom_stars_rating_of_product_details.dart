@@ -28,9 +28,9 @@ class OneStare extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Icon(
-      percent >= 1
+      percent >= 1.0
           ? Icons.star
-          : percent <= 0
+          : percent == 0.0
               ? null
               : Icons.star_half,
       color: Colors.amber,

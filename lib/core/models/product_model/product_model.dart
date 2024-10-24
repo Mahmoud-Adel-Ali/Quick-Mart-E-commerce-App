@@ -3,7 +3,7 @@ import 'category.dart';
 class ProductModel {
   int? id;
   String? title;
-  int? price;
+  num? price;
   String? description;
   List<dynamic>? images;
   DateTime? creationAt;
