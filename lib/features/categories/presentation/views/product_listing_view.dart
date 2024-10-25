@@ -12,11 +12,17 @@ class ProductListingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // setting object
-    final category = ModalRoute.of(context)!.settings.arguments as CategoryModel;
+    final category =
+        ModalRoute.of(context)!.settings.arguments as CategoryModel;
     return Scaffold(
       appBar: customAppBar(
         context,
-        title: Text(category.name ?? "unLabled Categoty", style: Styless.textBold18(context)),
+        title: Text(category.name ?? "unLabled Categoty",
+            style: Styless.textBold18(context)),
+        showLeading: true,
+        onTapOnLeading: () {
+          context.pop();
+        },
         actions: [
           InkWell(
             onTap: () {},
