@@ -3,11 +3,11 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/models/product_model/product_model.dart';
 import 'package:quick_mart_app/core/widgets/custom_badges.dart';
 import 'package:quick_mart_app/core/widgets/custom_button.dart';
+import 'package:quick_mart_app/core/widgets/product/custom_quantity_of_product.dart';
 import 'package:quick_mart_app/features/product_details/presentation/widgets/product_colors_list_view.dart';
 import 'package:quick_mart_app/features/product_details/presentation/widgets/product_disctiption_title.dart';
 import 'package:quick_mart_app/features/product_details/presentation/widgets/product_rate.dart';
 import 'package:quick_mart_app/features/product_details/presentation/widgets/product_title_and_price.dart';
-import 'package:quick_mart_app/features/product_details/presentation/widgets/quantity_of_product.dart';
 
 class ProductDescriptionSection extends StatelessWidget {
   const ProductDescriptionSection({super.key, required this.product});
@@ -39,7 +39,7 @@ class ProductDescriptionSection extends StatelessWidget {
             ],
           ),
           SizedBox(height: 10),
-          QuantityOfProduct(),
+          CustomQuantityOfProduct(),
           SizedBox(height: 20),
           Row(
             children: [
