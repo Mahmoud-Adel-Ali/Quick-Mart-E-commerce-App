@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/extensions/context_extention.dart';
+import 'package:quick_mart_app/core/widgets/product/one_color_of_product.dart';
 
 class CustomProductColors extends StatelessWidget {
   const CustomProductColors({
@@ -30,26 +30,6 @@ class CustomProductColors extends StatelessWidget {
             );
           },
         ).toList(),
-      ),
-    );
-  }
-}
-
-class OneColorsOfProduct extends StatelessWidget {
-  const OneColorsOfProduct(
-      {super.key, required this.color, required this.isSelected});
-  final Color color;
-  final bool isSelected;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: isSelected ? 26 : 24,
-      height: isSelected ? 26 : 24,
-      decoration: BoxDecoration(
-        color: color,
-        border: Border.all(
-            width: 2, color: isSelected ? context.color.blue : color),
-        shape: BoxShape.circle,
       ),
     );
   }

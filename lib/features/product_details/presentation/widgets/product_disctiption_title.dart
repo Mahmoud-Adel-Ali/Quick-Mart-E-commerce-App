@@ -17,11 +17,15 @@ class _ProductDiscriptionTitleState extends State<ProductDiscriptionTitle> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          widget.product.description ?? "no discription",
-          style: Styless.textSemiBold16(context),
-          maxLines: maxLine,
-          overflow: TextOverflow.ellipsis,
+        SizedBox(
+          width: double.infinity,
+          child: Text(
+            widget.product.description ?? "no discription",
+            style: Styless.textSemiBold16(context),
+            maxLines: maxLine,
+            textAlign: TextAlign.start,
+            overflow: TextOverflow.ellipsis,
+          ),
         ),
         maxLine != 5
             ? SizedBox()

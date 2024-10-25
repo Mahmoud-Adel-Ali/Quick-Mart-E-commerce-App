@@ -10,12 +10,15 @@ class ProductDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ProductDetailsImages(product: product),
-        SizedBox(height: 15),
-        ProductDescriptionSection(product: product),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ProductDetailsImages(product: product),
+          SizedBox(height: 15),
+          ProductDescriptionSection(product: product),
+          SizedBox(height: 20),
+        ],
+      ),
     );
   }
 }
