@@ -6,6 +6,7 @@ import 'package:quick_mart_app/features/product_details/presentation/widgets/pro
 import 'package:quick_mart_app/features/product_details/presentation/widgets/product_disctiption_title.dart';
 import 'package:quick_mart_app/features/product_details/presentation/widgets/product_rate.dart';
 import 'package:quick_mart_app/features/product_details/presentation/widgets/product_title_and_price.dart';
+import 'package:quick_mart_app/features/product_details/presentation/widgets/quantity_of_product.dart';
 
 class ProductDescriptionSection extends StatelessWidget {
   const ProductDescriptionSection({super.key, required this.product});
@@ -36,6 +37,8 @@ class ProductDescriptionSection extends StatelessWidget {
               context.color.purple,
             ],
           ),
+          SizedBox(height: 10),
+          QuantityOfProduct(),
         ],
       ),
     );

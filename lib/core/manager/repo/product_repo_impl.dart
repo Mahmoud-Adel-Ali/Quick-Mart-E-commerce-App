@@ -14,7 +14,6 @@ class ProductRepoImpl implements ProductRepo {
           .get('https://api.escuelajs.co/api/v1/products/');
       if (respons.statusCode == 200) {
         List<ProductModel> products = handelProdectsJson(respons.data);
-        print("all products lenght = ${products.length}");
         return right(products);
       } else {
         return left('Failed to fetch products');
@@ -31,7 +30,6 @@ class ProductRepoImpl implements ProductRepo {
           await dio.get('https://api.escuelajs.co/api/v1/categories/');
       if (response.statusCode == 200) {
         List<CategoryModel> categories = handelCategoriesToList(response);
-        print("all Categories lenght = ${categories.length}");
         return right(categories);
       } else {
         return left('Failed to fetch categories');
