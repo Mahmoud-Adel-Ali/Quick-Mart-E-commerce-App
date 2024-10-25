@@ -13,7 +13,7 @@ class QuickMart extends StatelessWidget {
       builder: (context, state) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: context.read<AppCubit>().isDark ? themeDark() : themeLight(),
+          theme: !context.read<AppCubit>().isDark ? themeDark() : themeLight(),
           initialRoute: AppRoutes.quickMartAppViews,
           onGenerateRoute: AppRoutes.onGenerateRoute,
         );

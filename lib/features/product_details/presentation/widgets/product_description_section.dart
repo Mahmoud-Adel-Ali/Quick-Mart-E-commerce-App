@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/models/product_model/product_model.dart';
 import 'package:quick_mart_app/core/widgets/custom_badges.dart';
+import 'package:quick_mart_app/core/widgets/custom_button.dart';
 import 'package:quick_mart_app/features/product_details/presentation/widgets/product_colors_list_view.dart';
 import 'package:quick_mart_app/features/product_details/presentation/widgets/product_disctiption_title.dart';
 import 'package:quick_mart_app/features/product_details/presentation/widgets/product_rate.dart';
@@ -39,6 +40,26 @@ class ProductDescriptionSection extends StatelessWidget {
           ),
           SizedBox(height: 10),
           QuantityOfProduct(),
+          SizedBox(height: 20),
+          Row(
+            children: [
+              Expanded(
+                child: CustomButton(
+                  onPressed: () {},
+                  text: 'Buy Now',
+                  color: context.color.white,
+                  textColor: context.color.black,
+                ),
+              ),
+              SizedBox(width: 10),
+              Expanded(
+                child: CustomButton(
+                  onPressed: () {},
+                  text: 'Add To Card',
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
