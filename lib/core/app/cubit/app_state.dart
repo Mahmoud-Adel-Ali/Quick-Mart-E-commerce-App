@@ -9,3 +9,7 @@ class ChangeThemeMode extends AppState {
 
   ChangeThemeMode({required this.isDark});
 }
+
+class LogoutLoading extends AppState {}
+
+class LogoutDone extends AppState {}

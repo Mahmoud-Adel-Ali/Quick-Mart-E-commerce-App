@@ -4,6 +4,7 @@ import 'package:quick_mart_app/core/databases/cach_keys.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
 import 'package:quick_mart_app/core/colors/colors_dark.dart';
 import 'package:quick_mart_app/core/colors/colors_light.dart';
+import 'package:quick_mart_app/core/services/services_locator.dart';
 
 part 'app_state.dart';
 
@@ -34,5 +35,11 @@ class AppCubit extends Cubit<AppState> {
       statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
       systemNavigationBarColor: !isDark ? ColorsDark.black : ColorsLight.white,
     ));
+  }
+
+  logout() {
+    emit(LogoutLoading());
+    getit.get<CacheHelper>().setBoolean(CachKeys.isLoggedIn, false);
+    emit(LogoutDone());
   }
 }
