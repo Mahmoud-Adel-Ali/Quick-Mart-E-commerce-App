@@ -23,6 +23,7 @@ class ProfileViewBodyItem extends StatelessWidget {
         title,
         style: Styless.textMedium14(context),
       ),
+      contentPadding: EdgeInsets.all(2),
       trailing: trailling ??
           Icon(
             Icons.arrow_forward_ios,
