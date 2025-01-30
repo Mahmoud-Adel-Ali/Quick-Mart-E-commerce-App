@@ -1,3 +1,4 @@
+// ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
   
@@ -17,9 +18,21 @@ class Assets {
   /// assets/images/category-white.svg
   static const String imagesCategoryWhite = "assets/images/category-white.svg";
 
+  /// Assets for imagesChangePassword
+  /// assets/images/change_password.svg
+  static const String imagesChangePassword = "assets/images/change_password.svg";
+
+  /// Assets for imagesDarkTheme
+  /// assets/images/dark_theme.svg
+  static const String imagesDarkTheme = "assets/images/dark_theme.svg";
+
   /// Assets for imagesError
   /// assets/images/Error.svg
   static const String imagesError = "assets/images/Error.svg";
+
+  /// Assets for imagesFaqs
+  /// assets/images/faqs.svg
+  static const String imagesFaqs = "assets/images/faqs.svg";
 
   /// Assets for imagesGoogle
   /// assets/images/google.svg
@@ -81,6 +94,10 @@ class Assets {
   /// assets/images/OnBoarding3.png
   static const String imagesOnBoarding3 = "assets/images/OnBoarding3.png";
 
+  /// Assets for imagesOrderHistory
+  /// assets/images/order_history.svg
+  static const String imagesOrderHistory = "assets/images/order_history.svg";
+
   /// Assets for imagesPageUnderBuild
   /// assets/images/page_under_build.jpg
   static const String imagesPageUnderBuild = "assets/images/page_under_build.jpg";
@@ -88,6 +105,14 @@ class Assets {
   /// Assets for imagesPasswordCreadedSuccess
   /// assets/images/password_creaded_success.png
   static const String imagesPasswordCreadedSuccess = "assets/images/password_creaded_success.png";
+
+  /// Assets for imagesPaymentMethod
+  /// assets/images/payment_method.svg
+  static const String imagesPaymentMethod = "assets/images/payment_method.svg";
+
+  /// Assets for imagesPrivacyPolicy
+  /// assets/images/privacy_policy.svg
+  static const String imagesPrivacyPolicy = "assets/images/privacy_policy.svg";
 
   /// Assets for imagesProfileCyan
   /// assets/images/profile-cyan.svg
@@ -121,6 +146,10 @@ class Assets {
   /// assets/images/search-white.svg
   static const String imagesSearchWhite = "assets/images/search-white.svg";
 
+  /// Assets for imagesShippingAddress
+  /// assets/images/shipping_address.svg
+  static const String imagesShippingAddress = "assets/images/shipping_address.svg";
+
   /// Assets for imagesSuccess
   /// assets/images/Success.svg
   static const String imagesSuccess = "assets/images/Success.svg";
@@ -136,6 +165,10 @@ class Assets {
   /// Assets for imagesSuffSearchWhite
   /// assets/images/suff_search_white.svg
   static const String imagesSuffSearchWhite = "assets/images/suff_search_white.svg";
+
+  /// Assets for imagesTermsAndConditions
+  /// assets/images/terms_and_conditions.svg
+  static const String imagesTermsAndConditions = "assets/images/terms_and_conditions.svg";
 
   /// Assets for imagesWarning
   /// assets/images/Warning.svg
