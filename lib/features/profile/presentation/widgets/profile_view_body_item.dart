@@ -9,9 +9,10 @@ class ProfileViewBodyItem extends StatelessWidget {
     required this.title,
     this.onTap,
     required this.leadingImage,
+    this.trailling,
   });
   final String title;
-
+  final Widget? trailling;
   final Function()? onTap;
   final String leadingImage;
 
@@ -22,11 +23,12 @@ class ProfileViewBodyItem extends StatelessWidget {
         title,
         style: Styless.textMedium14(context),
       ),
-      trailing: Icon(
-        Icons.arrow_forward_ios,
-        size: 20,
-        color: context.color.textColor,
-      ),
+      trailing: trailling ??
+          Icon(
+            Icons.arrow_forward_ios,
+            size: 20,
+            color: context.color.textColor,
+          ),
       onTap: onTap,
       leading: SvgPicture.asset(leadingImage),
     );
