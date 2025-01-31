@@ -13,6 +13,7 @@ import 'package:quick_mart_app/features/home/presentation/view/home_view.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
 
+import '../../features/profile/presentation/view/f_a_qs_view.dart';
 import '../../features/profile/presentation/view/privacy_policy_view.dart';
 import '../../features/profile/presentation/view/terms_and_conditions_view.dart';
 
@@ -32,6 +33,7 @@ class AppRoutes {
   static const String productDetailsView = 'productDetailsView';
   static const String privacyPolicyView = 'privacyPolicyView';
   static const String termsAndConditionsView = 'termsAndConditionsView';
+  static const String faqsView = 'faqsView';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -74,6 +76,8 @@ class AppRoutes {
       case termsAndConditionsView:
         return MaterialPageRoute(
             builder: (context) => const TermsAndConditionsView());
+      case faqsView:
+            return MaterialPageRoute(builder: (context) => const FAQsView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),

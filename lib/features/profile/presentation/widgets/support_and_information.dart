@@ -31,6 +31,9 @@ class SupportAndInformation extends StatelessWidget {
         ProfileViewBodyItem(
           title: 'FAQs',
           leadingImage: Assets.imagesFaqs,
+          onTap: () {
+            context.pushName(AppRoutes.faqsView);
+          },
         ),
       ],
     );
