@@ -14,6 +14,7 @@ import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boardin
 import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
 
 import '../../features/profile/presentation/view/privacy_policy_view.dart';
+import '../../features/profile/presentation/view/terms_and_conditions_view.dart';
 
 class AppRoutes {
   static const String login = 'login';
@@ -30,6 +31,7 @@ class AppRoutes {
   static const String productListingView = 'productListingView';
   static const String productDetailsView = 'productDetailsView';
   static const String privacyPolicyView = 'privacyPolicyView';
+  static const String termsAndConditionsView = 'termsAndConditionsView';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -67,8 +69,11 @@ class AppRoutes {
             settings: settings,
             builder: (context) => const ProductDetailsView());
       case privacyPolicyView:
-          return MaterialPageRoute(
-              builder: (context) => const PrivacyPolicyView());
+        return MaterialPageRoute(
+            builder: (context) => const PrivacyPolicyView());
+      case termsAndConditionsView:
+        return MaterialPageRoute(
+            builder: (context) => const TermsAndConditionsView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),

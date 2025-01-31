@@ -24,6 +24,9 @@ class SupportAndInformation extends StatelessWidget {
         ProfileViewBodyItem(
           title: 'Terms & Conditions',
           leadingImage: Assets.imagesTermsAndConditions,
+          onTap: () {
+            context.pushName(AppRoutes.termsAndConditionsView);
+          },
         ),
         ProfileViewBodyItem(
           title: 'FAQs',
