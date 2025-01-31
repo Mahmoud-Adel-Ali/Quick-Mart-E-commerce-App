@@ -13,6 +13,8 @@ import 'package:quick_mart_app/features/home/presentation/view/home_view.dart';
 import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
 
+import '../../features/profile/presentation/view/privacy_policy_view.dart';
+
 class AppRoutes {
   static const String login = 'login';
   static const String signUp = 'signUp';
@@ -27,6 +29,8 @@ class AppRoutes {
   static const String subCategoriesView = 'subCategoriesView';
   static const String productListingView = 'productListingView';
   static const String productDetailsView = 'productDetailsView';
+  static const String privacyPolicyView = 'privacyPolicyView';
+
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case onbording:
@@ -62,6 +66,9 @@ class AppRoutes {
         return MaterialPageRoute(
             settings: settings,
             builder: (context) => const ProductDetailsView());
+      case privacyPolicyView:
+          return MaterialPageRoute(
+              builder: (context) => const PrivacyPolicyView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),
