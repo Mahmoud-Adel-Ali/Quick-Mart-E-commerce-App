@@ -29,23 +29,23 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animated_custom_dropdown: ^3.1.1
-  cached_network_image: ^3.3.1
-  cupertino_icons: ^1.0.6
+  cached_network_image: ^3.4.1
+  cupertino_icons: ^1.0.8
   dartz: ^0.10.1
   device_preview: ^1.2.0
-  dio: ^5.5.0+1
+  dio: ^5.8.0+1
   easy_splash_screen: ^1.0.4
   expandable_page_view: ^1.0.17
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.6
-  flutter_svg: ^2.0.10+1
-  fluttertoast: ^8.2.6
-  get_it: ^7.7.0
-  input_quantity: ^2.4.1
+  flutter_bloc: ^9.0.0
+  flutter_svg: ^2.0.17
+  fluttertoast: ^8.2.10
+  get_it: ^8.0.3
+  input_quantity: ^2.5.1
   intl_phone_field: ^3.2.0
-  pinput: ^5.0.0
-  shared_preferences: ^2.2.3
+  pinput: ^5.0.1
+  shared_preferences: ^2.5.1
 
 dev_dependencies:
   flutter_lints: ^3.0.0
