@@ -24,7 +24,7 @@ class CustomToastMessage {
       toastDuration: Duration(seconds: 3),
       child: _buildToast(context, msg: msg, type: type),
       gravity: ToastGravity.BOTTOM,
-      positionedToastBuilder: (context, child) =>
+      positionedToastBuilder: (context, child, toastGravity) =>
           Positioned(bottom: 75, right: 0, left: 0, child: child),
     );
   }
@@ -39,7 +39,7 @@ class CustomToastMessage {
       toastDuration: Duration(seconds: 3),
       child: _buildToast(context, msg: msg, type: type),
       gravity: ToastGravity.TOP,
-      positionedToastBuilder: (context, child) =>
+      positionedToastBuilder: (context, child, toastGravity) =>
           Positioned(top: 75, right: 0, left: 0, child: child),
     );
   }
