@@ -8,9 +8,9 @@ final class SignUpInitial extends SignUpState {}
 final class SignUpLoading extends SignUpState {}
 
 final class SignUpSuccess extends SignUpState {
-  final UserModel userModel;
+  final AuthModel authModel;
 
-  SignUpSuccess({required this.userModel});
+  SignUpSuccess({required this.authModel});
 }
 
 final class SignUpFailure extends SignUpState {

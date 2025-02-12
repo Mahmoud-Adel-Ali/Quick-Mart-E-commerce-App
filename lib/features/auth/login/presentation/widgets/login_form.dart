@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/databases/cach_keys.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
+import 'package:quick_mart_app/core/extensions/context_extention.dart';
+import 'package:quick_mart_app/core/functions/validation_of_input_fields.dart';
 import 'package:quick_mart_app/core/services/services_locator.dart';
 import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/widgets/custom_text_form_field.dart';
-import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/functions/validation_of_input_fields.dart';
 import 'package:quick_mart_app/core/widgets/custom_toast_message.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/widgets/forget_password_text_button.dart';
@@ -55,9 +55,9 @@ class _LoginFormState extends State<LoginForm> {
                 lableText: 'Password',
                 obscureText: showPassword,
                 controller: context.read<LoginCubit>().loginPassword,
-                validator: (value) {
-                  return validatorOfPassword(value);
-                },
+                // validator: (value) {
+                //   return validatorOfPassword(value);
+                // },
                 suffixIcon: IconButton(
                   onPressed: () {
                     showPassword = !showPassword;

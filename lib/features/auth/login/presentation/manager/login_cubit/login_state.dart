@@ -7,9 +7,9 @@ final class LoginInitial extends LoginState {}
 final class LoginLoading extends LoginState {}
 
 final class LoginSuccess extends LoginState {
-  final UserModel userModel;
+  final AuthModel authModel;
 
-  LoginSuccess({required this.userModel});
+  LoginSuccess({required this.authModel});
 }
 
 final class LoginFailure extends LoginState {
@@ -18,4 +18,4 @@ final class LoginFailure extends LoginState {
   LoginFailure({required this.errorMessage});
 }
 
-final class LogoutDone extends LoginState{}
+final class LogoutDone extends LoginState {}

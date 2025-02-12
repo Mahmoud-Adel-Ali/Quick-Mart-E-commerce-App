@@ -1,0 +1,38 @@
+{
+    "register_success": {
+        "status": true,
+        "message":  "Registration done successfully",
+        "data": {
+            "name": "Mahmoud Adel",
+            "phone": "01004285088",
+            "email": "mahmoudadela413@gmail.com",
+            "id": 70366,
+            "image": "https://student.valuxapps.com/storage/assets/defaults/user.jpg",
+            "token": "ODKui11a7zJBgBJ3gMMrFqyCAU0Su9w9nAT6mQOf9rqebPbNlQMHAvWKJ6wgkj5FzuqmcW"
+        }
+    },
+    "register_fail": {
+        "status": false,
+        "message": "This phone has been used before",
+        "data": null
+    },
+    "login_success": {
+        "status": true,
+        "message": "Login done successfully",
+        "data": {
+            "id": 70366,
+            "name": "Mahmoud Adel",
+            "email": "mahmoudadela413@gmail.com",
+            "phone": "01004285088",
+            "image": "https://student.valuxapps.com/storage/assets/defaults/user.jpg",
+            "points": 0,
+            "credit": 0,
+            "token": "Nq4TJIeabJU9IF4rZsclx7pHe6K9uUWn1kO2NXUWidHQuT6a7eCY3NOWxgYvNcPm9US0sH"
+        }
+    },
+    "login_fail": {
+        "status": false,
+        "message": "This credentials does not meet any of our records, please make sure you have entered the right credentials",
+        "data": null
+    }
+}

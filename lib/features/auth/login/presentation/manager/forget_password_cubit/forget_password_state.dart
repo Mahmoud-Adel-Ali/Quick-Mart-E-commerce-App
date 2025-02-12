@@ -24,9 +24,9 @@ final class SendNumForEmailFailure extends ForgetPasswordState {
 final class ConfirmNumLoading extends ForgetPasswordState {}
 
 final class ConfirmNumSuccess extends ForgetPasswordState {
-  final UserModel userModel;
+  final AuthModel authModel;
 
-  ConfirmNumSuccess({required this.userModel});
+  ConfirmNumSuccess({required this.authModel});
 }
 
 final class ConfirmNumFailure extends ForgetPasswordState {

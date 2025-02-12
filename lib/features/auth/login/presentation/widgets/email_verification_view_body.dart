@@ -37,9 +37,7 @@ class EmailVerificationViewBody extends StatelessWidget {
                 else if (state is ConfirmNumSuccess) {
                   context.read<ForgetPasswordCubit>().toThirdView();
                   CustomToastMessage().topToast(context,
-                      msg: state.userModel.message ??
-                          ' Done : you can change password now',
-                      type: ToastMessageType.success);
+                      msg: state.authModel.message,                      type: ToastMessageType.success);
                 } else if (state is ConfirmNumFailure) {
                   CustomToastMessage().bottomToast(context,
                       msg: state.errorMessage, type: ToastMessageType.error);

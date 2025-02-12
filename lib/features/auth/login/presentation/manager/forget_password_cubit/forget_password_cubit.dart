@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quick_mart_app/features/auth/data/models/user_model/user_model.dart';
 import 'package:quick_mart_app/features/auth/data/repos/auth_repo_implementation.dart';
+
+import '../../../../data/models/auth_model/auth_model.dart';
 
 part 'forget_password_state.dart';
 
@@ -58,7 +59,7 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
         await authRepoImplementation.confirmNum(code: confirmNumCode);
     response.fold(
       (errorMessage) => emit(ConfirmNumFailure(errorMessage: errorMessage)),
-      (userModel) => emit(ConfirmNumSuccess(userModel: userModel)),
+      (userModel) => emit(ConfirmNumSuccess(authModel: userModel)),
     );
   }
 
