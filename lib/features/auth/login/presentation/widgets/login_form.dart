@@ -55,9 +55,9 @@ class _LoginFormState extends State<LoginForm> {
                 lableText: 'Password',
                 obscureText: showPassword,
                 controller: context.read<LoginCubit>().loginPassword,
-                // validator: (value) {
-                //   return validatorOfPassword(value);
-                // },
+                validator: (value) {
+                  return validatorOfPassword(value);
+                },
                 suffixIcon: IconButton(
                   onPressed: () {
                     showPassword = !showPassword;

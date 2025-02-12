@@ -13,19 +13,21 @@ String? validatorOfEmail(String? value) {
 }
 
 String? validatorOfPassword(String? value) {
-  RegExp regex =
-      RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
+  // RegExp regex =
+  //     RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
   if (value == null || value.isEmpty) {
     return 'Please enter password';
   } else if (value.length < 8) {
     return 'size of password greater than 8 char';
-  } else {
-    if (!regex.hasMatch(value)) {
-      return 'Enter valid password \n password should contain at least one upper , lower case , number , special character';
-    } else {
-      return null;
-    }
   }
+  return null;
+  //  else {
+  //   if (!regex.hasMatch(value)) {
+  //     return 'Enter valid password \n password should contain at least one upper , lower case , number , special character';
+  //   } else {
+  //     return null;
+  //   }
+  // }
 }
 
 String? validUserName(String? value) {
