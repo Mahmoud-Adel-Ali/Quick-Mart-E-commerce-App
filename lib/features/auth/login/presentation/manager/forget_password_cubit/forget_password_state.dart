@@ -7,45 +7,45 @@ final class ForgetPasswordInitial extends ForgetPasswordState {}
 
 final class ChangeViewDone extends ForgetPasswordState {}
 
-final class SendNumForEmailLoading extends ForgetPasswordState {}
+final class VerifyEmailLoading extends ForgetPasswordState {}
 
-final class SendNumForEmailSuccess extends ForgetPasswordState {
-  final String message;
-
-  SendNumForEmailSuccess({required this.message});
-}
-
-final class SendNumForEmailFailure extends ForgetPasswordState {
-  final String errorMessage;
-
-  SendNumForEmailFailure({required this.errorMessage});
-}
-
-final class ConfirmNumLoading extends ForgetPasswordState {}
-
-final class ConfirmNumSuccess extends ForgetPasswordState {
+final class VerifyEmailSuccess extends ForgetPasswordState {
   final AuthModel authModel;
 
-  ConfirmNumSuccess({required this.authModel});
+  VerifyEmailSuccess({required this.authModel});
 }
 
-final class ConfirmNumFailure extends ForgetPasswordState {
+final class VerifyEmailFailure extends ForgetPasswordState {
   final String errorMessage;
 
-  ConfirmNumFailure({required this.errorMessage});
+  VerifyEmailFailure({required this.errorMessage});
 }
 
-//ChangePassword
-final class ChangePasswordLoading extends ForgetPasswordState {}
+final class VerifyCodeLoading extends ForgetPasswordState {}
 
-final class ChangePasswordSuccess extends ForgetPasswordState {
-  final String message;
+final class VerifyCodeSuccess extends ForgetPasswordState {
+  final AuthModel authModel;
 
-  ChangePasswordSuccess({required this.message});
+  VerifyCodeSuccess({required this.authModel});
 }
 
-final class ChangePasswordFailure extends ForgetPasswordState {
+final class VerifyCodeFailure extends ForgetPasswordState {
   final String errorMessage;
 
-  ChangePasswordFailure({required this.errorMessage});
+  VerifyCodeFailure({required this.errorMessage});
+}
+
+//ResetPassword
+final class ResetPasswordLoading extends ForgetPasswordState {}
+
+final class ResetPasswordSuccess extends ForgetPasswordState {
+  final AuthModel authModel;
+
+  ResetPasswordSuccess({required this.authModel});
+}
+
+final class ResetPasswordFailure extends ForgetPasswordState {
+  final String errorMessage;
+
+  ResetPasswordFailure({required this.errorMessage});
 }

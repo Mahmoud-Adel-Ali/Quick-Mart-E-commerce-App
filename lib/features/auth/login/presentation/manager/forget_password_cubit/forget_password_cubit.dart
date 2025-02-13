@@ -31,47 +31,50 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
 // forget password
   TextEditingController forgetPasswordEmail = TextEditingController();
   GlobalKey<FormState> forgetPasswordComfirmEmailFormkey = GlobalKey();
-  //confirmNum
-  String confirmNumCode = '';
-  setConfirmNumCode(String code) {
-    confirmNumCode = code;
+  //VerifyCode
+  String verifyCodeCode = '';
+  setVerifyCode(String code) {
+    verifyCodeCode = code;
   }
 
   // reset password
   GlobalKey<FormState> resetPasswordFormKey = GlobalKey();
-  TextEditingController resetPassword = TextEditingController();
+  TextEditingController resetPasswordTextField = TextEditingController();
   TextEditingController resetConfirmPassword = TextEditingController();
 
-  sentNumForEmail() async {
-    emit(SendNumForEmailLoading());
-    final response = await authRepoImplementation.sentNumForEmail(
-        email: forgetPasswordEmail.text);
+  verifyEmail() async {
+    emit(VerifyEmailLoading());
+    final response = await authRepoImplementation.verifyEmail(
+      email: forgetPasswordEmail.text,
+    );
     response.fold(
-      (errorMessage) =>
-          emit(SendNumForEmailFailure(errorMessage: errorMessage)),
-      (message) => emit(SendNumForEmailSuccess(message: message)),
+      (errorMessage) => emit(VerifyEmailFailure(errorMessage: errorMessage)),
+      (authModel) => emit(VerifyEmailSuccess(authModel: authModel)),
     );
   }
 
-  confirmNum() async {
-    emit(ConfirmNumLoading());
-    final response =
-        await authRepoImplementation.confirmNum(code: confirmNumCode);
+  verifyCode() async {
+    emit(VerifyCodeLoading());
+    final response = await authRepoImplementation.verifyCode(
+      email: forgetPasswordEmail.text,
+      code: verifyCodeCode,
+    );
     response.fold(
-      (errorMessage) => emit(ConfirmNumFailure(errorMessage: errorMessage)),
-      (userModel) => emit(ConfirmNumSuccess(authModel: userModel)),
+      (errorMessage) => emit(VerifyCodeFailure(errorMessage: errorMessage)),
+      (authModel) => emit(VerifyCodeSuccess(authModel: authModel)),
     );
   }
 
-  changePassword() async {
-    emit(ChangePasswordLoading());
-    final response = await authRepoImplementation.changePassword(
-        email: forgetPasswordEmail.text,
-        password: resetPassword.text,
-        confirmPassword: resetConfirmPassword.text);
+  resetPassword() async {
+    emit(ResetPasswordLoading());
+    final response = await authRepoImplementation.resetPassword(
+      email: forgetPasswordEmail.text,
+      code: verifyCodeCode,
+      password: resetPasswordTextField.text,
+    );
     response.fold(
-      (errorMessage) => emit(ChangePasswordFailure(errorMessage: errorMessage)),
-      (message) => emit(ChangePasswordSuccess(message: message)),
+      (errorMessage) => emit(ResetPasswordFailure(errorMessage: errorMessage)),
+      (authModel) => emit(ResetPasswordSuccess(authModel: authModel)),
     );
   }
 }
