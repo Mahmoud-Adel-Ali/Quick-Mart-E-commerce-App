@@ -56,8 +56,7 @@ class AuthRepoImplementation extends AuthRepo {
       // success
       AuthModel authModel = AuthModel.fromJson(response);
       if (authModel.status) {
-        getit<CacheHelper>().setString(ApiKeys.token, authModel.data!.token);
-        getit<CacheHelper>().setInt(ApiKeys.id, authModel.data!.id);
+        cacheUserData(authModel);
         return Right(authModel);
       } else {
         return Left(authModel.message);
@@ -65,6 +64,27 @@ class AuthRepoImplementation extends AuthRepo {
     } on ServerException catch (e) {
       return Left(e.errorModel.message);
     }
+  }
+
+  void cacheUserData(AuthModel authModel) {
+    // id
+    getit<CacheHelper>().setInt(ApiKeys.id, authModel.data!.id);
+    //name
+    getit<CacheHelper>().setString(ApiKeys.name, authModel.data!.name);
+    //email
+    getit<CacheHelper>().setString(ApiKeys.email, authModel.data!.email);
+    //phone
+    getit<CacheHelper>().setString(ApiKeys.phone, authModel.data!.phone);
+    //image
+    getit<CacheHelper>().setString(ApiKeys.image, authModel.data!.image);
+    //points
+    getit<CacheHelper>()
+        .setInt(ApiKeys.points, authModel.data!.points?.toInt() ?? 0);
+    //credit
+    getit<CacheHelper>()
+        .setInt(ApiKeys.credit, authModel.data!.credit?.toInt() ?? 0);
+    //token
+    getit<CacheHelper>().setString(ApiKeys.token, authModel.data!.token);
   }
 
   @override
