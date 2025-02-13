@@ -14,14 +14,17 @@ abstract class AuthRepo {
     required String email,
     required String password,
   });
-  Future<Either<String, dynamic>> sentNumForEmail({
+  Future<Either<String, AuthModel>> verifyEmail({
     required String email,
   });
-  Future<Either<String, AuthModel>> confirmNum({required String code});
-
-  Future<Either<String, dynamic>> changePassword({
+  Future<Either<String, AuthModel>> verifyCode({
     required String email,
+    required String code,
+  });
+
+  Future<Either<String, AuthModel>> resetPassword({
+    required String email,
+    required String code,
     required String password,
-    required String confirmPassword,
   });
 }

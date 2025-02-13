@@ -3,9 +3,7 @@ import 'package:quick_mart_app/core/api/api_keys.dart';
 import 'package:quick_mart_app/core/api/dio_consumer.dart';
 import 'package:quick_mart_app/core/api/end_points.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
-import 'package:quick_mart_app/core/errors/error_model.dart';
 import 'package:quick_mart_app/core/errors/exception.dart';
-import 'package:quick_mart_app/core/errors/status_code_model.dart';
 import 'package:quick_mart_app/core/services/services_locator.dart';
 import 'package:quick_mart_app/features/auth/data/repos/auth_repo.dart';
 
@@ -70,47 +68,69 @@ class AuthRepoImplementation extends AuthRepo {
   }
 
   @override
-  Future<Either<String, dynamic>> sentNumForEmail(
-      {required String email}) async {
+  Future<Either<String, AuthModel>> verifyEmail({required String email}) async {
     try {
-      final response = await dio.post(EndPoints.sendNumForEmail(email));
-      String message = response.toString();
-      return Right('get code from this email $email \n $message');
+      final response = await dio.post(
+        EndPoints.verifyEmail,
+        data: {
+          ApiKeys.email: email,
+        },
+      );
+      // TODO : Now , Server is unavailable , and i don't know the shape of response
+      AuthModel authModel = AuthModel.fromJson(response);
+      if (authModel.status) {
+        return Right(authModel);
+      } else {
+        return Left(authModel.message);
+      }
     } on ServerException catch (e) {
       return Left(e.errorModel.message);
     }
   }
 
   @override
-  Future<Either<String, AuthModel>> confirmNum({required String code}) async {
+  Future<Either<String, AuthModel>> verifyCode({
+    required String email,
+    required String code,
+  }) async {
     try {
-      final response = await dio.get(EndPoints.confirmNum(code));
-      final StatusCodeModel statusCodeModel =
-          StatusCodeModel.fromJson(response);
+      final response = await dio.get(
+        EndPoints.verifyCode,
+        queryParameters: {
+          ApiKeys.email: email,
+          ApiKeys.code: code,
+        },
+      );
 
-      if (statusCodeModel.statusCode != 200) {
-        ErrorModel errorModel = ErrorModel.fromJson(response);
-        return Left(errorModel.message);
-      }
       AuthModel authModel = AuthModel.fromJson(response);
-      return Right(authModel);
+      if (authModel.status) {
+        return Right(authModel);
+      } else {
+        return Left(authModel.message);
+      }
     } on ServerException catch (e) {
       return Left(e.errorModel.message.toString());
     }
   }
 
   @override
-  Future<Either<String, dynamic>> changePassword(
-      {required String email,
-      required String password,
-      required String confirmPassword}) async {
+  Future<Either<String, AuthModel>> resetPassword({
+    required String email,
+    required String code,
+    required String password,
+  }) async {
     try {
-      final response = await dio.post(EndPoints.changePassword, data: {
+      final response = await dio.post(EndPoints.resetPassword, data: {
         ApiKeys.email: email,
+        ApiKeys.code: code,
         ApiKeys.password: password,
-        ApiKeys.confirmPassword: confirmPassword,
       });
-      return Right(response);
+      AuthModel authModel = AuthModel.fromJson(response);
+      if (authModel.status) {
+        return Right(authModel);
+      } else {
+        return Left(authModel.message);
+      }
     } on ServerException catch (e) {
       return Left(e.errorModel.message);
     }

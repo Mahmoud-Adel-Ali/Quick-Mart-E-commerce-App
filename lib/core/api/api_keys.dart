@@ -12,11 +12,12 @@ class ApiKeys {
   static const points = 'points';
   static const credit = 'credit';
   static const token = 'token';
+  static const code = 'code';
   static const username = 'username';
   static const statusCode = 'statusCode';
   static const isSuccess = 'isSuccess';
   static const isAuthenticated = 'isAuthenticated';
   static const errorMessage = 'errorMessage';
   static const lang = "lang";
-  static const authorization ='Authorization';
+  static const authorization = 'Authorization';
 }
