@@ -77,6 +77,7 @@ class AuthRepoImplementation extends AuthRepo {
         },
       );
       // TODO : Now , Server is unavailable , and i don't know the shape of response
+      // TODO : 500 Internal Server Error :The server has encountered a situation it does not know how to handle.
       AuthModel authModel = AuthModel.fromJson(response);
       if (authModel.status) {
         return Right(authModel);
@@ -94,7 +95,7 @@ class AuthRepoImplementation extends AuthRepo {
     required String code,
   }) async {
     try {
-      final response = await dio.get(
+      final response = await dio.post(
         EndPoints.verifyCode,
         queryParameters: {
           ApiKeys.email: email,

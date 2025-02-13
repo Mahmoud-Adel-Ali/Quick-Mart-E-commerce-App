@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/features/auth/data/repos/auth_repo_implementation.dart';
@@ -44,6 +46,7 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
 
   verifyEmail() async {
     emit(VerifyEmailLoading());
+    log('VerifyEmailLoading-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
     final response = await authRepoImplementation.verifyEmail(
       email: forgetPasswordEmail.text,
     );

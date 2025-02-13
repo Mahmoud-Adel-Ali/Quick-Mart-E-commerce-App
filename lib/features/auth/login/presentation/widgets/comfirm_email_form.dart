@@ -1,10 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
+import 'package:quick_mart_app/core/functions/validation_of_input_fields.dart';
 import 'package:quick_mart_app/core/widgets/custom_button.dart';
 import 'package:quick_mart_app/core/widgets/custom_text_form_field.dart';
 import 'package:quick_mart_app/core/widgets/custom_toast_message.dart';
-import 'package:quick_mart_app/core/functions/validation_of_input_fields.dart';
 import 'package:quick_mart_app/features/auth/login/presentation/manager/forget_password_cubit/forget_password_cubit.dart';
 
 class ComfirmEmailForm extends StatelessWidget {
@@ -54,6 +56,7 @@ class ComfirmEmailForm extends StatelessWidget {
                             .currentState!
                             .validate()) {
                           context.read<ForgetPasswordCubit>().verifyEmail;
+                          log('verify email ----------------------------------------');
                         } else {
                           CustomToastMessage().bottomToast(context,
                               msg: 'Error : fill all fields',
