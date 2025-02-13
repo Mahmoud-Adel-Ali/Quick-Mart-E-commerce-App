@@ -32,8 +32,6 @@ class AuthRepoImplementation extends AuthRepo {
       // success
       AuthModel authModel = AuthModel.fromJson(response);
       if (authModel.status) {
-        getit<CacheHelper>().setString(ApiKeys.token, authModel.data!.token);
-        getit<CacheHelper>().setInt(ApiKeys.id, authModel.data!.id);
         return Right(authModel);
       } else {
         return Left(authModel.message);
