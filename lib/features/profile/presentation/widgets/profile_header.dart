@@ -5,7 +5,11 @@ import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/app_images.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
+import 'package:quick_mart_app/core/widgets/custom_cached_network_image.dart';
 
+import '../../../../core/api/api_keys.dart';
+import '../../../../core/databases/my_cach-helper.dart';
+import '../../../../core/services/services_locator.dart';
 import '../../../../core/utils/app_routes.dart';
 
 class ProfileHeader extends StatelessWidget {
@@ -15,12 +19,12 @@ class ProfileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        'Mahmoud Adel',
+        getit.get<CacheHelper>().getString(ApiKeys.name) ?? '',
         style: Styless.textSemiBold16(context)
             .copyWith(color: context.color.white),
       ),
       subtitle: Text(
-        'mahmoudadel@gmail.com',
+        getit.get<CacheHelper>().getString(ApiKeys.email) ?? '',
         style: Styless.textSemiBold14(context)
             .copyWith(color: context.color.white),
       ),
@@ -30,8 +34,9 @@ class ProfileHeader extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.amber,
           borderRadius: BorderRadius.circular(12),
+          image: customCachedNetworkImageprovider(
+              getit.get<CacheHelper>().getString(ApiKeys.image) ?? ''),
         ),
-        child: Image.asset(Assets.imagesCategory),
       ),
       trailing: GestureDetector(
         onTap: () {
