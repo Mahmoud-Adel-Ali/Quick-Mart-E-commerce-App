@@ -14,11 +14,11 @@ class ComfirmEmailForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<ForgetPasswordCubit, ForgetPasswordState>(
       listener: (context, state) {
-        if (state is SendNumForEmailFailure) {
+        if (state is VerifyEmailFailure) {
           CustomToastMessage().bottomToast(context,
               msg: 'Error : ${state.errorMessage}',
               type: ToastMessageType.error);
-        } else if (state is SendNumForEmailSuccess) {
+        } else if (state is VerifyEmailSuccess) {
           context.read<ForgetPasswordCubit>().toSecondView();
           CustomToastMessage().topToast(context,
               msg:
@@ -44,7 +44,7 @@ class ComfirmEmailForm extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 50),
-              state is SendNumForEmailLoading
+              state is VerifyEmailLoading
                   ? CircularProgressIndicator(color: context.color.cyan)
                   : CustomButton(
                       onPressed: () {
@@ -53,7 +53,7 @@ class ComfirmEmailForm extends StatelessWidget {
                             .forgetPasswordComfirmEmailFormkey
                             .currentState!
                             .validate()) {
-                          context.read<ForgetPasswordCubit>().sentNumForEmail();
+                          context.read<ForgetPasswordCubit>().verifyEmail;
                         } else {
                           CustomToastMessage().bottomToast(context,
                               msg: 'Error : fill all fields',

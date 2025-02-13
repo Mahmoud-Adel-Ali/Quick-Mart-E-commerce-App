@@ -22,10 +22,10 @@ class _NewPasswordFormState extends State<NewPasswordForm> {
   Widget build(BuildContext context) {
     return BlocConsumer<ForgetPasswordCubit, ForgetPasswordState>(
         listener: (context, state) {
-      if (state is ChangePasswordFailure) {
+      if (state is ResetPasswordFailure) {
         CustomToastMessage().topToast(context,
             msg: state.errorMessage, type: ToastMessageType.error);
-      } else if (state is ChangePasswordSuccess) {
+      } else if (state is ResetPasswordSuccess) {
         context.pushName(AppRoutes.passwordCreatedSuccessfully);
       }
     }, builder: (context, state) {
@@ -38,7 +38,7 @@ class _NewPasswordFormState extends State<NewPasswordForm> {
               hintText: 'Enter Your Password',
               lableText: 'Password',
               obscureText: showPassword,
-              controller: context.read<ForgetPasswordCubit>().resetPassword,
+              controller: context.read<ForgetPasswordCubit>().resetPasswordTextField,
               validator: (value) {
                 return validatorOfPassword(value);
               },
@@ -75,7 +75,7 @@ class _NewPasswordFormState extends State<NewPasswordForm> {
               ),
             ),
             const SizedBox(height: 50),
-            state is ChangePasswordLoading
+            state is ResetPasswordLoading
                 ? CircularProgressIndicator(
                     color: context.color.cyan,
                   )
@@ -83,7 +83,7 @@ class _NewPasswordFormState extends State<NewPasswordForm> {
                     onPressed: () {
                       if (context
                               .read<ForgetPasswordCubit>()
-                              .resetPassword
+                              .resetPasswordTextField
                               .text !=
                           context
                               .read<ForgetPasswordCubit>()
@@ -99,7 +99,7 @@ class _NewPasswordFormState extends State<NewPasswordForm> {
                           .resetPasswordFormKey
                           .currentState!
                           .validate()) {
-                        context.read<ForgetPasswordCubit>().changePassword();
+                        context.read<ForgetPasswordCubit>().resetPassword();
                       } else {
                         CustomToastMessage().bottomToast(context,
                             msg: 'Error : fill all fields',
