@@ -29,13 +29,9 @@ class ProfileCubit extends Cubit<ProfileState> {
           pickedImage == null ? null : await convertXFileToBase64(pickedImage!),
     );
     response.fold(
-      (l) => emit(
-        UpdateProfileFailure(errorMessage: ''),
-      ),
-      (r) => emit(
-        UpdateProfileSuccess(),
-      ),
-    );
+        (errorMessage) =>
+            emit(UpdateProfileFailure(errorMessage: errorMessage)),
+        (authModel) => emit(UpdateProfileSuccess()));
   }
 
   // conver image from XFile to base64

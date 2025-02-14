@@ -70,7 +70,12 @@ class CustomToastMessage {
         color: context.color.grey50,
       ),
       child: ListTile(
-        title: Text(msg, style: Styless.textSemiBold14(context)),
+        title: Text(
+          msg,
+          style: Styless.textSemiBold14(context).copyWith(
+            color: context.color.textColor,
+          ),
+        ),
         leading: SvgPicture.asset(toastImage(type)),
       ),
     );
