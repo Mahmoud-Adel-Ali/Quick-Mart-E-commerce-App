@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/functions/validation_of_input_fields.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
+import '../manager/cubit/profile_cubit.dart';
 import 'custom_edit_profile_image.dart';
 
 class UpdateProfileForm extends StatelessWidget {
@@ -11,7 +13,7 @@ class UpdateProfileForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      // key: context.read<SignUpCubit>().signUpFormKey,
+      key: context.read<ProfileCubit>().updateProfileFormKey,
       child: Column(
         children: [
           CustomEditProfileImage(),
@@ -19,7 +21,7 @@ class UpdateProfileForm extends StatelessWidget {
           CustomTextFormField(
             hintText: 'Enter Your updated Name',
             lableText: 'Full Name',
-            // controller: context.read<SignUpCubit>().signUpUserName,
+            controller: context.read<ProfileCubit>().updateProfileName,
             validator: (value) {
               return validUserName(value);
             },
