@@ -154,4 +154,30 @@ class AuthRepoImplementation extends AuthRepo {
       return Left(e.errorModel.message);
     }
   }
+
+  @override
+  Future<Either<String, AuthModel>> updateProfile(
+      {required String name, String? image}) async {
+    try {
+      final response = await dio.put(
+        EndPoints.updateProfile,
+        data: {
+          ApiKeys.name: name,
+          ApiKeys.image: image,
+        },
+      );
+      // success
+      AuthModel authModel = AuthModel.fromJson(response);
+      if (authModel.status) {
+        cacheUserData(authModel);
+        return Right(authModel);
+      } else {
+        return Left(authModel.message);
+      }
+    } on ServerException catch (e) {
+      return Left(
+        e.errorModel.message ?? 'There was an error , Please try again later',
+      );
+    }
+  }
 }

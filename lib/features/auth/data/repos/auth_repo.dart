@@ -27,4 +27,9 @@ abstract class AuthRepo {
     required String code,
     required String password,
   });
+
+  Future<Either<String, AuthModel>> updateProfile({
+    required String name,
+    String? image,
+  });
 }

@@ -5,4 +5,5 @@ class EndPoints {
   static const verifyEmail = 'verify-email';
   static const verifyCode = 'verify-code';
   static const resetPassword = 'reset-password';
+  static const updateProfile = 'update-profile';
 }
