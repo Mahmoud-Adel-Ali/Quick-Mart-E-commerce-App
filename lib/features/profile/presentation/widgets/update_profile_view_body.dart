@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../auth/sign_up/presentation/widgets/form_header.dart';
+import 'update_profile_form.dart';
 
 class UpdateProfileViewBody extends StatelessWidget {
   const UpdateProfileViewBody({super.key});
@@ -18,6 +19,7 @@ class UpdateProfileViewBody extends StatelessWidget {
               leadingText: 'Now , You can update your profile.',
             ),
             SizedBox(height: 30),
+            UpdateProfileForm(),
           ],
         ),
       ),
