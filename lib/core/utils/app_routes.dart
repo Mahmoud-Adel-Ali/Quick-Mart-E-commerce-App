@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/views/quick_mart_app_views.dart';
-import 'package:quick_mart_app/core/views/under_build_screen.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/views/forget_password_view.dart';
-import 'package:quick_mart_app/features/auth/sign_up/presentation/views/email_verification_view.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/views/login_view.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/views/password_created_successfully_view.dart';
-import 'package:quick_mart_app/features/auth/sign_up/presentation/views/sign_up_view.dart';
-import 'package:quick_mart_app/features/categories/presentation/views/product_listing_view.dart';
-import 'package:quick_mart_app/features/categories/presentation/views/sub_categories_view.dart';
-import 'package:quick_mart_app/features/product_details/presentation/views/product_details_view.dart';
-import 'package:quick_mart_app/features/home/presentation/view/home_view.dart';
-import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boarding_view.dart';
-import 'package:quick_mart_app/features/splash/presentation/view/splash_view.dart';
 
+import '../../features/auth/login/presentation/views/forget_password_view.dart';
+import '../../features/auth/login/presentation/views/login_view.dart';
+import '../../features/auth/login/presentation/views/password_created_successfully_view.dart';
+import '../../features/auth/sign_up/presentation/views/email_verification_view.dart';
+import '../../features/auth/sign_up/presentation/views/sign_up_view.dart';
+import '../../features/categories/presentation/views/product_listing_view.dart';
+import '../../features/categories/presentation/views/sub_categories_view.dart';
+import '../../features/home/presentation/view/home_view.dart';
+import '../../features/onBoarding/presentation/views/on_boarding_view.dart';
+import '../../features/product_details/presentation/views/product_details_view.dart';
 import '../../features/profile/presentation/view/f_a_qs_view.dart';
 import '../../features/profile/presentation/view/privacy_policy_view.dart';
 import '../../features/profile/presentation/view/terms_and_conditions_view.dart';
+import '../../features/profile/presentation/view/update_profile_view.dart';
+import '../../features/splash/presentation/view/splash_view.dart';
+import '../views/quick_mart_app_views.dart';
+import '../views/under_build_screen.dart';
 
 class AppRoutes {
   static const String login = 'login';
@@ -34,6 +35,7 @@ class AppRoutes {
   static const String privacyPolicyView = 'privacyPolicyView';
   static const String termsAndConditionsView = 'termsAndConditionsView';
   static const String faqsView = 'faqsView';
+  static const String updateProfileView = 'updateProfileView';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -77,7 +79,10 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (context) => const TermsAndConditionsView());
       case faqsView:
-            return MaterialPageRoute(builder: (context) => const FAQsView());
+        return MaterialPageRoute(builder: (context) => const FAQsView());
+      case updateProfileView:
+        return MaterialPageRoute(
+            builder: (context) => const UpdateProfileView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),
