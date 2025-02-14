@@ -10,12 +10,15 @@ class ProfileViewBodyItem extends StatelessWidget {
     this.onTap,
     required this.leadingImage,
     this.trailling,
+    this.height,
+    this.width,
   });
   final String title;
   final Widget? trailling;
   final Function()? onTap;
   final String leadingImage;
-
+  final double? height;
+  final double? width;
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -31,7 +34,11 @@ class ProfileViewBodyItem extends StatelessWidget {
             color: context.color.textColor,
           ),
       onTap: onTap,
-      leading: SvgPicture.asset(leadingImage),
+      leading: SvgPicture.asset(
+        leadingImage,
+        height: height,
+        width: width,
+      ),
     );
   }
 }

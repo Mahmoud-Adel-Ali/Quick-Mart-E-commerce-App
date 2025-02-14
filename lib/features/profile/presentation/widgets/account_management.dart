@@ -14,6 +14,11 @@ class AccountManagement extends StatelessWidget {
       title: 'Account Management',
       children: [
         ProfileViewBodyItem(
+          title: 'Edit Profile',
+          leadingImage: Assets.imagesEditProfile,
+          height: 35,
+        ),
+        ProfileViewBodyItem(
           title: 'Change Password',
           leadingImage: Assets.imagesChangePassword,
         ),

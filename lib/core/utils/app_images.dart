@@ -26,6 +26,10 @@ class Assets {
   /// assets/images/dark_theme.svg
   static const String imagesDarkTheme = "assets/images/dark_theme.svg";
 
+  /// Assets for imagesEditProfile
+  /// assets/images/edit_profile.svg
+  static const String imagesEditProfile = "assets/images/edit_profile.svg";
+
   /// Assets for imagesError
   /// assets/images/Error.svg
   static const String imagesError = "assets/images/Error.svg";
