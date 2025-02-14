@@ -13,20 +13,38 @@ class CustomEditProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      width: 200,
-      decoration: BoxDecoration(
-        image: customCachedNetworkImageprovider(
-          getit.get<CacheHelper>().getString(ApiKeys.image) ?? '',
+    return Stack(
+      children: [
+        Container(
+          height: 200,
+          width: 200,
+          decoration: BoxDecoration(
+            image: customCachedNetworkImageprovider(
+              getit.get<CacheHelper>().getString(ApiKeys.image) ?? '',
+            ),
+            shape: BoxShape.circle,
+            color: context.color.textColor,
+            border: Border.all(
+              color: context.color.cyan,
+              width: 1,
+            ),
+          ),
         ),
-        shape: BoxShape.circle,
-        color: context.color.textColor,
-        border: Border.all(
-          color: context.color.cyan,
-          width: 1,
+        Positioned(
+          right: 3,
+          bottom: 3,
+          child: CircleAvatar(
+            backgroundColor: context.color.grey50,
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.add_a_photo_outlined,
+                color: context.color.textColor,
+              ),
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }

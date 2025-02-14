@@ -13,6 +13,7 @@ class UpdateProfileView extends StatelessWidget {
       appBar: customAppBar(
         context,
         title: const AppLogo(),
+        showLeading: true,
       ),
       body: const UpdateProfileViewBody(),
     );
