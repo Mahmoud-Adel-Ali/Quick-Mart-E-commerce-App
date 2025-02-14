@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/functions/validation_of_input_fields.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
+import 'custom_edit_profile_image.dart';
 
 class UpdateProfileForm extends StatelessWidget {
   const UpdateProfileForm({super.key});
@@ -13,6 +14,8 @@ class UpdateProfileForm extends StatelessWidget {
       // key: context.read<SignUpCubit>().signUpFormKey,
       child: Column(
         children: [
+          CustomEditProfileImage(),
+          const SizedBox(height: 30),
           CustomTextFormField(
             hintText: 'Enter Your updated Name',
             lableText: 'Full Name',
