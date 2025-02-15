@@ -33,8 +33,7 @@ String? validatorOfPassword(String? value) {
 String? validUserName(String? value) {
   bool upper = value!.contains(RegExp(r'[A-Z]'));
   bool lower = value.contains(RegExp(r'[a-z]'));
-  bool spaces = value.contains(' ');
-  if (upper && lower && spaces) {
+  if (upper && lower) {
     return null;
   } else {
     return 'should contain at least one upper case , lower caser \nand under score';

@@ -164,6 +164,8 @@ class AuthRepoImplementation extends AuthRepo {
         data: {
           ApiKeys.name: name,
           ApiKeys.image: image,
+          ApiKeys.phone: getit<CacheHelper>().getString(ApiKeys.phone),
+          ApiKeys.email: getit<CacheHelper>().getString(ApiKeys.email),
         },
       );
       // success
