@@ -16,16 +16,21 @@ class ProfileView extends StatelessWidget {
     return BlocProvider<ProfileCubit>(
       create: (context) => ProfileCubit(
           authRepoImplementation: getit.get<AuthRepoImplementation>()),
-      child: Scaffold(
-        backgroundColor: context.color.cyan,
-        body: const Column(
-          children: [
-            SizedBox(height: 40),
-            ProfileHeader(),
-            // SizedBox(height: 40),
-            ProfileViewBody(),
-          ],
-        ),
+      child: BlocBuilder<ProfileCubit, ProfileState>(
+        buildWhen: (previous, current) => previous != current,
+        builder: (context, state) {
+          return Scaffold(
+            backgroundColor: context.color.cyan,
+            body: const Column(
+              children: [
+                SizedBox(height: 40),
+                ProfileHeader(),
+                // SizedBox(height: 40),
+                ProfileViewBody(),
+              ],
+            ),
+          );
+        },
       ),
     );
   }
