@@ -5,6 +5,9 @@ sealed class ProfileState {}
 
 final class ProfileInitial extends ProfileState {}
 
+// get user profile data from local storage
+final class GetUserProfileSuccess extends ProfileState {}
+
 // image picker states
 final class PickedProfileImageLoading extends ProfileState {}
 

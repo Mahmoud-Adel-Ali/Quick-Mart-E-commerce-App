@@ -7,44 +7,46 @@ import 'package:quick_mart_app/core/utils/app_images.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/core/widgets/custom_cached_network_image.dart';
 
-import '../../../../core/api/api_keys.dart';
-import '../../../../core/databases/my_cach-helper.dart';
-import '../../../../core/services/services_locator.dart';
 import '../../../../core/utils/app_routes.dart';
+import '../manager/cubit/profile_cubit.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        getit.get<CacheHelper>().getString(ApiKeys.name) ?? '',
-        style: Styless.textSemiBold16(context)
-            .copyWith(color: context.color.white),
-      ),
-      subtitle: Text(
-        getit.get<CacheHelper>().getString(ApiKeys.email) ?? '',
-        style: Styless.textSemiBold14(context)
-            .copyWith(color: context.color.white),
-      ),
-      leading: Container(
-        height: 50,
-        width: 50,
-        decoration: BoxDecoration(
-          color: Colors.amber,
-          borderRadius: BorderRadius.circular(12),
-          image: customCachedNetworkImageprovider(
-              getit.get<CacheHelper>().getString(ApiKeys.image) ?? ''),
-        ),
-      ),
-      trailing: GestureDetector(
-        onTap: () {
-          // show simple dialog context logout | cancel
-          logoutDialog(context);
-        },
-        child: SvgPicture.asset(Assets.imagesLogoutIcon),
-      ),
+    return BlocBuilder<ProfileCubit, ProfileState>(
+      builder: (context, state) {
+        final cubit = context.read<ProfileCubit>();
+        return ListTile(
+          title: Text(
+            cubit.userName ?? 'non',
+            style: Styless.textSemiBold16(context)
+                .copyWith(color: context.color.white),
+          ),
+          subtitle: Text(
+            cubit.userEmail ?? 'non',
+            style: Styless.textSemiBold14(context)
+                .copyWith(color: context.color.white),
+          ),
+          leading: Container(
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+              color: Colors.amber,
+              borderRadius: BorderRadius.circular(12),
+              image: customCachedNetworkImageprovider(cubit.userImage ?? ''),
+            ),
+          ),
+          trailing: GestureDetector(
+            onTap: () {
+              // show simple dialog context logout | cancel
+              logoutDialog(context);
+            },
+            child: SvgPicture.asset(Assets.imagesLogoutIcon),
+          ),
+        );
+      },
     );
   }
 

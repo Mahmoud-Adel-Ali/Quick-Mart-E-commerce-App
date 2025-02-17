@@ -17,6 +17,7 @@ class UpdateProfileForm extends StatelessWidget {
     return BlocConsumer<ProfileCubit, ProfileState>(
       listener: (context, state) {
         if (state is UpdateProfileSuccess) {
+          context.read<ProfileCubit>().getUserProfile();
           context.pop();
         } else if (state is UpdateProfileFailure) {
           CustomToastMessage().bottomToast(

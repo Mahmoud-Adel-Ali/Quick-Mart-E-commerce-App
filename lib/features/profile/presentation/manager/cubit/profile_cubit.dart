@@ -37,7 +37,9 @@ class ProfileCubit extends Cubit<ProfileState> {
     userPoints = getit.get<CacheHelper>().getInt(ApiKeys.points).toString();
     userCredit = getit.get<CacheHelper>().getInt(ApiKeys.credit).toString();
     userToken = getit.get<CacheHelper>().getString(ApiKeys.token);
+    emit(GetUserProfileSuccess());
   }
+
   // update profile method
   void updateProfile() async {
     emit(UpdateProfileLoading());
