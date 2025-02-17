@@ -25,3 +25,13 @@ final class UpdateProfileFailure extends ProfileState {
 
   UpdateProfileFailure({required this.errorMessage});
 }
+// change password states
+final class ChangePasswordLoading extends ProfileState {}
+
+final class ChangePasswordSuccess extends ProfileState {}
+
+final class ChangePasswordFailure extends ProfileState {
+  final String errorMessage;
+
+  ChangePasswordFailure({required this.errorMessage});
+}
