@@ -12,7 +12,7 @@ class AccountManagement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ProfileViewBodySection(
+    return ProfileViewBodySection(
       title: 'Account Management',
       children: [
         ProfileViewBodyItem(
@@ -26,6 +26,9 @@ class AccountManagement extends StatelessWidget {
         ProfileViewBodyItem(
           title: 'Change Password',
           leadingImage: Assets.imagesChangePassword,
+          onTap: () {
+            context.pushName(AppRoutes.changePasswordView);
+          },
         ),
         ProfileViewBodyItem(
           title: 'Dark Theme',
