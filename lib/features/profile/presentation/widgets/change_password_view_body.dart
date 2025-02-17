@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../auth/sign_up/presentation/widgets/form_header.dart';
+import 'change_password_form.dart';
 
 class ChangePasswordViewBody extends StatelessWidget {
   const ChangePasswordViewBody({super.key});
@@ -18,6 +19,7 @@ class ChangePasswordViewBody extends StatelessWidget {
               leadingText: 'Now , You can change your password.',
             ),
             SizedBox(height: 30),
+            ChangePasswordForm(),
           ],
         ),
       ),
