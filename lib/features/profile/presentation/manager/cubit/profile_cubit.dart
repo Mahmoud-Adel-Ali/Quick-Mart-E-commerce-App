@@ -28,6 +28,25 @@ class ProfileCubit extends Cubit<ProfileState> {
       userPoints,
       userCredit,
       userToken;
+  // change password form key
+  GlobalKey<FormState> changePasswordFormKey = GlobalKey();
+  // change password text fields
+  TextEditingController currentPassword = TextEditingController();
+  TextEditingController newPassword = TextEditingController();
+  TextEditingController confirmNewPassword = TextEditingController();
+  //change password method
+  void changePassword() async {
+    emit(ChangePasswordLoading());
+    final response = await authRepoImplementation.changePassword(
+      currentPassword: currentPassword.text,
+      newPassword: newPassword.text,
+    );
+    response.fold(
+        (errorMessage) =>
+            emit(ChangePasswordFailure(errorMessage: errorMessage)),
+        (authModel) => emit(ChangePasswordSuccess()));
+  }
+
   // get user data
   void getUserProfile() {
     userName = getit.get<CacheHelper>().getString(ApiKeys.name);
