@@ -32,4 +32,9 @@ abstract class AuthRepo {
     required String name,
     String? image,
   });
+
+  Future<Either<String, AuthModel>> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  });
 }

@@ -182,4 +182,32 @@ class AuthRepoImplementation extends AuthRepo {
       );
     }
   }
+
+  @override
+  Future<Either<String, AuthModel>> changePassword({
+    required String currentPassword,
+    required String newPassword,
+  }) async {
+    try {
+      final response = await dio.put(
+        EndPoints.updateProfile,
+        data: {
+          ApiKeys.currentPassword: currentPassword,
+          ApiKeys.newPassword: newPassword,
+        },
+      );
+      // success
+      AuthModel authModel = AuthModel.fromJson(response);
+      if (authModel.status) {
+        cacheUserData(authModel);
+        return Right(authModel);
+      } else {
+        return Left(authModel.message);
+      }
+    } on ServerException catch (e) {
+      return Left(
+        e.errorModel.message ?? 'There was an error , Please try again later',
+      );
+    }
+  }
 }

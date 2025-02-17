@@ -6,6 +6,8 @@ class ApiKeys {
   static const id = 'id';
   static const email = 'email';
   static const password = 'password';
+  static const currentPassword = 'current_password';
+  static const newPassword = 'new_password';
   static const confirmPassword = 'confirmPassword';
   static const phone = 'phone';
   static const image = 'image';
