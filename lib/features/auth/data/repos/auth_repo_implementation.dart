@@ -189,17 +189,17 @@ class AuthRepoImplementation extends AuthRepo {
     required String newPassword,
   }) async {
     try {
-      final response = await dio.put(
-        EndPoints.updateProfile,
+      final response = await dio.post(
+        EndPoints.changePassword,
         data: {
           ApiKeys.currentPassword: currentPassword,
           ApiKeys.newPassword: newPassword,
         },
       );
       // success
+      response['data'] = null;
       AuthModel authModel = AuthModel.fromJson(response);
       if (authModel.status) {
-        cacheUserData(authModel);
         return Right(authModel);
       } else {
         return Left(authModel.message);

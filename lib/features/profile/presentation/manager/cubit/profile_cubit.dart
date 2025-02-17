@@ -47,6 +47,13 @@ class ProfileCubit extends Cubit<ProfileState> {
         (authModel) => emit(ChangePasswordSuccess()));
   }
 
+  // clear password text fields
+  void clearPasswordTextFields() {
+    currentPassword.clear();
+    newPassword.clear();
+    confirmNewPassword.clear();
+  }
+
   // get user data
   void getUserProfile() {
     userName = getit.get<CacheHelper>().getString(ApiKeys.name);
