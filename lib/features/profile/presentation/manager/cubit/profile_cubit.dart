@@ -20,6 +20,24 @@ class ProfileCubit extends Cubit<ProfileState> {
       text: getit.get<CacheHelper>().getString(ApiKeys.name));
   //update profile form key
   GlobalKey<FormState> updateProfileFormKey = GlobalKey();
+  // local user data
+  String? userName,
+      userImage,
+      userPhone,
+      userEmail,
+      userPoints,
+      userCredit,
+      userToken;
+  // get user data
+  void getUserProfile() {
+    userName = getit.get<CacheHelper>().getString(ApiKeys.name);
+    userImage = getit.get<CacheHelper>().getString(ApiKeys.image);
+    userPhone = getit.get<CacheHelper>().getString(ApiKeys.phone);
+    userEmail = getit.get<CacheHelper>().getString(ApiKeys.email);
+    userPoints = getit.get<CacheHelper>().getInt(ApiKeys.points).toString();
+    userCredit = getit.get<CacheHelper>().getInt(ApiKeys.credit).toString();
+    userToken = getit.get<CacheHelper>().getString(ApiKeys.token);
+  }
   // update profile method
   void updateProfile() async {
     emit(UpdateProfileLoading());
