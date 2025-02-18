@@ -17,7 +17,7 @@ class HomeBannerOnlyItem extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(
-              'https://s3-alpha-sig.figma.com/img/cc61/3cbf/1b8131ced9da4b0d651e5a8d437e5eb2?Expires=1739145600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=N~gqdTj4BrAw8azluAjNQJ-Yx9nHr8rS0fgyF0jIMS5IuQ6Q87ANRRvJjnGsJSRaeB7UDdqYo8GCddu1rtObKLwZmbSuWiuDZybnZCp73BhaxvIuAhaj0K~JkQBpS8dwzLf-YUpde33jQ678qFKjbB18ElvYse~Jz6B~0Dhi9nsSxUBNY0tYxipyQaitRLUQXunfHMNNAA2DVrbDieQdpixCbDRifLUnVi4SOUE7rpYYia3M7wBX3HzgUaJGf0~xl4LrPHqm5rWfaG2dZIF3OGipM60NFAYn-AqZEAgr8Ave-OSxabM13vgktsTYIreGaTDUfEZxCU4HKk4D3zvTxA__',
+              'https://s3-alpha-sig.figma.com/img/cc61/3cbf/1b8131ced9da4b0d651e5a8d437e5eb2?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LluwurBcv2vnJ-9STQcZRwY6YaC2qjVryX4ih2XUSuNgySi-vVEy1-1Fh7c6wN5oJcDtXj-ooSpefKfpIUd3OVI5xvX8Du7n4OfutW-Zld4YHFhLWv3juPue28yWTHOwkrVSUUSWHhiaRicPZ-qXhB48tpF4StdI6UMB6fmwmENFJS~jFewp-9ocvcRfq2I~w0oienOq0sld1Om8jwInfmzD5C6O5q4AumW6D42OHQm5VFUgw9b1yKCMFusSz3Neurt7ngmRE3NsE-QYiLm-yq61BYKrt12Z2h7mfbG9L-C9m1ErOMyT0uBrQ5HFPy8fMK4asKPqvn-o7zYy2PK~HQ__',
             ),
             fit: BoxFit.fill,
           ),
