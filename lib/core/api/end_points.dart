@@ -7,4 +7,5 @@ class EndPoints {
   static const resetPassword = 'reset-password';
   static const updateProfile = 'update-profile';
   static const changePassword = 'change-password';
+  static const getBanners = 'banners';
 }
