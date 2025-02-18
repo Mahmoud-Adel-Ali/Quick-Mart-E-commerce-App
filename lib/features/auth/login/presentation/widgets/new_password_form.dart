@@ -38,7 +38,8 @@ class _NewPasswordFormState extends State<NewPasswordForm> {
               hintText: 'Enter Your Password',
               lableText: 'Password',
               obscureText: showPassword,
-              controller: context.read<ForgetPasswordCubit>().resetPasswordTextField,
+              controller:
+                  context.read<ForgetPasswordCubit>().resetPasswordTextField,
               validator: (value) {
                 return validatorOfPassword(value);
               },

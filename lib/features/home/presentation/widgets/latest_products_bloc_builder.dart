@@ -9,7 +9,7 @@ class LatestProductsBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProductsCubit,ProductsState>(
+    return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
         return LatestProducts();
       },

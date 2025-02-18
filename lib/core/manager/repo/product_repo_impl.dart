@@ -1,4 +1,3 @@
-
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:quick_mart_app/core/manager/repo/product_repo.dart';
@@ -10,8 +9,7 @@ class ProductRepoImpl implements ProductRepo {
   @override
   Future<Either<String, List<ProductModel>>> getAllProducts() async {
     try {
-      var respons = await dio
-          .get('https://api.escuelajs.co/api/v1/products/');
+      var respons = await dio.get('https://api.escuelajs.co/api/v1/products/');
       if (respons.statusCode == 200) {
         List<ProductModel> products = handelProdectsJson(respons.data);
         return right(products);

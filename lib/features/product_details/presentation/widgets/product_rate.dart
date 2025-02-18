@@ -1,5 +1,3 @@
-
-
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -14,11 +12,9 @@ class ProductRate extends StatelessWidget {
     return Row(
       children: [
         CustomStarsRatingOfProductDetails(rating: myRandom),
-        Text(myRandom.toString().substring(0,3)),
-        Text(' (${(myRandom*256).toInt().toString()} Reviews)'),
+        Text(myRandom.toString().substring(0, 3)),
+        Text(' (${(myRandom * 256).toInt().toString()} Reviews)'),
       ],
     );
   }
-
-  
 }
