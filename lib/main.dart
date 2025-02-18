@@ -6,14 +6,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/app/cubit/app_cubit.dart';
 import 'package:quick_mart_app/core/databases/cach_keys.dart';
 import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
-import 'package:quick_mart_app/core/manager/products_cubit/products_cubit.dart';
-import 'package:quick_mart_app/core/manager/repo/product_repo_impl.dart';
 import 'package:quick_mart_app/core/services/services_locator.dart';
-import 'package:quick_mart_app/features/profile/presentation/manager/cubit/profile_cubit.dart';
 import 'package:quick_mart_app/quick_mart.dart';
 import 'package:quick_mart_app/simple_bloc_observer.dart';
-
-import 'features/auth/data/repos/auth_repo_implementation.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,16 +28,6 @@ void main() async {
             ..changeAppThemeMode(
               sharedMode: CacheHelper().getBoolean(CachKeys.isDarkMode),
             ),
-        ),
-        BlocProvider<ProductsCubit>(
-          create: (context) => ProductsCubit(productRepoImpl: ProductRepoImpl())
-            ..getAllProducts()
-            ..getCategories(),
-        ),
-        BlocProvider<ProfileCubit>(
-          create: (context) => ProfileCubit(
-              authRepoImplementation: getit.get<AuthRepoImplementation>())
-            ..getUserProfile(),
         ),
       ],
       child: DevicePreview(

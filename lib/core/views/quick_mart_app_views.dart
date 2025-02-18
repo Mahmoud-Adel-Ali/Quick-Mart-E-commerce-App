@@ -1,12 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/app_images.dart';
 import 'package:quick_mart_app/features/categories/presentation/views/categories_view.dart';
 import 'package:quick_mart_app/features/home/presentation/view/home_view.dart';
 
+import '../../features/auth/data/repos/auth_repo_implementation.dart';
+import '../../features/home/data/repos/home_repo_impl.dart';
+import '../../features/home/presentation/manager/home_cubit/home_cubit.dart';
+import '../../features/profile/presentation/manager/cubit/profile_cubit.dart';
 import '../../features/profile/presentation/view/profile_view.dart';
+import '../manager/products_cubit/products_cubit.dart';
+import '../manager/repo/product_repo_impl.dart';
+import '../services/services_locator.dart';
 
 class QuickMartAppViews extends StatefulWidget {
   const QuickMartAppViews({super.key});
@@ -67,17 +75,36 @@ class _QuickMartAppViewsState extends State<QuickMartAppViews> {
           ),
         ],
       ),
-      body: PageView(
-        onPageChanged: (index) {},
-        physics: const NeverScrollableScrollPhysics(),
-        controller: _pageController,
-        children: const [
-          HomeView(),
-          CategoriesView(),
-          SizedBox(),
-          SizedBox(),
-          ProfileView(),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider<HomeCubit>(
+            create: (context) =>
+                HomeCubit(homeRepoImpl: getit.get<HomeRepoImpl>()),
+          ),
+          BlocProvider<ProfileCubit>(
+            create: (context) => ProfileCubit(
+                authRepoImplementation: getit.get<AuthRepoImplementation>())
+              ..getUserProfile(),
+          ),
+          BlocProvider<ProductsCubit>(
+            create: (context) =>
+                ProductsCubit(productRepoImpl: ProductRepoImpl())
+                  ..getAllProducts()
+                  ..getCategories(),
+          ),
         ],
+        child: PageView(
+          onPageChanged: (index) {},
+          physics: const NeverScrollableScrollPhysics(),
+          controller: _pageController,
+          children: const [
+            HomeView(),
+            CategoriesView(),
+            SizedBox(),
+            SizedBox(),
+            ProfileView(),
+          ],
+        ),
       ),
     );
   }
