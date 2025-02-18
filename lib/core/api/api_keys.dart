@@ -22,4 +22,6 @@ class ApiKeys {
   static const errorMessage = 'errorMessage';
   static const lang = "lang";
   static const authorization = 'Authorization';
+  static const category = 'category';
+  static const product = 'product';
 }
