@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/widgets/app_logo.dart';
@@ -6,9 +7,7 @@ import 'package:quick_mart_app/core/widgets/custom_cached_network_image.dart';
 import 'package:quick_mart_app/core/widgets/custom_simple_app_bar.dart';
 import 'package:quick_mart_app/features/home/presentation/widgets/home_view_body.dart';
 
-import '../../../../core/api/api_keys.dart';
-import '../../../../core/databases/my_cach-helper.dart';
-import '../../../../core/services/services_locator.dart';
+import '../../../profile/presentation/manager/cubit/profile_cubit.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -31,7 +30,7 @@ class HomeView extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
                 image: customCachedNetworkImageprovider(
-                    getit.get<CacheHelper>().getString(ApiKeys.image) ?? '')),
+                    context.read<ProfileCubit>().userImage ?? '')),
           ),
           SizedBox(width: 12),
         ],
