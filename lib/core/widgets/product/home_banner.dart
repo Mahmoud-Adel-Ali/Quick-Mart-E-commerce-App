@@ -1,8 +1,8 @@
+import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/widgets/custom_indecator.dart';
-import 'package:quick_mart_app/core/widgets/product/home_banner_only_item.dart';
-import 'package:expandable_page_view/expandable_page_view.dart';
+import 'package:quick_mart_app/core/widgets/product/home_banner_image.dart';
 
 class HomeBanner extends StatefulWidget {
   const HomeBanner({super.key});
@@ -23,8 +23,12 @@ class _HomeBannerState extends State<HomeBanner> {
             currentIndex = index;
             setState(() {});
           },
-          children:
-              List.generate(numOfDot, (index) => const HomeBannerOnlyItem()),
+          children: List.generate(
+            numOfDot,
+            (index) => HomeBannerImage(
+              imageUrl: '',
+            ),
+          ),
         ),
         Positioned(
           bottom: 16.0,
