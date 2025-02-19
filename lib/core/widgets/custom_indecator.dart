@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/colors/colors_dark.dart';
+import 'package:quick_mart_app/core/extensions/context_extention.dart';
 
 class CustomIndecator extends StatelessWidget {
   const CustomIndecator(
@@ -13,7 +13,7 @@ class CustomIndecator extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 18,
-      width: numOfIndecator * 15,
+      width: numOfIndecator * 17,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: numOfIndecator,

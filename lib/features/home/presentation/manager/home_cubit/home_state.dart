@@ -8,7 +8,11 @@ final class HomeInitial extends HomeState {}
 // get banner states
 final class GetBannerDataLoadin extends HomeState {}
 
-final class GetBannerDataSuccess extends HomeState {}
+final class GetBannerDataSuccess extends HomeState {
+  final BannerModel bannerModel;
+
+  GetBannerDataSuccess({required this.bannerModel});
+}
 
 final class GetBannerDataError extends HomeState {
   final String errorMessage;

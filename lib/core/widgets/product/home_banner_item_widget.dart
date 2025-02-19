@@ -4,12 +4,14 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/core/widgets/custom_badges.dart';
 
+import '../../../features/home/data/models/banner_model/banner_model/banner_data.dart';
+
 class HomeBannerItemWidget extends StatelessWidget {
   const HomeBannerItemWidget({
     super.key,
-    required this.imageUrl,
+    required this.bannerData,
   });
-  final String imageUrl;
+  final BannerData bannerData;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -18,7 +20,7 @@ class HomeBannerItemWidget extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(imageUrl),
+            image: NetworkImage(bannerData.image ?? ''),
             fit: BoxFit.fill,
           ),
           borderRadius: BorderRadius.all(Radius.circular(16)),
@@ -30,12 +32,12 @@ class HomeBannerItemWidget extends StatelessWidget {
             SaleOff(),
             SizedBox(height: 8),
             Text(
-              'New Arrivals',
+              bannerData.product ?? '',
               style: Styless.textRegular12(context)
                   .copyWith(color: context.color.grey50),
             ),
             Text(
-              'On Headphones',
+              bannerData.category?.name ?? '',
               style: Styless.textBold24(context)
                   .copyWith(color: context.color.mainColor),
             ),

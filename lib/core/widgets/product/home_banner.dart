@@ -4,32 +4,43 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/widgets/custom_indecator.dart';
 import 'package:quick_mart_app/core/widgets/product/home_banner_item_widget.dart';
 
-class HomeBanner extends StatefulWidget {
-  const HomeBanner({super.key});
+import '../../../features/home/data/models/banner_model/banner_model/banner_model.dart';
 
+class HomeBanner extends StatefulWidget {
+  const HomeBanner({super.key, required this.bannerModel});
+  final BannerModel bannerModel;
   @override
   State<HomeBanner> createState() => _HomeBannerState();
 }
 
 class _HomeBannerState extends State<HomeBanner> {
   int currentIndex = 0, numOfDot = 5;
-
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ExpandablePageView(
+        ExpandablePageView.builder(
           onPageChanged: (index) {
             currentIndex = index;
             setState(() {});
           },
-          children: List.generate(
-            numOfDot,
-            (index) => HomeBannerItemWidget(
-              imageUrl: '',
-            ),
+          itemCount: widget.bannerModel.data!.length,
+          itemBuilder: (context, index) => HomeBannerItemWidget(
+            bannerData: widget.bannerModel.data![index],
           ),
         ),
+        // ExpandablePageView(
+        //   onPageChanged: (index) {
+        //     currentIndex = index;
+        //     setState(() {});
+        //   },
+        //   children: List.generate(
+        //     numOfDot,
+        //     (index) => HomeBannerItemWidget(
+        //       imageUrl: '',
+        //     ),
+        //   ),
+        // ),
         Positioned(
           bottom: 16.0,
           right: 16.0,
@@ -40,7 +51,7 @@ class _HomeBannerState extends State<HomeBanner> {
               borderRadius: BorderRadius.circular(32.0),
             ),
             child: CustomIndecator(
-                numOfIndecator: numOfDot,
+                numOfIndecator: widget.bannerModel.data!.length,
                 activeIndecatorPosition: currentIndex),
           ),
         )
