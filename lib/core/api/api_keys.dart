@@ -24,4 +24,11 @@ class ApiKeys {
   static const authorization = 'Authorization';
   static const category = 'category';
   static const product = 'product';
+  static const price = 'price';
+  static const oldPrice = 'old_price';
+  static const discount = 'discount';
+  static const description = 'description';
+  static const images = 'images';
+  static const inFavorites = 'in_favorites';
+  static const inCart = 'in_cart';
 }
