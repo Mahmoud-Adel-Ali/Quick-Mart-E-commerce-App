@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/models/product_model/product_model.dart';
+import 'package:quick_mart_app/core/models/all_product_model/product_model.dart';
 import 'package:quick_mart_app/core/widgets/custom_cached_network_image.dart';
 import 'package:quick_mart_app/core/widgets/product/custom_wish_icon.dart';
 

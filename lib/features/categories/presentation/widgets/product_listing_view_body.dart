@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/manager/products_cubit/products_cubit.dart';
 import 'package:quick_mart_app/core/models/product_model/category.dart';
-import 'package:quick_mart_app/core/models/product_model/product_model.dart';
+import 'package:quick_mart_app/core/models/all_product_model/product_model.dart';
 import 'package:quick_mart_app/core/widgets/product/custom_product_card.dart';
 
 class ProductListingViewBody extends StatelessWidget {

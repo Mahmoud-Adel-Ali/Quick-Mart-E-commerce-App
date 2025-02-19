@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/models/product_model/product_model.dart';
+import 'package:quick_mart_app/core/models/all_product_model/product_model.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 
 class ProductTitleAndPrice extends StatelessWidget {

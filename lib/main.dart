@@ -50,11 +50,12 @@ void main() async {
                 ..getUserProfile(),
             ),
             BlocProvider<ProductsCubit>(
-              create: (context) =>
-                  ProductsCubit(productRepoImpl: ProductRepoImpl(dio: getit.get<DioConsumer>()))
-                    ..getAllProducts()
-                    // ..getCategories(),
-            ),
+                create: (context) => ProductsCubit(
+                    productRepoImpl:
+                        ProductRepoImpl(dio: getit.get<DioConsumer>()))
+                  ..getAllProducts()
+                // ..getCategories(),
+                ),
           ],
           child: DevicePreview(
             enabled: !kReleaseMode,

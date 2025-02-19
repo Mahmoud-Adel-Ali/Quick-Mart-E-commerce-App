@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/models/product_model/product_model.dart';
+import 'package:quick_mart_app/core/models/all_product_model/product_model.dart';
 import 'package:quick_mart_app/core/utils/app_routes.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/core/widgets/product/custom_product_card_image.dart';

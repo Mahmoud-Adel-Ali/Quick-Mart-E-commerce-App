@@ -13,7 +13,9 @@ class BannerData {
   factory BannerData.fromJson(Map<String, dynamic> json) => BannerData(
         id: num.tryParse(json[ApiKeys.id].toString()),
         image: json[ApiKeys.image]?.toString(),
-        category: json[ApiKeys.category] != null ? CategoryOfBannerData.fromJson(json[ApiKeys.category]) : null,
+        category: json[ApiKeys.category] != null
+            ? CategoryOfBannerData.fromJson(json[ApiKeys.category])
+            : null,
         product: json[ApiKeys.product],
       );
 }
