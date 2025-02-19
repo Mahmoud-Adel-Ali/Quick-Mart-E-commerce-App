@@ -14,7 +14,7 @@ class HomeBanner extends StatefulWidget {
 }
 
 class _HomeBannerState extends State<HomeBanner> {
-  int currentIndex = 0, numOfDot = 5;
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -29,18 +29,6 @@ class _HomeBannerState extends State<HomeBanner> {
             bannerData: widget.bannerModel.data![index],
           ),
         ),
-        // ExpandablePageView(
-        //   onPageChanged: (index) {
-        //     currentIndex = index;
-        //     setState(() {});
-        //   },
-        //   children: List.generate(
-        //     numOfDot,
-        //     (index) => HomeBannerItemWidget(
-        //       imageUrl: '',
-        //     ),
-        //   ),
-        // ),
         Positioned(
           bottom: 16.0,
           right: 16.0,
@@ -51,8 +39,9 @@ class _HomeBannerState extends State<HomeBanner> {
               borderRadius: BorderRadius.circular(32.0),
             ),
             child: CustomIndecator(
-                numOfIndecator: widget.bannerModel.data!.length,
-                activeIndecatorPosition: currentIndex),
+              numOfIndecator: widget.bannerModel.data!.length,
+              activeIndecatorPosition: currentIndex,
+            ),
           ),
         )
       ],

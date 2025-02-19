@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
-import 'package:quick_mart_app/core/widgets/custom_badges.dart';
 
 import '../../../features/home/data/models/banner_model/banner_model/banner_data.dart';
 
@@ -29,7 +28,7 @@ class HomeBannerItemWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SaleOff(),
+            // SaleOff(),
             SizedBox(height: 8),
             Text(
               bannerData.product ?? '',
