@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/models/product_model/category.dart';
+import 'package:quick_mart_app/core/models/all_category_model/category_model.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/core/widgets/custom_cached_network_image.dart';
 

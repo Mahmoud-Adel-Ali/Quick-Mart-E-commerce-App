@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:quick_mart_app/core/manager/repo/product_repo.dart';
 import 'package:quick_mart_app/core/models/all_product_model/product_model.dart';
-import 'package:quick_mart_app/core/models/product_model/category.dart';
+import 'package:quick_mart_app/core/models/all_category_model/category_model.dart';
 
 import '../../api/dio_consumer.dart';
 import '../../api/end_points.dart';

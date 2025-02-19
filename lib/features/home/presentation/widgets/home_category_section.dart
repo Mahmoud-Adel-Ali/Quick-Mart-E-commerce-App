@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quick_mart_app/core/manager/products_cubit/products_cubit.dart';
-import 'package:quick_mart_app/core/models/product_model/category.dart';
+import 'package:quick_mart_app/core/models/all_category_model/category_model.dart';
 import 'package:quick_mart_app/core/widgets/product/custom_category_card.dart';
 import 'package:quick_mart_app/features/home/presentation/widgets/header_of_any_home_section.dart';
 

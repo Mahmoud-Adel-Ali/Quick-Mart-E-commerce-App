@@ -1,8 +1,8 @@
-import 'product_model.dart';
+import 'category_model.dart';
 
-class AllProductModelData {
+class AllCategoryModelData {
   num? currentPage;
-  List<ProductModel>? products;
+  List<CategoryModel>? products;
   String? firstPageUrl;
   num? from;
   num? lastPage;
@@ -14,7 +14,7 @@ class AllProductModelData {
   num? to;
   num? total;
 
-  AllProductModelData({
+  AllCategoryModelData({
     this.currentPage,
     this.products,
     this.firstPageUrl,
@@ -29,11 +29,11 @@ class AllProductModelData {
     this.total,
   });
 
-  factory AllProductModelData.fromJson(Map<String, dynamic> json) =>
-      AllProductModelData(
+  factory AllCategoryModelData.fromJson(Map<String, dynamic> json) =>
+      AllCategoryModelData(
         currentPage: num.tryParse(json['current_page'].toString()),
         products: (json['data'] as List<dynamic>?)
-            ?.map((e) => ProductModel.fromJson(Map<String, dynamic>.from(e)))
+            ?.map((e) => CategoryModel.fromJson(Map<String, dynamic>.from(e)))
             .toList(),
         firstPageUrl: json['first_page_url']?.toString(),
         from: num.tryParse(json['from'].toString()),

@@ -13,7 +13,8 @@ class AllProductModel {
       message: json['message'],
       allProductModelData: json['data'] == null
           ? null
-          : AllProductModelData.fromJson(Map<String, dynamic>.from(json['data'])),
+          : AllProductModelData.fromJson(
+              Map<String, dynamic>.from(json['data'])),
     );
   }
 }
