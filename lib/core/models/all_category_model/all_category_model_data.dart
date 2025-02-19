@@ -2,7 +2,7 @@ import 'category_model.dart';
 
 class AllCategoryModelData {
   num? currentPage;
-  List<CategoryModel>? products;
+  List<CategoryModel>? categories;
   String? firstPageUrl;
   num? from;
   num? lastPage;
@@ -16,7 +16,7 @@ class AllCategoryModelData {
 
   AllCategoryModelData({
     this.currentPage,
-    this.products,
+    this.categories,
     this.firstPageUrl,
     this.from,
     this.lastPage,
@@ -32,7 +32,7 @@ class AllCategoryModelData {
   factory AllCategoryModelData.fromJson(Map<String, dynamic> json) =>
       AllCategoryModelData(
         currentPage: num.tryParse(json['current_page'].toString()),
-        products: (json['data'] as List<dynamic>?)
+        categories: (json['data'] as List<dynamic>?)
             ?.map((e) => CategoryModel.fromJson(Map<String, dynamic>.from(e)))
             .toList(),
         firstPageUrl: json['first_page_url']?.toString(),
