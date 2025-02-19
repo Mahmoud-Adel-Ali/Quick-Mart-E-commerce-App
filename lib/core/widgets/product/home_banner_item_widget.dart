@@ -4,8 +4,8 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/core/widgets/custom_badges.dart';
 
-class HomeBannerImage extends StatelessWidget {
-  const HomeBannerImage({
+class HomeBannerItemWidget extends StatelessWidget {
+  const HomeBannerItemWidget({
     super.key,
     required this.imageUrl,
   });
