@@ -1,4 +1,4 @@
-import 'data.dart';
+import 'all_product_model_data.dart';
 
 class AllProductModel {
   bool? status;
