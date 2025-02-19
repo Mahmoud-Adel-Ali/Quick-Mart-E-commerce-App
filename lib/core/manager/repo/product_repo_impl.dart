@@ -1,23 +1,23 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:quick_mart_app/core/api/api_keys.dart';
 import 'package:quick_mart_app/core/manager/repo/product_repo.dart';
 import 'package:quick_mart_app/core/models/all_product_model/product_model.dart';
 import 'package:quick_mart_app/core/models/product_model/category.dart';
 
 import '../../api/dio_consumer.dart';
 import '../../api/end_points.dart';
+import '../../models/all_product_model/all_product_model.dart';
 
 class ProductRepoImpl implements ProductRepo {
   DioConsumer dio;
   ProductRepoImpl({required this.dio});
   @override
-  Future<Either<String, List<ProductModel>>> getAllProducts() async {
+  Future<Either<String, AllProductModel>> getAllProducts() async {
     try {
       var respons = await dio.get(EndPoints.getAllProducts);
-      if (respons[ApiKeys.status]) {
-        List<ProductModel> products = handelProdectsJson(respons[ApiKeys.data]);
-        return right(products);
+      AllProductModel allProductModel = AllProductModel.fromJson(respons);
+      if (allProductModel.status ?? false) {
+        return right(allProductModel);
       } else {
         return left('Failed to fetch products');
       }

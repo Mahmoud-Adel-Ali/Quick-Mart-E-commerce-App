@@ -18,10 +18,10 @@ class ProductsCubit extends Cubit<ProductsState> {
     var response = await productRepoImpl.getAllProducts();
     response.fold(
       (error) => emit(GetAllProductsFailure(errorMessage: error)),
-      (products) {
-        allProducts = products;
+      (allProductModel) {
+        allProducts = allProductModel.allProductModelData?.products ?? [];
         // handelCategoryMap();
-        emit(GetAllProductsSuccess(products: products));
+        emit(GetAllProductsSuccess(products: allProducts));
       },
     );
   }
