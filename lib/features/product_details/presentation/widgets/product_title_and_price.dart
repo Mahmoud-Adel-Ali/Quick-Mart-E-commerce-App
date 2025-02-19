@@ -10,7 +10,7 @@ class ProductTitleAndPrice extends StatelessWidget {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       title: Text(
-        product.title ?? "nuLabled",
+        product.name ?? "nuLabled",
         style: Styless.textBold24(context),
       ),
       trailing: Text(

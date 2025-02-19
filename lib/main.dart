@@ -10,6 +10,7 @@ import 'package:quick_mart_app/core/services/services_locator.dart';
 import 'package:quick_mart_app/quick_mart.dart';
 import 'package:quick_mart_app/simple_bloc_observer.dart';
 
+import 'core/api/dio_consumer.dart';
 import 'core/manager/products_cubit/products_cubit.dart';
 import 'core/manager/repo/product_repo_impl.dart';
 import 'features/auth/data/repos/auth_repo_implementation.dart';
@@ -50,9 +51,9 @@ void main() async {
             ),
             BlocProvider<ProductsCubit>(
               create: (context) =>
-                  ProductsCubit(productRepoImpl: ProductRepoImpl())
+                  ProductsCubit(productRepoImpl: ProductRepoImpl(dio: getit.get<DioConsumer>()))
                     ..getAllProducts()
-                    ..getCategories(),
+                    // ..getCategories(),
             ),
           ],
           child: DevicePreview(

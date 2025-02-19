@@ -8,7 +8,7 @@ class ProductModel {
   String? image;
   String? name;
   String? description;
-  List<String>? images;
+  List<dynamic>? images;
   bool? inFavorites;
   bool? inCart;
 

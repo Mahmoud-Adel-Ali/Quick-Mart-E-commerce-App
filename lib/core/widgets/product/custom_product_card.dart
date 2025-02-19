@@ -48,7 +48,7 @@ class CustomProductCard extends StatelessWidget {
               ],
             ),
             Text(
-              product.title ?? "unLabled",
+              product.name ?? "unLabled",
               maxLines: 1,
               style: Styless.textBold18(context),
             ),
@@ -58,7 +58,7 @@ class CustomProductCard extends StatelessWidget {
               style: Styless.textSemiBold16(context),
             ),
             Text(
-              'updatedAt: ${product.updatedAt.toString()}',
+              'Discount: ${product.discount.toString()}',
               maxLines: 1,
               style: Styless.textRegular12(context),
             ),

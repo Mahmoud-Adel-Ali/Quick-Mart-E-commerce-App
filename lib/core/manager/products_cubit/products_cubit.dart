@@ -20,7 +20,7 @@ class ProductsCubit extends Cubit<ProductsState> {
       (error) => emit(GetAllProductsFailure(errorMessage: error)),
       (products) {
         allProducts = products;
-        handelCategoryMap();
+        // handelCategoryMap();
         emit(GetAllProductsSuccess(products: products));
       },
     );
@@ -39,22 +39,22 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  List<ProductModel> getProductsInCategory(int categoryId) {
-    if (allProducts.isEmpty) {
-      return [];
-    } else {
-      return allProducts
-          .where((product) => product.category!.id == categoryId)
-          .toList();
-    }
-  }
+  // List<ProductModel> getProductsInCategory(int categoryId) {
+  //   if (allProducts.isEmpty) {
+  //     return [];
+  //   } else {
+  //     return allProducts
+  //         .where((product) => product.category!.id == categoryId)
+  //         .toList();
+  //   }
+  // }
 
-  void handelCategoryMap() {
-    for (ProductModel item in allProducts) {
-      if (!categoryMap.containsKey(item.category!.id)) {
-        categoryMap[item.category!.id!] = [];
-      }
-      categoryMap[item.category!.id]!.add(item);
-    }
-  }
+  // void handelCategoryMap() {
+  //   for (ProductModel item in allProducts) {
+  //     if (!categoryMap.containsKey(item.category!.id)) {
+  //       categoryMap[item.category!.id!] = [];
+  //     }
+  //     categoryMap[item.category!.id]!.add(item);
+  //   }
+  // }
 }

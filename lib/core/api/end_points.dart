@@ -8,4 +8,5 @@ class EndPoints {
   static const updateProfile = 'update-profile';
   static const changePassword = 'change-password';
   static const getBanners = 'banners';
+  static const getAllProducts = 'products';
 }
