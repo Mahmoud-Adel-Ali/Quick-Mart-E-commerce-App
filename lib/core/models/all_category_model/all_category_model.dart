@@ -1,14 +1,14 @@
 import 'all_category_model_data.dart';
 
-class AllProductModel {
+class AllCategoryModel {
   bool? status;
   dynamic message;
   AllCategoryModelData? allCategoryModelData;
 
-  AllProductModel({this.status, this.message, this.allCategoryModelData});
+  AllCategoryModel({this.status, this.message, this.allCategoryModelData});
 
-  factory AllProductModel.fromJson(Map<String, dynamic> json) {
-    return AllProductModel(
+  factory AllCategoryModel.fromJson(Map<String, dynamic> json) {
+    return AllCategoryModel(
       status: json['status'] ?? false,
       message: json['message'],
       allCategoryModelData: json['data'] == null

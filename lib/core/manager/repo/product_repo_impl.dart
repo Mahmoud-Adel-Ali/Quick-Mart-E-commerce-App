@@ -1,11 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:quick_mart_app/core/manager/repo/product_repo.dart';
-import 'package:quick_mart_app/core/models/all_product_model/product_model.dart';
 import 'package:quick_mart_app/core/models/all_category_model/category_model.dart';
+import 'package:quick_mart_app/core/models/all_product_model/product_model.dart';
 
 import '../../api/dio_consumer.dart';
 import '../../api/end_points.dart';
+import '../../models/all_category_model/all_category_model.dart';
 import '../../models/all_product_model/all_product_model.dart';
 
 class ProductRepoImpl implements ProductRepo {
@@ -27,15 +28,14 @@ class ProductRepoImpl implements ProductRepo {
   }
 
   @override
-  Future<Either<String, List<CategoryModel>>> getCatergories() async {
+  Future<Either<String, AllCategoryModel>> getCatergories() async {
     try {
-      var response =
-          await dio.get('https://api.escuelajs.co/api/v1/categories/');
-      if (response.statusCode == 200) {
-        List<CategoryModel> categories = handelCategoriesToList(response);
-        return right(categories);
+      var response = await dio.get(EndPoints.getAllCategories);
+      AllCategoryModel allCategoryModel = AllCategoryModel.fromJson(response);
+      if (allCategoryModel.status ?? false) {
+        return right(allCategoryModel);
       } else {
-        return left('Failed to fetch categories');
+        return left(allCategoryModel.message ?? 'Failed to fetch categories');
       }
     } on DioException catch (e) {
       return left('Failed to fetch categories: ${e.message}');

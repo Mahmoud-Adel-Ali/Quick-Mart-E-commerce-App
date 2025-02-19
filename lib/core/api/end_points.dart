@@ -9,4 +9,5 @@ class EndPoints {
   static const changePassword = 'change-password';
   static const getBanners = 'banners';
   static const getAllProducts = 'products';
+  static const getAllCategories = 'categories';
 }
