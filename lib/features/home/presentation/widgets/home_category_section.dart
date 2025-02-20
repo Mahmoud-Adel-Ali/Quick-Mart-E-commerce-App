@@ -29,7 +29,10 @@ class HomeCategorySection extends StatelessWidget {
                             context.read<ProductsCubit>().allcategories[index];
                         return Padding(
                           padding: EdgeInsets.only(left: index != 0 ? 4 : 0),
-                          child: CustomCategoryCard(categoryModel: category),
+                          child: AspectRatio(
+                            aspectRatio: 1,
+                            child: CustomCategoryCard(categoryModel: category),
+                          ),
                         );
                       },
                     ),

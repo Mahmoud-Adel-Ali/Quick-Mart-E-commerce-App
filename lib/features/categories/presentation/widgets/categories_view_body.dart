@@ -17,7 +17,7 @@ class CategoriesViewBody extends StatelessWidget {
           crossAxisCount: 2,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
-          childAspectRatio: 1.5,
+          childAspectRatio: 1,
         ),
         itemCount: context.read<ProductsCubit>().allcategories.length,
         itemBuilder: (context, index) {
