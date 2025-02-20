@@ -18,7 +18,7 @@ class _CustomWishIconState extends State<CustomWishIcon> {
         setState(() {});
       },
       child: CircleAvatar(
-        backgroundColor: context.color.textColor,
+        backgroundColor: context.color.mainColor,
         child: isLove
             ? Icon(Icons.favorite, color: context.color.red)
             : Icon(Icons.favorite_border, color: context.color.grey100),
