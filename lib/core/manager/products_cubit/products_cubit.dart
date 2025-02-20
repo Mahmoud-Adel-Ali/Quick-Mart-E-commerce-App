@@ -11,7 +11,7 @@ class ProductsCubit extends Cubit<ProductsState> {
   final ProductRepoImpl productRepoImpl;
   List<ProductModel> allProducts = [];
   List<CategoryModel> allcategories = [];
-  // Map<int, List<ProductModel>> categoryMap = {};
+  Map<int, List<ProductModel>> categoryMap = {};
   //
   void getAllProducts() async {
     emit(GetAllProductsLoading());
