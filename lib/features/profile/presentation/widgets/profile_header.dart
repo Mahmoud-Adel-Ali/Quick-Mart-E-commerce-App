@@ -21,11 +21,15 @@ class ProfileHeader extends StatelessWidget {
         return ListTile(
           title: Text(
             cubit.userName ?? 'non',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: Styless.textSemiBold16(context)
                 .copyWith(color: context.color.white),
           ),
           subtitle: Text(
             cubit.userEmail ?? 'non',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: Styless.textSemiBold14(context)
                 .copyWith(color: context.color.white),
           ),
