@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
@@ -16,17 +18,26 @@ class HomeBanner extends StatefulWidget {
 class _HomeBannerState extends State<HomeBanner> {
   int currentIndex = 0;
   @override
+  void initState() {
+    Timer.periodic(const Duration(seconds: 3), (timer) {
+      if (currentIndex < widget.bannerModel.data!.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+      setState(() {});
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         ExpandablePageView.builder(
-          onPageChanged: (index) {
-            currentIndex = index;
-            setState(() {});
-          },
           itemCount: widget.bannerModel.data!.length,
           itemBuilder: (context, index) => HomeBannerItemWidget(
-            bannerData: widget.bannerModel.data![index],
+            bannerData: widget.bannerModel.data![currentIndex],
           ),
         ),
         Positioned(
