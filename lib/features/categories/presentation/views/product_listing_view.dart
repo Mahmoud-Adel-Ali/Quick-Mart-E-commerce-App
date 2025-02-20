@@ -12,7 +12,7 @@ class ProductListingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // setting object
-    final category =
+    final CategoryModel category =
         ModalRoute.of(context)!.settings.arguments as CategoryModel;
     return Scaffold(
       appBar: customAppBar(

@@ -10,4 +10,5 @@ class EndPoints {
   static const getBanners = 'banners';
   static const getAllProducts = 'products';
   static const getAllCategories = 'categories';
+  static getCategoryProducts(int id) => 'products?category_id=$id';
 }

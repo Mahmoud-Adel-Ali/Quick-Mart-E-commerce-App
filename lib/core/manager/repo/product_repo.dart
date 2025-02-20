@@ -6,4 +6,5 @@ import '../../models/all_product_model/all_product_model.dart';
 abstract class ProductRepo {
   Future<Either<String, AllCategoryModel>> getCatergories();
   Future<Either<String, AllProductModel>> getAllProducts();
+  Future<Either<String, AllProductModel>> getCategoryProducts(int id);
 }

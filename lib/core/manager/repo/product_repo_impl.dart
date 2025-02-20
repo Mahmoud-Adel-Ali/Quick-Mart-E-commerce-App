@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:quick_mart_app/core/errors/exception.dart';
 import 'package:quick_mart_app/core/manager/repo/product_repo.dart';
 import 'package:quick_mart_app/core/models/all_category_model/category_model.dart';
 import 'package:quick_mart_app/core/models/all_product_model/product_model.dart';
@@ -53,5 +54,20 @@ class ProductRepoImpl implements ProductRepo {
 
   List<ProductModel> handelProdectsJson(List<dynamic> prod) {
     return prod.map((json) => ProductModel.fromJson(json)).toList();
+  }
+
+  @override
+  Future<Either<String, AllProductModel>> getCategoryProducts(int id) async {
+    try {
+      var response = await dio.get(EndPoints.getCategoryProducts(id));
+      AllProductModel allProductModel = AllProductModel.fromJson(response);
+      if (allProductModel.status ?? false) {
+        return right(allProductModel);
+      } else {
+        return left(allProductModel.message ?? 'Failed to fetch products');
+      }
+    } on ServerException catch (e) {
+      return left('Failed to fetch products: ${e.errorModel.message}');
+    }
   }
 }
