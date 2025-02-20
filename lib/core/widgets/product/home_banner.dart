@@ -17,9 +17,15 @@ class HomeBanner extends StatefulWidget {
 
 class _HomeBannerState extends State<HomeBanner> {
   int currentIndex = 0;
+  late Timer timer;
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
+  }
   @override
   void initState() {
-    Timer.periodic(const Duration(seconds: 3), (timer) {
+    timer = Timer.periodic(const Duration(seconds: 3), (timer) {
       if (currentIndex < widget.bannerModel.data!.length - 1) {
         currentIndex++;
       } else {
