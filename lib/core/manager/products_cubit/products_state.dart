@@ -45,3 +45,17 @@ final class GetProductsInCategorySuccess extends ProductsState {
   GetProductsInCategorySuccess({required this.products});
   List<ProductModel> products;
 }
+
+// get category products states
+
+final class GetCategoryProductsLoading extends ProductsState {}
+
+final class GetCategoryProductsFailure extends ProductsState {
+  final String errorMessage;
+  GetCategoryProductsFailure({required this.errorMessage});
+}
+
+final class GetCategoryProductsSuccess extends ProductsState {
+  GetCategoryProductsSuccess({required this.products});
+  List<ProductModel> products;
+}
