@@ -38,20 +38,20 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-void getCategoryProducts(int id){
-  emit(GetCategoryProductsLoading());
-  // check if the category is already loaded
-  if(categoryMap.containsKey(id)){
-    emit(GetCategoryProductsSuccess(products: categoryMap[id]));
-    return;
+  void getCategoryProducts(int id) async {
+    emit(GetCategoryProductsLoading());
+    // check if the category is already loaded
+    if (categoryMap.containsKey(id)) {
+      emit(GetCategoryProductsSuccess(products: categoryMap[id] ?? []));
+      return;
+    }
+    var response = await productRepoImpl.getCategoryProducts(id);
+    response.fold(
+      (error) => emit(GetCategoryProductsFailure(errorMessage: error)),
+      (allProductModel) {
+        categoryMap[id] = allProductModel.allProductModelData?.products ?? [];
+        emit(GetCategoryProductsSuccess(products: categoryMap[id] ?? []));
+      },
+    );
   }
-  var response = await productRepoImpl.getCategoryProducts(id);
-  response.fold(
-    (error) => emit(GetCategoryProductsFailure(errorMessage: error)),
-    (products) {
-      categoryMap[id] = products.allProductModelData?.products?? [];
-      emit(GetCategoryProductsSuccess(products: products));
-    },
-  );
-}
 }

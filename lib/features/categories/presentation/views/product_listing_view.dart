@@ -4,7 +4,8 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/models/all_category_model/category_model.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 import 'package:quick_mart_app/core/widgets/custom_simple_app_bar.dart';
-import 'package:quick_mart_app/features/categories/presentation/widgets/product_listing_view_body.dart';
+
+import '../widgets/product_listing_view_body_bloc_consumer.dart';
 
 class ProductListingView extends StatelessWidget {
   const ProductListingView({super.key});
@@ -36,7 +37,7 @@ class ProductListingView extends StatelessWidget {
           SizedBox(width: 12),
         ],
       ),
-      body: ProductListingViewBody(
+      body: ProductListingViewBodyBlocConsumer(
         category: category,
       ),
     );
