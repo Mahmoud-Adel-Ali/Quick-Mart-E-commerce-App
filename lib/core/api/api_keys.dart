@@ -31,4 +31,16 @@ class ApiKeys {
   static const images = 'images';
   static const inFavorites = 'in_favorites';
   static const inCart = 'in_cart';
+  static const currentPage = 'current_page';
+  static const products = 'products';
+  static const firstPageUrl = 'first_page_url';
+  static const from = 'from';
+  static const lastPage = 'last_page';
+  static const lastPageUrl = 'last_page_url';
+  static const nextPageUrl = 'next_page_url';
+  static const path = 'path';
+  static const perPage = 'per_page';
+  static const prevPageUrl = 'prev_page_url';
+  static const to = 'to';
+  static const total = 'total';
 }
