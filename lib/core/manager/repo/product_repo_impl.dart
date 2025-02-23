@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:quick_mart_app/core/errors/exception.dart';
@@ -17,6 +19,7 @@ class ProductRepoImpl implements ProductRepo {
       var respons = await dio.get(EndPoints.getAllProducts);
       AllProductModel allProductModel = AllProductModel.fromJson(respons);
       if (allProductModel.status ?? false) {
+        log("All products count: ${allProductModel.allProductModelData?.products?.length}");
         return right(allProductModel);
       } else {
         return left('Failed to fetch products');

@@ -1,3 +1,4 @@
+import '../../api/api_keys.dart';
 import 'all_product_model_data.dart';
 
 class AllProductModel {
@@ -9,12 +10,12 @@ class AllProductModel {
 
   factory AllProductModel.fromJson(Map<String, dynamic> json) {
     return AllProductModel(
-      status: json['status']?.toString().contains("true"),
-      message: json['message'],
-      allProductModelData: json['data'] == null
+      status: json[ApiKeys.status] ?? false,
+      message: json[ApiKeys.message],
+      allProductModelData: json[ApiKeys.data] == null
           ? null
           : AllProductModelData.fromJson(
-              Map<String, dynamic>.from(json['data'])),
+              Map<String, dynamic>.from(json[ApiKeys.data])),
     );
   }
 }
