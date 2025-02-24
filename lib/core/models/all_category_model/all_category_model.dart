@@ -1,3 +1,5 @@
+import 'package:quick_mart_app/core/api/api_keys.dart';
+
 import 'all_category_model_data.dart';
 
 class AllCategoryModel {
@@ -9,12 +11,12 @@ class AllCategoryModel {
 
   factory AllCategoryModel.fromJson(Map<String, dynamic> json) {
     return AllCategoryModel(
-      status: json['status'] ?? false,
-      message: json['message'],
-      allCategoryModelData: json['data'] == null
+      status: json[ApiKeys.status] ?? false,
+      message: json[ApiKeys.message],
+      allCategoryModelData: json[ApiKeys.data] == null
           ? null
           : AllCategoryModelData.fromJson(
-              Map<String, dynamic>.from(json['data'])),
+              Map<String, dynamic>.from(json[ApiKeys.data])),
     );
   }
 }
