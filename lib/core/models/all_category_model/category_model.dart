@@ -10,10 +10,4 @@ class CategoryModel {
         name: json['name']?.toString(),
         image: json['image']?.toString(),
       );
-
-  Map<String, dynamic> toJson() => {
-        if (id != null) 'id': id,
-        if (name != null) 'name': name,
-        if (image != null) 'image': image,
-      };
 }
