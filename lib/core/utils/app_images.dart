@@ -31,6 +31,10 @@ class Assets {
   /// assets/images/edit_profile.svg
   static const String imagesEditProfile = "assets/images/edit_profile.svg";
 
+  /// Assets for imagesEmptyCart
+  /// assets/images/empty_cart.png
+  static const String imagesEmptyCart = "assets/images/empty_cart.png";
+
   /// Assets for imagesError
   /// assets/images/Error.svg
   static const String imagesError = "assets/images/Error.svg";
@@ -132,6 +136,10 @@ class Assets {
   /// Assets for imagesProfileWhite
   /// assets/images/profile-white.svg
   static const String imagesProfileWhite = "assets/images/profile-white.svg";
+
+  /// Assets for imagesQ
+  /// assets/images/Q.png
+  static const String imagesQ = "assets/images/Q.png";
 
   /// Assets for imagesQuickmartDarkMode
   /// assets/images/quickmart_dark_mode.png
