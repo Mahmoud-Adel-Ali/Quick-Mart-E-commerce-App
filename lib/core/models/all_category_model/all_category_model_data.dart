@@ -1,3 +1,4 @@
+import '../../api/api_keys.dart';
 import 'category_model.dart';
 
 class AllCategoryModelData {
@@ -31,19 +32,19 @@ class AllCategoryModelData {
 
   factory AllCategoryModelData.fromJson(Map<String, dynamic> json) =>
       AllCategoryModelData(
-        currentPage: num.tryParse(json['current_page'].toString()),
-        categories: (json['data'] as List<dynamic>?)
+        currentPage: num.tryParse(json[ApiKeys.currentPage].toString()),
+        categories: (json[ApiKeys.data] as List<dynamic>?)
             ?.map((e) => CategoryModel.fromJson(Map<String, dynamic>.from(e)))
             .toList(),
-        firstPageUrl: json['first_page_url']?.toString(),
-        from: num.tryParse(json['from'].toString()),
-        lastPage: num.tryParse(json['last_page'].toString()),
-        lastPageUrl: json['last_page_url']?.toString(),
-        nextPageUrl: json['next_page_url'],
-        path: json['path']?.toString(),
-        perPage: num.tryParse(json['per_page'].toString()),
-        prevPageUrl: json['prev_page_url'],
-        to: num.tryParse(json['to'].toString()),
-        total: num.tryParse(json['total'].toString()),
+        firstPageUrl: json[ApiKeys.firstPageUrl]?.toString(),
+        from: num.tryParse(json[ApiKeys.from].toString()),
+        lastPage: num.tryParse(json[ApiKeys.lastPage].toString()),
+        lastPageUrl: json[ApiKeys.lastPageUrl]?.toString(),
+        nextPageUrl: json[ApiKeys.nextPageUrl],
+        path: json[ApiKeys.path]?.toString(),
+        perPage: num.tryParse(json[ApiKeys.perPage].toString()),
+        prevPageUrl: json[ApiKeys.prevPageUrl],
+        to: num.tryParse(json[ApiKeys.to].toString()),
+        total: num.tryParse(json[ApiKeys.total].toString()),
       );
 }

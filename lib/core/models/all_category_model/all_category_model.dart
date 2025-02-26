@@ -1,5 +1,4 @@
-import 'package:quick_mart_app/core/api/api_keys.dart';
-
+import '../../api/api_keys.dart';
 import 'all_category_model_data.dart';
 
 class AllCategoryModel {
