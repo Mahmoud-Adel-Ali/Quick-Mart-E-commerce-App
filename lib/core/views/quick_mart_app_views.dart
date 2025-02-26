@@ -2,11 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-import 'package:quick_mart_app/core/utils/app_images.dart';
-import 'package:quick_mart_app/features/categories/presentation/views/categories_view.dart';
-import 'package:quick_mart_app/features/home/presentation/view/home_view.dart';
 
+import '../../features/cart/presentation/views/cart_view.dart';
+import '../../features/categories/presentation/views/categories_view.dart';
+import '../../features/home/presentation/view/home_view.dart';
 import '../../features/profile/presentation/view/profile_view.dart';
+import '../utils/app_images.dart';
 
 class QuickMartAppViews extends StatefulWidget {
   const QuickMartAppViews({super.key});
@@ -74,7 +75,7 @@ class _QuickMartAppViewsState extends State<QuickMartAppViews> {
         children: const [
           HomeView(),
           CategoriesView(),
-          SizedBox(),
+          CartView(),
           SizedBox(),
           ProfileView(),
         ],
