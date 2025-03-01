@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
 
-import '../../../features/home/data/models/banner_model/banner_model/banner_data.dart';
+import '../../data/models/banner_model/banner_model/banner_data.dart';
+
 
 class HomeBannerItemWidget extends StatelessWidget {
   const HomeBannerItemWidget({
