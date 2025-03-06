@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/constant.dart';
-import 'package:quick_mart_app/features/home/presentation/widgets/header_of_any_home_section.dart';
-import 'package:quick_mart_app/features/home/presentation/widgets/home_category_section.dart';
-
-import '../../../../core/widgets/product/home_banner_bloc_builder.dart';
+import 'header_of_any_home_section.dart';
+import 'home_banner_bloc_builder.dart';
+import 'home_category_section.dart';
 import 'latest_products_bloc_Builder.dart';
 
 class HomeViewBody extends StatelessWidget {
