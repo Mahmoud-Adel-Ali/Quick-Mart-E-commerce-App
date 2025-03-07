@@ -29,6 +29,7 @@ class CustomCartItem extends StatelessWidget {
   }
 }
 
+
 class CustomCartItemNameAndCheckout extends StatelessWidget {
   const CustomCartItemNameAndCheckout({
     super.key,
