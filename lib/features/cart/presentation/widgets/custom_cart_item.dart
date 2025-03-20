@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 
 import '../../../../core/utils/app_images.dart';
+import '../../../../core/utils/styles.dart';
 
 class CustomCartItem extends StatelessWidget {
   const CustomCartItem({super.key});
@@ -20,6 +21,7 @@ class CustomCartItem extends StatelessWidget {
                 child: Column(
               children: [
                 CustomCartItemNameAndCheckout(),
+                CustomCardItemPrice(),
               ],
             ))
           ],
@@ -29,6 +31,36 @@ class CustomCartItem extends StatelessWidget {
   }
 }
 
+class CustomCardItemPrice extends StatelessWidget {
+  const CustomCardItemPrice({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: double.infinity,
+          child: Text(
+            r'$15.25',
+            style: Styless.textSemiBold16(context),
+          ),
+        ),
+        SizedBox(
+          width: double.infinity,
+          child: Text(
+            r'$25.25',
+            style: Styless.textSemiBold14(context).copyWith(
+              decoration: TextDecoration.lineThrough,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
 
 class CustomCartItemNameAndCheckout extends StatelessWidget {
   const CustomCartItemNameAndCheckout({
