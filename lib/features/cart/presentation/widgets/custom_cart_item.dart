@@ -3,6 +3,7 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/styles.dart';
+import '../../../../core/widgets/product/custom_quantity_of_product.dart';
 
 class CustomCartItem extends StatelessWidget {
   const CustomCartItem({super.key});
@@ -11,22 +12,48 @@ class CustomCartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: SizedBox(
-        height: 150,
+        height: 160,
         width: double.infinity,
         child: Row(
           children: const [
             CustomCartItemImage(),
-            SizedBox(width: 10),
+            // SizedBox(width: 10),
             Expanded(
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Column(
-              children: [
-                CustomCartItemNameAndCheckout(),
-                CustomCardItemPrice(),
-              ],
-            ))
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomCartItemNameAndCheckout(),
+                    CustomCardItemPrice(),
+                    AddMoreAboutItemSection(),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
+    );
+  }
+}
+
+class AddMoreAboutItemSection extends StatelessWidget {
+  const AddMoreAboutItemSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        CustomQuantityOfProduct(),
+        Icon(
+          Icons.delete,
+          color: context.color.red,
+        )
+      ],
     );
   }
 }
