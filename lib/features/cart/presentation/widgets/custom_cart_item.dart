@@ -10,25 +10,20 @@ class CustomCartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: SizedBox(
-        height: 160,
-        width: double.infinity,
+    return IntrinsicHeight(
+      child: Card(
         child: Row(
           children: const [
             CustomCartItemImage(),
-            // SizedBox(width: 10),
+            SizedBox(width: 10),
             Expanded(
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CustomCartItemNameAndCheckout(),
-                    CustomCardItemPrice(),
-                    AddMoreAboutItemSection(),
-                  ],
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomCartItemNameAndCheckout(),
+                  CustomCardItemPrice(),
+                  AddMoreAboutItemSection(),
+                ],
               ),
             )
           ],
@@ -49,10 +44,14 @@ class AddMoreAboutItemSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CustomQuantityOfProduct(),
-        Icon(
-          Icons.delete,
-          color: context.color.red,
-        )
+        IconButton(
+          padding: EdgeInsets.zero,
+          onPressed: () {},
+          icon: Icon(
+            Icons.delete,
+            color: context.color.red,
+          ),
+        ),
       ],
     );
   }

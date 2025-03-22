@@ -28,6 +28,7 @@ class CustomQuantityOfProduct extends StatelessWidget {
       qtyFormProps: QtyFormProps(enableTyping: false),
       decoration: QtyDecorationProps(
         btnColor: context.color.cyan,
+        border: InputBorder.none,
       ),
     );
   }
