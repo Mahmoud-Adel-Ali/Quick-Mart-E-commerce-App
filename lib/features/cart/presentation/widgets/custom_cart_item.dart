@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 
-import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/styles.dart';
 import '../../../../core/widgets/product/custom_quantity_of_product.dart';
+import 'custom_cart_item_image.dart';
 
 class CustomCartItem extends StatelessWidget {
   const CustomCartItem({super.key});
@@ -105,23 +105,6 @@ class CustomCartItemNameAndCheckout extends StatelessWidget {
         value: true,
         onChanged: (e) {},
         fillColor: WidgetStatePropertyAll(context.color.cyan),
-      ),
-    );
-  }
-}
-
-class CustomCartItemImage extends StatelessWidget {
-  const CustomCartItemImage({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: Image.asset(
-        Assets.imagesTestCartImage,
-        height: 150,
-        width: 150,
       ),
     );
   }
