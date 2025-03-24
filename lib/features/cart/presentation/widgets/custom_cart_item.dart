@@ -4,6 +4,7 @@ import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import '../../../../core/utils/styles.dart';
 import '../../../../core/widgets/product/custom_quantity_of_product.dart';
 import 'custom_cart_item_image.dart';
+import 'custom_cart_item_name_and_checkout.dart';
 
 class CustomCartItem extends StatelessWidget {
   const CustomCartItem({super.key});
@@ -84,28 +85,6 @@ class CustomCardItemPrice extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class CustomCartItemNameAndCheckout extends StatelessWidget {
-  const CustomCartItemNameAndCheckout({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      title: Text(
-        'Loop Silicone Strong Magnetic Watch',
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-      trailing: Checkbox(
-        value: true,
-        onChanged: (e) {},
-        fillColor: WidgetStatePropertyAll(context.color.cyan),
-      ),
     );
   }
 }
