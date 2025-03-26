@@ -9,15 +9,28 @@ class QuickMart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppCubit, AppState>(
-      builder: (context, state) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: context.read<AppCubit>().isDark ? themeDark() : themeLight(),
-          initialRoute: AppRoutes.splash,
-          onGenerateRoute: AppRoutes.onGenerateRoute,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: _getTheme(context), // Initialize theme once
+      initialRoute: AppRoutes.splash,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
+      builder: (context, child) {
+        return BlocBuilder<AppCubit, AppState>(
+          builder: (context, state) {
+            // Only rebuild the theme part (not the entire MaterialApp)
+            return Theme(
+              data:
+                  context.read<AppCubit>().isDark ? themeDark() : themeLight(),
+              child: child!,
+            );
+          },
         );
       },
     );
+  }
+
+  // Helper to get initial theme
+  ThemeData _getTheme(BuildContext context) {
+    return context.read<AppCubit>().isDark ? themeDark() : themeLight();
   }
 }
