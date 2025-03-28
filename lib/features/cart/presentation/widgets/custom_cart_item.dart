@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quick_mart_app/core/extensions/context_extention.dart';
 
 import 'add_more_about_item_section.dart';
 import 'custom_card_item_price.dart';
@@ -12,6 +13,11 @@ class CustomCartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return IntrinsicHeight(
       child: Card(
+        color: context.color.grey50,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        elevation: 1,
         child: Row(
           children: const [
             CustomCartItemImage(),
