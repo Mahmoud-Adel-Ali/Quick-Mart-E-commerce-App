@@ -33,7 +33,7 @@ class ApiInterceptor extends Interceptor {
     options.cancelToken = cancelToken;
     _activeRequests[key] = cancelToken;
 
-    print("➡️ New request started: $key");
+    log("➡️ New request started: $key");
 
     handler.next(options);
   }
