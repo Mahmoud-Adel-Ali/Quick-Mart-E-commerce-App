@@ -7,63 +7,56 @@ class ServerException implements Exception {
   ServerException({required this.errorModel});
 }
 
-void handleDioException(DioException e) {
-  // Helper to safely extract ErrorModel from response or create default
-  ErrorModel extractErrorModel() {
-    if (e.response?.data != null) {
-      try {
-        return ErrorModel.fromJson(e.response!.data);
-      } catch (_) {
-        // In case parsing fails
-        return ErrorModel(
-          statusCode: e.response?.statusCode ?? 500,
-          isSuccess: false,
-          message: 'Unexpected error format',
-          data: null,
-        );
-      }
-    } else {
-      return ErrorModel(
-        statusCode: 500,
-        isSuccess: false,
-        message: 'No response from server',
-        data: null,
-      );
-    }
-  }
-
-  // Handle different Dio error types
+void handelDioException(DioException e) {
   switch (e.type) {
     case DioExceptionType.connectionTimeout:
+      throw ServerException(errorModel: ErrorModel.fromJson(e.response!.data));
     case DioExceptionType.sendTimeout:
+      throw ServerException(errorModel: ErrorModel.fromJson(e.response!.data));
     case DioExceptionType.receiveTimeout:
+      throw ServerException(errorModel: ErrorModel.fromJson(e.response!.data));
     case DioExceptionType.badCertificate:
-    case DioExceptionType.unknown:
-    case DioExceptionType.badResponse:
-      throw ServerException(errorModel: extractErrorModel());
-
+      throw ServerException(errorModel: ErrorModel.fromJson(e.response!.data));
     case DioExceptionType.cancel:
-      throw ServerException(
-        errorModel: ErrorModel(
-          statusCode: 499,
-          isSuccess: false,
-          message: 'Request was cancelled by the interceptor',
-          data: null,
-        ),
-      );
-
+      throw ServerException(errorModel: ErrorModel.fromJson(e.response!.data));
     case DioExceptionType.connectionError:
-      if (e.response == null) {
-        throw ServerException(
-          errorModel: ErrorModel(
-            statusCode: 500,
-            isSuccess: false,
-            data: null,
-            message: 'Lost Internet Connection',
-          ),
-        );
-      } else {
-        throw ServerException(errorModel: extractErrorModel());
+      e.response == null
+          ? throw ServerException(
+              errorModel: ErrorModel(
+                  statusCode: 500,
+                  isSuccess: false,
+                  data: null,
+                  message: 'Lose Internet'))
+          : throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
+    case DioExceptionType.unknown:
+      throw ServerException(errorModel: ErrorModel.fromJson(e.response!.data));
+    case DioExceptionType.badResponse:
+      switch (e.response?.statusCode) {
+        case 400: // bad request
+          throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
+        case 401: // unauthorized
+          throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
+        case 403: // forbidden
+          throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
+        case 404: // not found
+          throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
+        case 409: // cofficient
+          throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
+        case 422: // unprocessable
+          throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
+        case 500:
+          throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
+        case 504: // server exception
+          throw ServerException(
+              errorModel: ErrorModel.fromJson(e.response!.data));
       }
   }
 }
