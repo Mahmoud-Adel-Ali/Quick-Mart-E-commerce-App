@@ -7,9 +7,8 @@ import 'package:quick_mart_app/core/databases/my_cach-helper.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/services/services_locator.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
-import 'package:quick_mart_app/core/views/quick_mart_app_views.dart';
-import 'package:quick_mart_app/features/auth/login/presentation/views/login_view.dart';
-import 'package:quick_mart_app/features/onBoarding/presentation/views/on_boarding_view.dart';
+
+import '../../../../core/utils/app_routes.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -30,20 +29,11 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     await Future.delayed(Duration(seconds: durationInSeconds));
 
     if (!onBoardingIsViewing) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => OnBoardingView()),
-      );
+      context.pushReplacementNamed(AppRoutes.onbording);
     } else if (isLoggedIn) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => QuickMartAppViews()),
-      );
+      context.pushReplacementNamed(AppRoutes.quickMartAppViews);
     } else {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => LoginView()),
-      );
+      context.pushReplacementNamed(AppRoutes.login);
     }
   }
 
