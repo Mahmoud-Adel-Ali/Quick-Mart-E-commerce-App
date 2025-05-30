@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_images.dart';
@@ -10,11 +9,18 @@ class CustomCartItemImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: Image.asset(
-        Assets.imagesTestCartImage,
-        height: 150,
-        width: 150,
+    return Container(
+      width: MediaQuery.sizeOf(context).width * 0.33,
+      height: double.infinity,
+      alignment: Alignment.centerLeft,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.asset(
+          Assets.imagesTestCartImage,
+          fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,
+        ),
       ),
     );
   }

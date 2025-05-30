@@ -33,7 +33,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     } else if (isLoggedIn) {
       context.pushReplacementNamed(AppRoutes.quickMartAppViews);
     } else {
-      context.pushReplacementNamed(AppRoutes.login);
+      context.pushReplacementNamed(AppRoutes.quickMartAppViews); //login
     }
   }
 

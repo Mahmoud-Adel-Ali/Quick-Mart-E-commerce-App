@@ -11,7 +11,8 @@ class CustomCartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IntrinsicHeight(
+    return SizedBox(
+      height: 188,
       child: Card(
         color: context.color.grey50,
         shape: RoundedRectangleBorder(
@@ -19,19 +20,27 @@ class CustomCartItem extends StatelessWidget {
         ),
         elevation: 1,
         child: Row(
-          children: const [
-            CustomCartItemImage(),
-            SizedBox(width: 10),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomCartItemNameAndCheckout(),
-                  CustomCardItemPrice(),
-                  AddMoreAboutItemSection(),
-                ],
-              ),
-            )
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const CustomCartItemImage(),
+            const SizedBox(width: 10),
+            _buildItemDetails(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildItemDetails() {
+    return const Expanded(
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 12),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CustomCartItemNameAndCheckout(),
+            CustomCardItemPrice(),
+            AddMoreAboutItemSection(),
           ],
         ),
       ),

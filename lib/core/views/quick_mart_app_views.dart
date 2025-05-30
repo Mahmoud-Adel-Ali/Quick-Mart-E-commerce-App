@@ -4,9 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 
 import '../../features/cart/presentation/views/cart_view.dart';
-import '../../features/categories/presentation/views/categories_view.dart';
-import '../../features/home/presentation/view/home_view.dart';
-import '../../features/profile/presentation/view/profile_view.dart';
 import '../utils/app_images.dart';
 
 class QuickMartAppViews extends StatefulWidget {
@@ -73,11 +70,11 @@ class _QuickMartAppViewsState extends State<QuickMartAppViews> {
         physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
         children: const [
-          HomeView(),
-          CategoriesView(),
+          SizedBox(), // HomeView(),
+          SizedBox(), // CategoriesView(),
           CartView(),
           SizedBox(),
-          ProfileView(),
+          SizedBox(), // ProfileView(),
         ],
       ),
     );
