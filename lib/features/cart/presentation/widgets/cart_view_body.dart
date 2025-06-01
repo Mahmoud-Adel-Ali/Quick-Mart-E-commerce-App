@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../constant.dart';
 import 'cart_list_view.dart';
-import 'custom_order_info.dart';
+import 'custom_order_info_section.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
@@ -14,7 +14,7 @@ class CartViewBody extends StatelessWidget {
       child: Column(
         children: const [
           Expanded(child: CartListView()),
-          CustomOrderInfo(
+          CustomOrderInfoSection(
             subtotal: 25.25,
             shippingCost: 5.25,
           ),

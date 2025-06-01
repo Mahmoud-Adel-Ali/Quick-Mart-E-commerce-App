@@ -7,6 +7,7 @@ import '../../features/auth/sign_up/presentation/views/email_verification_view.d
 import '../../features/auth/sign_up/presentation/views/sign_up_view.dart';
 import '../../features/categories/presentation/views/product_listing_view.dart';
 import '../../features/categories/presentation/views/sub_categories_view.dart';
+import '../../features/checkout/presentation/views/checkout_view.dart';
 import '../../features/home/presentation/view/home_view.dart';
 import '../../features/onBoarding/presentation/views/on_boarding_view.dart';
 import '../../features/product_details/presentation/views/product_details_view.dart';
@@ -38,6 +39,8 @@ class AppRoutes {
   static const String faqsView = 'faqsView';
   static const String updateProfileView = 'updateProfileView';
   static const String changePasswordView = 'changePasswordView';
+  //Checkout View
+  static const String shippingView = 'shippingView';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -88,6 +91,8 @@ class AppRoutes {
       case changePasswordView:
         return MaterialPageRoute(
             builder: (context) => const ChangePasswordView());
+      case shippingView:
+        return MaterialPageRoute(builder: (context) => const CheckoutView());
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),

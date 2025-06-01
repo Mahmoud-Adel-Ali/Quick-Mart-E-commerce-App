@@ -1,11 +1,13 @@
 import 'package:flutter/widgets.dart';
+import 'package:quick_mart_app/core/extensions/context_extention.dart';
 
+import '../../../../core/utils/app_routes.dart';
 import '../../../../core/utils/styles.dart';
 import '../../../../core/widgets/custom_button.dart';
 import 'custom_order_info_item.dart';
 
-class CustomOrderInfo extends StatelessWidget {
-  const CustomOrderInfo({
+class CustomOrderInfoSection extends StatelessWidget {
+  const CustomOrderInfoSection({
     super.key,
     required this.subtotal,
     required this.shippingCost,
@@ -41,7 +43,9 @@ class CustomOrderInfo extends StatelessWidget {
         ),
         SizedBox(height: 20),
         CustomButton(
-          onPressed: () {},
+          onPressed: () {
+            context.pushName(AppRoutes.shippingView);
+          },
           text: 'Checkout ( ${total.toStringAsFixed(2)} \$)',
         ),
       ],
