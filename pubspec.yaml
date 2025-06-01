@@ -87,3 +87,6 @@ flutter_assets:
   output_path: lib/core/utils/
   filename: app_images.dart
   field_prefix: null
+  class_name: Assets
+  generate: true
+  ignore_comments: true
