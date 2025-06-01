@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../../core/widgets/custom_button.dart';
+import '../../manager/checkout_cubit/checkout_cubit.dart';
 
 class PaymentViewBody extends StatelessWidget {
   const PaymentViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Payment View Body"),
+    return  Center(
+      child: CustomButton(
+        onPressed: () {
+          context.read<CheckoutCubit>().toReviewOrder();
+        },
+        text: "Continue",
+      ),
     );
   }
 }

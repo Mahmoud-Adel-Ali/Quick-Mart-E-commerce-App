@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/widgets/custom_button.dart';
+
 class ReviewViewBody extends StatelessWidget {
   const ReviewViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Review View Body"),
+    return  Center(
+      child: CustomButton(
+        onPressed: () {
+          //Complete Checkout Process (Do)
+        },
+        text: "Place Order",
+      ),
     );
   }
 }
