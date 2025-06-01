@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
-
 import '../../features/cart/presentation/views/cart_view.dart';
+import '../../features/profile/presentation/view/profile_view.dart';
 import '../utils/app_images.dart';
 
 class QuickMartAppViews extends StatefulWidget {
@@ -74,7 +74,8 @@ class _QuickMartAppViewsState extends State<QuickMartAppViews> {
           SizedBox(), // CategoriesView(),
           CartView(),
           SizedBox(),
-          SizedBox(), // ProfileView(),
+          // SizedBox(), 
+          ProfileView(),
         ],
       ),
     );

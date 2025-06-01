@@ -11,21 +11,27 @@ class CustomCartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 188,
-      child: Card(
-        color: context.color.grey50,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        elevation: 1,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const CustomCartItemImage(),
-            const SizedBox(width: 10),
-            _buildItemDetails(),
-          ],
+    return GestureDetector(
+      onTap: () {
+        //TODO : navigate to product details , but after API equipment
+        // context.pushReplacementNamed(AppRoutes.productDetailsView);
+      },
+      child: SizedBox(
+        height: 188,
+        child: Card(
+          color: context.color.grey50,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          elevation: 1,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const CustomCartItemImage(),
+              const SizedBox(width: 10),
+              _buildItemDetails(),
+            ],
+          ),
         ),
       ),
     );
