@@ -44,7 +44,7 @@ class CustomOrderInfoSection extends StatelessWidget {
         SizedBox(height: 20),
         CustomButton(
           onPressed: () {
-            context.pushName(AppRoutes.shippingView);
+            context.pushName(AppRoutes.checkoutView);
           },
           text: 'Checkout ( ${total.toStringAsFixed(2)} \$)',
         ),
