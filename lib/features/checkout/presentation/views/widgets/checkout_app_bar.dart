@@ -7,10 +7,6 @@ checkoutAppBar(BuildContext context) {
   return customAppBar(
     context,
     showLeading: true,
-    onTapOnLeading: () {
-      //if it is first view
-      Navigator.of(context).pop();
-    },
     title: Text(
       "Checkout",
       style: Styless.textSemiBold16(context),

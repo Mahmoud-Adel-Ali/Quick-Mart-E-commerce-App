@@ -40,7 +40,7 @@ class AppRoutes {
   static const String updateProfileView = 'updateProfileView';
   static const String changePasswordView = 'changePasswordView';
   //Checkout View
-  static const String shippingView = 'shippingView';
+  static const String checkoutView = 'checkoutView';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -91,7 +91,7 @@ class AppRoutes {
       case changePasswordView:
         return MaterialPageRoute(
             builder: (context) => const ChangePasswordView());
-      case shippingView:
+      case checkoutView:
         return MaterialPageRoute(builder: (context) => const CheckoutView());
       default:
         return MaterialPageRoute(
