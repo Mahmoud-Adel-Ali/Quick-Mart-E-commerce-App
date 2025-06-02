@@ -11,6 +11,9 @@ class MyAssets extends ThemeExtension<MyAssets> {
     required this.myCartIcon,
     required this.heartIcon,
     required this.profileIcon,
+    required this.shippingIcon,
+    required this.paymentIcon,
+    required this.reviewIcon,
   });
 
   final String quickmartImage;
@@ -21,6 +24,10 @@ class MyAssets extends ThemeExtension<MyAssets> {
   final String myCartIcon;
   final String heartIcon;
   final String profileIcon;
+  // Checkout Feature Icons
+  final String shippingIcon;
+  final String paymentIcon;
+  final String reviewIcon;
 
   @override
   ThemeExtension<MyAssets> copyWith({
@@ -32,6 +39,9 @@ class MyAssets extends ThemeExtension<MyAssets> {
     String? myCartIcon,
     String? heartIcon,
     String? profileIcon,
+    String? shippingIcon,
+    String? paymentIcon,
+    String? reviewIcon,
   }) {
     return MyAssets(
       quickmartImage: quickmartImage ?? this.quickmartImage,
@@ -42,6 +52,9 @@ class MyAssets extends ThemeExtension<MyAssets> {
       myCartIcon: myCartIcon ?? this.myCartIcon,
       heartIcon: heartIcon ?? this.heartIcon,
       profileIcon: profileIcon ?? this.profileIcon,
+      shippingIcon: shippingIcon ?? this.shippingIcon,
+      paymentIcon: paymentIcon ?? this.paymentIcon,
+      reviewIcon: reviewIcon ?? this.reviewIcon,
     );
   }
 
@@ -62,6 +75,9 @@ class MyAssets extends ThemeExtension<MyAssets> {
       myCartIcon: myCartIcon,
       heartIcon: heartIcon,
       profileIcon: profileIcon,
+      shippingIcon: shippingIcon,
+      paymentIcon: paymentIcon,
+      reviewIcon: reviewIcon,
     )..lerp(other, t);
   }
 
@@ -74,6 +90,9 @@ class MyAssets extends ThemeExtension<MyAssets> {
     myCartIcon: Assets.imagesMyCartWhite,
     heartIcon: Assets.imagesHeartWhite,
     profileIcon: Assets.imagesProfileWhite,
+    shippingIcon: Assets.imagesShippingWhiteIcon,
+    paymentIcon: Assets.imagesPaymentWhiteIcon,
+    reviewIcon: Assets.imagesReviewWhiteIcon,
   );
   static const MyAssets light = MyAssets(
     quickmartImage: Assets.imagesQuickmartLightMode,
@@ -84,5 +103,8 @@ class MyAssets extends ThemeExtension<MyAssets> {
     myCartIcon: Assets.imagesMyCartGrey,
     heartIcon: Assets.imagesHeartGrey,
     profileIcon: Assets.imagesProfileGrey,
+    shippingIcon: Assets.imagesShippingBlackIcon,
+    paymentIcon: Assets.imagesPaymentBlackIcon,
+    reviewIcon: Assets.imagesReviewBlackIcon,
   );
 }
