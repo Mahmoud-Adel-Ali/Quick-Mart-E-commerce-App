@@ -9,9 +9,13 @@ class CustomDropdownFeild extends StatefulWidget {
     required this.hintText,
     required this.items,
     this.controller,
+    this.onChanged,
+    this.validator,
   });
   final String hintText;
   final List<String> items;
+  final String? Function(String?)? validator;
+  final void Function(String?)? onChanged;
   final SingleSelectController<String?>? controller;
 
   @override
@@ -32,8 +36,9 @@ class _CustomDropdownFeildState extends State<CustomDropdownFeild> {
         headerStyle: Styless.textRegular14(context),
         // listItemStyle: Styless.textRegular12(context),
         expandedBorder: Border.all(color: context.color.cyan),
-        closedBorder: Border.all(
-            color: selectedItem ? context.color.blue : context.color.mainColor),
+        closedBorder: Border.all(color: context.color.grey100),
+        // closedBorder: Border.all(
+        //     color: selectedItem ? context.color.blue : context.color.mainColor),
         closedSuffixIcon: Icon(
           Icons.keyboard_arrow_down,
           color: context.color.textColor,
@@ -60,14 +65,18 @@ class _CustomDropdownFeildState extends State<CustomDropdownFeild> {
           ),
           child: Text(
             item,
-            style: Styless.textRegular12(context),
+            style: Styless.textRegular14(context),
           ),
         );
       },
+      validator: widget.validator,
       onChanged: (value) {
-        // log('changing value to: $value');
-        selectedItem = true;
-        setState(() {});
+        setState(() {
+          selectedItem = value != null && value.isNotEmpty;
+        });
+        if (widget.onChanged != null) {
+          widget.onChanged!(value);
+        }
       },
     );
   }
