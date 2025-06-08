@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../core/widgets/custom_phone_text_form_field.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 import '../../manager/checkout_cubit/checkout_cubit.dart';
 
@@ -18,6 +19,7 @@ class ShippingForm extends StatelessWidget {
             lableText: 'First Name',
             hintText: 'Enter Your First Name',
           ),
+          CustomPhoneTextFormField(),
           CustomButton(
             onPressed: () {
               context.read<CheckoutCubit>().toPaymentView();

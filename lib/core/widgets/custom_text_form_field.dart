@@ -1,74 +1,81 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:quick_mart_app/core/widgets/custom_text_form_lable.dart';
 import 'package:quick_mart_app/core/extensions/context_extention.dart';
 import 'package:quick_mart_app/core/utils/styles.dart';
+import 'package:quick_mart_app/core/widgets/custom_text_form_lable.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
-    super.key,
-    required this.hintText,
-    this.obscureText = false,
-    this.onChange,
-    this.suffixIcon,
-    this.validator,
-    this.controller,
-    this.keyboardType,
-    required this.lableText,
-  });
   final TextEditingController? controller;
   final String hintText;
   final String lableText;
-  final bool? obscureText;
+  final bool obscureText;
   final Function(String)? onChange;
   final Widget? suffixIcon;
+  final Widget? prefixIcon;
   final String? Function(String?)? validator;
   final TextInputType? keyboardType;
+  final bool enabled;
+  final int maxLines;
+
+  const CustomTextFormField({
+    super.key,
+    required this.hintText,
+    required this.lableText,
+    this.controller,
+    this.obscureText = false,
+    this.onChange,
+    this.suffixIcon,
+    this.prefixIcon,
+    this.validator,
+    this.keyboardType,
+    this.enabled = true,
+    this.maxLines = 1,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTextFormLable(lableText: lableText),
         const SizedBox(height: 10),
         TextFormField(
-          keyboardType: keyboardType,
           controller: controller,
-          obscureText: obscureText ?? false, // show_Text or no
+          obscureText: obscureText,
           validator: validator,
+          keyboardType: keyboardType,
+          enabled: enabled,
+          maxLines: maxLines,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           onChanged: onChange,
           style: Styless.textRegular14(context),
           cursorColor: context.color.cyan,
           decoration: InputDecoration(
-            fillColor: context.color.mainColor,
-            filled: true,
-            hintStyle: Styless.textRegular12(context),
             hintText: hintText,
-            suffixIcon: suffixIcon,
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(18),
-                borderSide: BorderSide(
-                  color: context.color.cyan,
-                )),
-            errorBorder: errorBorder(context),
-            focusedErrorBorder: errorBorder(context),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(18),
-              borderSide: BorderSide(color: context.color.grey100),
+            hintStyle: Styless.textRegular12(context),
+            filled: true,
+            fillColor: context.color.mainColor,
+            contentPadding: const EdgeInsets.symmetric(
+              vertical: 20.0,
+              horizontal: 16.0,
             ),
+            suffixIcon: suffixIcon,
+            prefixIcon: prefixIcon,
+            enabledBorder: _buildBorder(context, context.color.grey100),
+            focusedBorder: _buildBorder(context, context.color.cyan),
+            errorBorder: _buildBorder(context, context.color.red),
+            focusedErrorBorder: _buildBorder(context, context.color.red),
           ),
         ),
       ],
     );
   }
 
-  OutlineInputBorder errorBorder(BuildContext context) {
+  OutlineInputBorder _buildBorder(BuildContext context, Color color) {
     return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(18),
-        borderSide: BorderSide(color: context.color.red));
+      borderRadius: BorderRadius.circular(18),
+      borderSide: BorderSide(color: color),
+    );
   }
 }
