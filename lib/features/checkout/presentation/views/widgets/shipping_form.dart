@@ -37,6 +37,15 @@ class ShippingForm extends StatelessWidget {
               return null;
             },
           ),
+          CustomTextFormField(
+            lableText: 'Street Address',
+            hintText: 'Enter Your Street Address',
+          ),
+          CustomTextFormField(
+            lableText: 'Postal Code',
+            hintText: 'Enter Your Postal Code',
+          ),
+          
           CustomButton(
             onPressed: () {
               context.read<CheckoutCubit>().toPaymentView();

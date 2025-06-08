@@ -8,7 +8,7 @@ class ShippingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return SingleChildScrollView(
       child: Column(
         children: const [
           CheckoutHeaderSection(),
