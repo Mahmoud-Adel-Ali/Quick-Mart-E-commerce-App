@@ -22,6 +22,8 @@ class Assets {
 
   static const String imagesFaqs = "assets/images/faqs.svg";
 
+  static const String imagesGPayIcon = "assets/images/g_pay_icon.svg";
+
   static const String imagesGoogle = "assets/images/google.svg";
 
   static const String imagesHeartCyan = "assets/images/heart-cyan.svg";
@@ -67,6 +69,8 @@ class Assets {
   static const String imagesPaymentMethod = "assets/images/payment_method.svg";
 
   static const String imagesPaymentWhiteIcon = "assets/images/payment_white_icon.svg";
+
+  static const String imagesPaypalIcon = "assets/images/paypal_icon.svg";
 
   static const String imagesPrivacyPolicy = "assets/images/privacy_policy.svg";
 
