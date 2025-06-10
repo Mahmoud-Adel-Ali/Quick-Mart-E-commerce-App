@@ -12,6 +12,8 @@ class Assets {
 
   static const String imagesChangePassword = "assets/images/change_password.svg";
 
+  static const String imagesCheckoutSuccess = "assets/images/checkout_success.png";
+
   static const String imagesDarkTheme = "assets/images/dark_theme.svg";
 
   static const String imagesEditProfile = "assets/images/edit_profile.svg";
