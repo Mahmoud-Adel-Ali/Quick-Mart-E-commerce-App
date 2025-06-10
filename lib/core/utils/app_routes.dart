@@ -8,6 +8,7 @@ import '../../features/auth/sign_up/presentation/views/sign_up_view.dart';
 import '../../features/categories/presentation/views/product_listing_view.dart';
 import '../../features/categories/presentation/views/sub_categories_view.dart';
 import '../../features/checkout/presentation/views/checkout_view.dart';
+import '../../features/checkout/presentation/views/order_placed_successfully_view.dart';
 import '../../features/home/presentation/view/home_view.dart';
 import '../../features/onBoarding/presentation/views/on_boarding_view.dart';
 import '../../features/product_details/presentation/views/product_details_view.dart';
@@ -41,6 +42,7 @@ class AppRoutes {
   static const String changePasswordView = 'changePasswordView';
   //Checkout View
   static const String checkoutView = 'checkoutView';
+  static const String orderPlacedSuccessfully = 'orderPlacedSuccessfully';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -93,6 +95,10 @@ class AppRoutes {
             builder: (context) => const ChangePasswordView());
       case checkoutView:
         return MaterialPageRoute(builder: (context) => const CheckoutView());
+      case orderPlacedSuccessfully:
+        return MaterialPageRoute(
+          builder: (context) => const OrderPlacedSuccessfullyView(),
+        );
       default:
         return MaterialPageRoute(
           builder: (context) => const PageUnderBuildView(),
