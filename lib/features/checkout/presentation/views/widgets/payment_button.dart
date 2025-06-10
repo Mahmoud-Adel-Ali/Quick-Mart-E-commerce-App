@@ -20,8 +20,9 @@ class PaymentButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      borderRadius: BorderRadius.circular(borderRadius),
       child: Container(
-        height: 50,
+        height: 65,
         padding: padding,
         decoration: BoxDecoration(
           color: context.color.cyan50,
