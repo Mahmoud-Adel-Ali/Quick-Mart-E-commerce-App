@@ -45,7 +45,7 @@ class ShippingForm extends StatelessWidget {
             lableText: 'Postal Code',
             hintText: 'Enter Your Postal Code',
           ),
-          
+          Expanded(child: SizedBox()),
           CustomButton(
             onPressed: () {
               context.read<CheckoutCubit>().toPaymentView();

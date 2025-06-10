@@ -8,14 +8,16 @@ class ShippingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: const [
-          CheckoutHeaderSection(),
-          SizedBox(height: 20),
-          ShippingForm(),
-        ],
-      ),
+    return CustomScrollView(
+      slivers: const [
+        SliverToBoxAdapter(child: CheckoutHeaderSection()),
+        SliverToBoxAdapter(child: SizedBox(height: 24)),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: ShippingForm(),
+        ),
+        SliverToBoxAdapter(child: SizedBox(height: 16)),
+      ],
     );
   }
 }
