@@ -24,7 +24,7 @@ class CustomViewBody extends StatelessWidget {
         spacing: 20,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          const SizedBox(height: 20),
+          // const SizedBox(height: 20),
           Expanded(
             flex: 8,
             child: Container(
